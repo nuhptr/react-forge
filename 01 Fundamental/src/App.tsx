@@ -1,11 +1,15 @@
-// Rafce
-const App = () => {
+const Rules = () => {
    return (
-      <section>
+      <div>
          <h1>Rules</h1>
          <p>Open every folder to see topics!</p>
-      </section>
+      </div>
    )
+}
+
+// Rafce
+const App = () => {
+   return <>{/* <Rules /> */}</>
 }
 
 export default App
