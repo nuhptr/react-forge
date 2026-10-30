@@ -1,7 +1,7 @@
 import ProductList from "./components/product-list"
 // import UserList from "./components/user-list"
 
-const Challenge = () => {
+const ListOfDataChallenge = () => {
    return (
       <>
          {/* <UserList /> */}
@@ -10,4 +10,4 @@ const Challenge = () => {
    )
 }
 
-export default Challenge
+export default ListOfDataChallenge

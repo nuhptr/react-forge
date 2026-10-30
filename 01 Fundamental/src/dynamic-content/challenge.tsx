@@ -1,7 +1,7 @@
 import GreetingContent from "./components/greeting"
 import ProductInfo from "./components/product-info"
 
-const Challenge = () => {
+const DynamicContentChallenge = () => {
    return (
       <>
          <GreetingContent />
@@ -10,4 +10,4 @@ const Challenge = () => {
    )
 }
 
-export default Challenge
+export default DynamicContentChallenge

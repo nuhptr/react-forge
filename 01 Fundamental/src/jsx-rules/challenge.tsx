@@ -1,4 +1,4 @@
-const Challenge = () => {
+const JSXRulesChallenge = () => {
    return (
       <div>
          <h1>JSX Rules</h1>
@@ -9,4 +9,4 @@ const Challenge = () => {
    )
 }
 
-export default Challenge
+export default JSXRulesChallenge
