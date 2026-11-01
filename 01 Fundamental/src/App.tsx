@@ -1,3 +1,5 @@
+import StateChallenge from "./state/challenge"
+
 const Rules = () => {
    return (
       <div>
@@ -7,9 +9,18 @@ const Rules = () => {
    )
 }
 
+const State = () => {
+   return <StateChallenge />
+}
+
 // Rafce
 const App = () => {
-   return <>{/* <Rules /> */}</>
+   return (
+      <>
+         {/* <Rules /> */}
+         {/* <State /> */}
+      </>
+   )
 }
 
 export default App
