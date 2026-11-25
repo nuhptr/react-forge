@@ -1,0 +1,29 @@
+/** Style form untuk form-action, form-status, dan react-action-state. */
+@layer components {
+    .form-container {
+        @apply grid gap-4 rounded-xl border border-slate-700 bg-slate-800/60 p-6;
+    }
+    .field {
+        @apply grid gap-1;
+    }
+    .field label {
+        @apply text-sm font-semibold text-slate-400;
+    }
+    .field input,
+    .field textarea {
+        @apply w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40;
+    }
+    .field-error {
+        @apply text-sm text-rose-400;
+    }
+    button[type="submit"],
+    .action-button {
+        @apply justify-self-start rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+    .status {
+        @apply text-sm text-slate-400;
+    }
+    .count-display {
+        @apply text-3xl font-bold text-slate-100;
+    }
+}
