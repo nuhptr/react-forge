@@ -1,6 +1,6 @@
-import LazyCounter from "./components/lazy-counter";
-import PersistentNameForm from "./components/persistent-name-form";
-import RandomNumberGenerator from "./components/random-number-generator";
+import LazyCounter from "./components/lazy-counter"
+import PersistentNameForm from "./components/persistent-name-form"
+import RandomNumberGenerator from "./components/random-number-generator"
 
 /**
  * Menampilkan tiga pola bertahap penerusan fungsi inisialisasi ke `useState`:
@@ -11,13 +11,13 @@ import RandomNumberGenerator from "./components/random-number-generator";
  * @returns Gabungan contoh penggunaan fungsi inisialisasi state.
  */
 const StateInitializers = () => {
-  return (
-    <section>
-      <LazyCounter />
-      <RandomNumberGenerator />
-      <PersistentNameForm />
-    </section>
-  );
-};
+    return (
+        <section>
+            <LazyCounter />
+            <RandomNumberGenerator />
+            <PersistentNameForm />
+        </section>
+    )
+}
 
-export default StateInitializers;
+export default StateInitializers

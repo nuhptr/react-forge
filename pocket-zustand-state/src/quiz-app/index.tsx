@@ -1,11 +1,11 @@
-import QuizLayout from "./components/QuizLayout";
+import QuizLayout from "./components/QuizLayout"
 
 function App() {
-  return (
-    <div className="App">
-      <QuizLayout />
-    </div>
-  );
+    return (
+        <div className="App">
+            <QuizLayout />
+        </div>
+    )
 }
 
-export default App;
+export default App

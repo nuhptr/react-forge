@@ -1,0 +1,12 @@
+{
+    "expo": {
+        "name": "Zen React Native",
+        "slug": "zen-react-native",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "scheme": "zenreactnative",
+        "plugins": ["expo-router"],
+        "experiments": { "typedRoutes": true },
+        "web": { "bundler": "metro" }
+    }
+}

@@ -1,5 +1,5 @@
-import ControlledField from "./controlled-field";
-import UncontrolledField from "./uncontrolled-field";
+import ControlledField from "./controlled-field"
+import UncontrolledField from "./uncontrolled-field"
 
 /**
  * Perbandingan Controlled vs Uncontrolled component.
@@ -7,13 +7,11 @@ import UncontrolledField from "./uncontrolled-field";
  * @returns Dua input: controlled (state) dan uncontrolled (ref).
  */
 export default function ControlledVsUncontrolled() {
-  return (
-    <section className="panel" aria-label="Controlled vs Uncontrolled">
-      <h3 className="text-lg font-semibold text-blue-400">
-        Controlled vs Uncontrolled
-      </h3>
-      <ControlledField />
-      <UncontrolledField />
-    </section>
-  );
+    return (
+        <section className="panel" aria-label="Controlled vs Uncontrolled">
+            <h3 className="text-lg font-semibold text-blue-400">Controlled vs Uncontrolled</h3>
+            <ControlledField />
+            <UncontrolledField />
+        </section>
+    )
 }

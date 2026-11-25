@@ -1,18 +1,21 @@
 # Testing React Grounds (`testing-react-grounds`)
 
-Testing komponen React dengan query Testing Library dan peran aksesibilitas.
+Testing komponen React: render dengan props, query Testing Library, peran aksesibilitas, interaksi pengguna, dan data fetching asynchronous.
 
-Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
+Modul ini adalah bagian dari kurikulum [React Forge](../readme.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
 
 ---
 
 ## Daftar Modul
 
-| Folder | Topik | Pintu Masuk |
-| :--- | :--- | :--- |
-| `get-by-role` | Get By Role | `src/get-by-role/index.tsx` |
-| `query-functions` | Query Functions | `src/query-functions/index.tsx` |
-| `setup-testing` | Setup Testing | `src/setup-testing/index.tsx` |
+| Folder               | Topik              | Pintu Masuk                        |
+| :------------------- | :----------------- | :--------------------------------- |
+| `data-fetching`      | Data Fetching      | `src/data-fetching/index.tsx`      |
+| `get-by-role`        | Get By Role        | `src/get-by-role/index.tsx`        |
+| `query-functions`    | Query Functions    | `src/query-functions/index.tsx`    |
+| `setup-testing`      | Setup Testing      | `src/setup-testing/index.tsx`      |
+| `testing-components` | Testing Components | `src/testing-components/index.tsx` |
+| `user-interaction`   | User Interaction   | `src/user-interaction/index.tsx`   |
 
 ---
 
@@ -34,7 +37,7 @@ bun run dev
 src/
 ├── App.tsx                  # compose saja
 ├── demos.ts                 # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
+├── section-list.tsx  # dropdown + kartu pemilih modul
 ├── globals.css              # hanya @import
 ├── styles/                  # base.css, layout.css (@layer + @apply)
 └── <topik>/index.tsx        # demo/orkestrasi singkat
@@ -56,4 +59,4 @@ Pilih topik lewat dropdown atau kartu di halaman — tidak perlu menyunting `App
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Materi diadaptasi dari referensi kursus React.

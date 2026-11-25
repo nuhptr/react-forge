@@ -1,39 +1,39 @@
 /** Layout bersama playground motion-studio. */
 @layer components {
-  .playground {
-    @apply mx-auto grid w-full max-w-4xl gap-8 px-4 py-8;
-  }
-  .playground-header {
-    @apply grid gap-2;
-  }
-  .playground-header p {
-    @apply max-w-3xl text-slate-400;
-  }
-  .demo-nav {
-    @apply grid gap-4;
-  }
-  .demo-card {
-    @apply rounded-xl border border-slate-700 bg-slate-800/60 p-5 transition hover:-translate-y-0.5 hover:border-blue-500;
-  }
-  .demo-card h3 {
-    @apply mb-1 text-lg;
-  }
-  .demo-card p {
-    @apply text-sm text-slate-400;
-  }
-  .demo-link {
-    @apply block cursor-pointer;
-  }
-  .demo-section {
-    @apply grid gap-6 pt-4;
-  }
-  .demo-section h2 {
-    @apply mb-2 text-xl text-blue-400;
-  }
-  .demo-group {
-    @apply grid items-start gap-4;
-  }
-  .demo-half {
-    @apply contents;
-  }
+    .playground {
+        @apply mx-auto grid w-full max-w-4xl gap-8 px-4 py-8;
+    }
+    .playground-header {
+        @apply grid gap-2;
+    }
+    .playground-header p {
+        @apply max-w-3xl text-slate-400;
+    }
+    .demo-nav {
+        @apply grid gap-4;
+    }
+    .demo-card {
+        @apply rounded-xl border border-slate-700 bg-slate-800/60 p-5 transition hover:-translate-y-0.5 hover:border-blue-500;
+    }
+    .demo-card h3 {
+        @apply mb-1 text-lg;
+    }
+    .demo-card p {
+        @apply text-sm text-slate-400;
+    }
+    .demo-link {
+        @apply block cursor-pointer;
+    }
+    .demo-section {
+        @apply grid gap-6 pt-4;
+    }
+    .demo-section h2 {
+        @apply mb-2 text-xl text-blue-400;
+    }
+    .demo-group {
+        @apply grid items-start gap-4;
+    }
+    .demo-half {
+        @apply contents;
+    }
 }

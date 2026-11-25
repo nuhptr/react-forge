@@ -2,8 +2,8 @@
  * Props untuk komponen {@link Weather}.
  */
 export interface WeatherProps {
-  /** Suhu udara dalam derajat Celsius. Nilai bawaan `26`. */
-  temperature?: number;
+    /** Suhu udara dalam derajat Celsius. Nilai bawaan `26`. */
+    temperature?: number
 }
 
 /**
@@ -13,10 +13,10 @@ export interface WeatherProps {
  * @returns Pesan kondisi cuaca.
  */
 const Weather = ({ temperature = 26 }: WeatherProps) => {
-  if (temperature < 15) return <div>It&apos;s cold outside!</div>;
-  if (temperature <= 25) return <div>It&apos;s nice outside!</div>;
+    if (temperature < 15) return <div>It&apos;s cold outside!</div>
+    if (temperature <= 25) return <div>It&apos;s nice outside!</div>
 
-  return <div>It&apos;s hot outside!</div>;
-};
+    return <div>It&apos;s hot outside!</div>
+}
 
-export default Weather;
+export default Weather

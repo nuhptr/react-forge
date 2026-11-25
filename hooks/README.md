@@ -12,7 +12,7 @@ bun install
 bun run dev
 ```
 
-Pilih topik atau *challenge* langsung lewat dropdown/kartu di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/components/module-picker.tsx`](./src/components/module-picker.tsx).
+Pilih topik atau *challenge* langsung lewat dropdown/kartu di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/section-list.tsx`](./src/section-list.tsx).
 
 ---
 

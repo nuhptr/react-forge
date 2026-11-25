@@ -1,20 +1,23 @@
 # Test Foundations (`test-foundations`)
 
-Dasar testing: TDD, matchers, parameterized testing, positive/negative, dan boundary testing.
+Dasar testing: sintaks test (describe/it/expect/AAA), basic tests, TDD, matchers, parameterized testing, positive/negative, boundary testing, dan testing asynchronous.
 
-Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
+Modul ini adalah bagian dari kurikulum [React Forge](../readme.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
 
 ---
 
 ## Daftar Modul
 
-| Folder | Topik | Pintu Masuk |
-| :--- | :--- | :--- |
-| `boundary-testing` | Boundary Testing | `src/boundary-testing/index.tsx` |
-| `matchers` | Matchers | `src/matchers/index.tsx` |
-| `parameterized-testing` | Parameterized Testing | `src/parameterized-testing/index.tsx` |
-| `positive-negative-testing` | Positive & Negative | `src/positive-negative-testing/index.tsx` |
-| `tdd` | TDD | `src/tdd/index.tsx` |
+| Folder                      | Topik                 | Pintu Masuk                               |
+| :-------------------------- | :-------------------- | :---------------------------------------- |
+| `basic-tests`               | Basic Tests           | `src/basic-tests/index.tsx`               |
+| `boundary-testing`          | Boundary Testing      | `src/boundary-testing/index.tsx`          |
+| `matchers`                  | Matchers              | `src/matchers/index.tsx`                  |
+| `parameterized-testing`     | Parameterized Testing | `src/parameterized-testing/index.tsx`     |
+| `positive-negative-testing` | Positive & Negative   | `src/positive-negative-testing/index.tsx` |
+| `tdd`                       | TDD                   | `src/tdd/index.tsx`                       |
+| `testing-async`             | Testing Async         | `src/testing-async/index.tsx`             |
+| `tests-syntax-intro`        | Tests Syntax Intro    | `src/tests-syntax-intro/index.tsx`        |
 
 ---
 
@@ -36,7 +39,7 @@ bun run dev
 src/
 ├── App.tsx                  # compose saja
 ├── demos.ts                 # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
+├── section-list.tsx  # dropdown + kartu pemilih modul
 ├── globals.css              # hanya @import
 ├── styles/                  # base.css, layout.css (@layer + @apply)
 └── <topik>/index.tsx        # demo/orkestrasi singkat
@@ -58,4 +61,4 @@ Pilih topik lewat dropdown atau kartu di halaman — tidak perlu menyunting `App
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Materi diadaptasi dari referensi kursus React.

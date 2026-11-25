@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react"
 
 export interface FetchState<T> {
-  data: T | null;
-  loading: boolean;
-  error: string | null;
+    data: T | null
+    loading: boolean
+    error: string | null
 }
 
 /**
@@ -14,33 +14,33 @@ export interface FetchState<T> {
  * Dependency Inversion: URL diinjeksi sebagai parameter, bukan dikodekan kaku.
  */
 export function useFetch<T>(url: string): FetchState<T> {
-  const [state, setState] = useState<FetchState<T>>({
-    data: null,
-    loading: true,
-    error: null,
-  });
-
-  const fetchData = useCallback(async () => {
-    setState((prev) => ({ ...prev, loading: true, error: null }));
-    try {
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`Gagal mengambil data: ${res.statusText}`);
-      }
-      const data: T = await res.json();
-      setState({ data, loading: false, error: null });
-    } catch (error) {
-      setState({
+    const [state, setState] = useState<FetchState<T>>({
         data: null,
-        loading: false,
-        error: error instanceof Error ? error.message : "Terjadi kesalahan",
-      });
-    }
-  }, [url]);
+        loading: true,
+        error: null,
+    })
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    const fetchData = useCallback(async () => {
+        setState((prev) => ({ ...prev, loading: true, error: null }))
+        try {
+            const res = await fetch(url)
+            if (!res.ok) {
+                throw new Error(`Gagal mengambil data: ${res.statusText}`)
+            }
+            const data: T = await res.json()
+            setState({ data, loading: false, error: null })
+        } catch (error) {
+            setState({
+                data: null,
+                loading: false,
+                error: error instanceof Error ? error.message : "Terjadi kesalahan",
+            })
+        }
+    }, [url])
 
-  return state;
+    useEffect(() => {
+        fetchData()
+    }, [fetchData])
+
+    return state
 }

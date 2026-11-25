@@ -1,26 +1,19 @@
-interface User {
-    name: string
-}
+import { View, Text } from "react-native"
+
+/** Komponen terdalam. */
+const Leaf = ({ message }: { message: string }) => <Text>{message}</Text>
+/** Perantara yang meneruskan props. */
+const Middle = ({ message }: { message: string }) => <Leaf message={message} />
 
 /**
- * Komponen terdalam menerima props dari atas (prop drilling).
- */
-const DeepChild = ({ user }: { user: User }) => (
-    <p className="rounded border border-slate-700 p-2">Halo, {user.name}!</p>
-)
-
-const Middle = ({ user }: { user: User }) => <DeepChild user={user} />
-
-/**
- * Demo prop drilling.
+ * Demo prop drilling lewat satu tingkat perantara.
  *
- * @returns Pesan dari komponen terdalam.
+ * @returns Pesan yang sampai ke komponen terdalam.
  */
-export default function PropDrilling() {
+export default function PropDrillingTopic() {
     return (
-        <section className="panel" aria-label="Prop drilling">
-            <h3 className="text-lg font-semibold text-blue-400">Prop Drilling</h3>
-            <Middle user={{ name: "React Native" }} />
-        </section>
+        <View>
+            <Middle message="Halo dari Root" />
+        </View>
     )
 }
