@@ -1,32 +1,53 @@
 import { useState } from "react"
 
+const INITIAL_FRIENDS: string[] = ["Alex", "John"]
+
+/**
+ * Demonstrates immutable array state updates (`spread`, `filter`, and `map`).
+ *
+ * Never mutates the existing array in place (`push`/`splice`), ensuring React
+ * detects reference changes and triggers predictable re-renders.
+ *
+ * @returns Friends list manager component.
+ */
 const UpdatingArrays = () => {
-   // Keep the friends list in state; setFriends schedules a render with the new list.
-   const [friends, setFriends] = useState<Array<string>>(["Alex", "John"])
+    const [friends, setFriends] = useState<string[]>(INITIAL_FRIENDS)
 
-   // Add a friend by copying the current array and appending a new name.
-   const addOne = () => setFriends([...friends, "anmastery"])
+    const handleAddFriend = () => {
+        setFriends((prevFriends) =>
+            prevFriends.includes("anmastery") ? prevFriends : [...prevFriends, "anmastery"],
+        )
+    }
 
-   // Filter out John, returning a new array that contains every other friend.
-   const removeOne = () => setFriends(friends.filter((f) => f !== "John"))
+    const handleRemoveFriend = () => {
+        setFriends((prevFriends) => prevFriends.filter((friend) => friend !== "John"))
+    }
 
-   // Map to a new array, replacing Alex's name while leaving other names unchanged.
-   const updateOne = () => setFriends(friends.map((f) => (f === "Alex" ? "Alex Smith" : f)))
+    const handleUpdateFriend = () => {
+        setFriends((prevFriends) =>
+            prevFriends.map((friend) => (friend === "Alex" ? "Alex Smith" : friend)),
+        )
+    }
 
-   // Render the current list and buttons that call the update functions when clicked.
-   return (
-      <div>
-         {/* Create one list item for each friend. Math.random changes keys on every render; stable keys are preferable when list items have persistent identities. */}
-         {friends.map((t) => (
-            <li key={Math.random()}>{t}</li>
-         ))}
+    return (
+        <div>
+            <ul>
+                {friends.map((friend) => (
+                    <li key={friend}>{friend}</li>
+                ))}
+            </ul>
 
-         <button onClick={addOne}>Add One</button>
-         <button onClick={removeOne}>Remove One</button>
-         <button onClick={updateOne}>Update One</button>
-      </div>
-   )
+            <button type="button" onClick={handleAddFriend}>
+                Add Friend
+            </button>
+            <button type="button" onClick={handleRemoveFriend}>
+                Remove Friend
+            </button>
+            <button type="button" onClick={handleUpdateFriend}>
+                Update Friend
+            </button>
+        </div>
+    )
 }
 
-// Make this component available for import in other files.
 export default UpdatingArrays

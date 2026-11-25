@@ -1,62 +1,80 @@
-import { useState, type ChangeEvent } from "react"
+import { useId, useState, type SubmitEvent } from "react"
 
-type ShoppingItem = {
-   name: string
-   quantity: number
+/**
+ * Represents an entry in the shopping list state.
+ */
+interface ShoppingItem {
+    id: string
+    name: string
+    quantity: number
 }
 
+/**
+ * State challenge 3: validated form managing an array of `{ id, name, quantity }` objects.
+ *
+ * @returns Shopping list manager component.
+ */
 const ShoppingList = () => {
-   const [items, setItems] = useState<ShoppingItem[]>([])
-   const [name, setName] = useState("")
-   const [quantity, setQuantity] = useState("")
+    const itemNameInputId = useId()
+    const itemQuantityInputId = useId()
+    const [items, setItems] = useState<ShoppingItem[]>([])
+    const [itemName, setItemName] = useState("")
+    const [itemQuantity, setItemQuantity] = useState("")
 
-   const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-      event.preventDefault()
+    const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault()
 
-      const trimmedName = name.trim()
-      const parsedQuantity = Number.parseInt(quantity, 10)
+        const trimmedName = itemName.trim()
+        const parsedQuantity = Number.parseInt(itemQuantity, 10)
 
-      if (!trimmedName || !Number.isInteger(parsedQuantity) || parsedQuantity <= 0) return
+        if (!trimmedName || !Number.isInteger(parsedQuantity) || parsedQuantity <= 0) return
 
-      const newItem: ShoppingItem = {
-         name: trimmedName,
-         quantity: parsedQuantity,
-      }
+        const newItem: ShoppingItem = {
+            id: crypto.randomUUID(),
+            name: trimmedName,
+            quantity: parsedQuantity,
+        }
 
-      setItems((prevItems) => [...prevItems, newItem])
+        setItems((prevItems) => [...prevItems, newItem])
+        setItemName("")
+        setItemQuantity("")
+    }
 
-      setName("")
-      setQuantity("")
-   }
+    return (
+        <div>
+            <h2>Shopping List</h2>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor={itemNameInputId}>Item: </label>
+                <input
+                    id={itemNameInputId}
+                    type="text"
+                    placeholder="Item name"
+                    value={itemName}
+                    onChange={(event) => setItemName(event.target.value)}
+                />
 
-   return (
-      <div>
-         <h1>Shopping List</h1>
-         <form onSubmit={handleSubmit}>
-            <input
-               type="text"
-               placeholder="Item name"
-               value={name}
-               onChange={(event) => setName(event.target.value)}
-            />
-            <input
-               type="number"
-               placeholder="Quantity"
-               value={quantity}
-               onChange={(event) => setQuantity(event.target.value)}
-            />
-            <button type="submit">Add Item</button>
-         </form>
+                <label htmlFor={itemQuantityInputId}>Quantity: </label>
+                <input
+                    id={itemQuantityInputId}
+                    type="number"
+                    min={1}
+                    placeholder="Quantity"
+                    value={itemQuantity}
+                    onChange={(event) => setItemQuantity(event.target.value)}
+                />
 
-         <ul>
-            {items.map((item, index) => (
-               <li key={`${item.name}-${index}`}>
-                  {item.name} - Quantity: {item.quantity}
-               </li>
-            ))}
-         </ul>
-      </div>
-   )
+                <button type="submit">Add Item</button>
+            </form>
+
+            <ul>
+                {items.map((item) => (
+                    <li key={item.id}>
+                        {item.name} - Quantity: {item.quantity}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default ShoppingList

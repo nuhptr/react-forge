@@ -1,16 +1,24 @@
-type DealerProps = {
-   name?: string
-   from?: string
+/**
+ * Props for the {@link Dealer} component.
+ */
+export interface DealerProps {
+    dealerName?: string
+    originCountry?: string
 }
 
-const Dealer = ({ name, from }: DealerProps) => {
-   return (
-      <div>
-         {/* If value null assign with "Default" and "Indonesia" */}
-         <h1>Dealer Name: {name ?? "Default "}</h1>
-         <p>From : {from ?? "Indonesia"}</p>
-      </div>
-   )
+/**
+ * Renders dealership metadata using destructured props with fallback defaults.
+ *
+ * @param props Optional dealership name and country of origin.
+ * @returns Dealer details block.
+ */
+const Dealer = ({ dealerName = "Default", originCountry = "Indonesia" }: DealerProps) => {
+    return (
+        <div>
+            <h2>Dealer Name: {dealerName}</h2>
+            <p>Origin: {originCountry}</p>
+        </div>
+    )
 }
 
 export default Dealer

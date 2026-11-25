@@ -1,47 +1,70 @@
-import { useState, type ChangeEvent } from "react"
+import { useId, useState, type ChangeEvent } from "react"
 
-type ProfileType = {
-   name: string
-   age: number
+/**
+ * Represents editable user profile fields.
+ */
+interface UserProfile {
+    name: string
+    age: number
 }
 
+/**
+ * State challenge 2: controlled form inputs updating a typed `UserProfile` object.
+ *
+ * Preserves numeric type safety on `age` when handling string values from `<input type="number" />`.
+ *
+ * @returns Editable user profile form and live preview.
+ */
 const Profile = () => {
-   // Initialize state with an object containing name and age
-   const [profile, setProfile] = useState<ProfileType>({
-      name: "John Doe",
-      age: 30,
-   })
+    const nameInputId = useId()
+    const ageInputId = useId()
+    const [profile, setProfile] = useState<UserProfile>({
+        name: "John Doe",
+        age: 30,
+    })
 
-   // Function to update the profile state
-   const handleProfileUpdate = (event: ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target
-      setProfile((prevProfile) => ({
-         ...prevProfile,
-         [name]: value,
-      }))
-   }
+    const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setProfile((prevProfile) => ({ ...prevProfile, name: event.target.value }))
+    }
 
-   return (
-      <div>
-         <h2>User Profile</h2>
-         <div>
-            <label>
-               Name:
-               <input type="text" name="name" value={profile.name} onChange={handleProfileUpdate} />
-            </label>
-         </div>
-         <div>
-            <label>
-               Age:
-               <input type="number" name="age" value={profile.age} onChange={handleProfileUpdate} />
-            </label>
-         </div>
+    const handleAgeChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const parsedAge = Number.parseInt(event.target.value, 10)
+        setProfile((prevProfile) => ({
+            ...prevProfile,
+            age: Number.isNaN(parsedAge) ? 0 : Math.max(0, parsedAge),
+        }))
+    }
 
-         <h3>Profile Information</h3>
-         <p>Name: {profile.name}</p>
-         <p>Age: {profile.age}</p>
-      </div>
-   )
+    return (
+        <div>
+            <h2>User Profile</h2>
+            <div>
+                <label htmlFor={nameInputId}>Name: </label>
+                <input
+                    id={nameInputId}
+                    type="text"
+                    name="name"
+                    value={profile.name}
+                    onChange={handleNameChange}
+                />
+            </div>
+            <div>
+                <label htmlFor={ageInputId}>Age: </label>
+                <input
+                    id={ageInputId}
+                    type="number"
+                    name="age"
+                    min={0}
+                    value={profile.age}
+                    onChange={handleAgeChange}
+                />
+            </div>
+
+            <h3>Profile Information</h3>
+            <p>Name: {profile.name}</p>
+            <p>Age: {profile.age}</p>
+        </div>
+    )
 }
 
 export default Profile

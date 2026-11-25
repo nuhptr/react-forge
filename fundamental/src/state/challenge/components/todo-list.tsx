@@ -1,48 +1,58 @@
-import { useState, type ChangeEvent } from "react"
+import { useId, useState, type ChangeEvent, type SubmitEvent } from "react"
 
-type TodoItem = {
-   text: string
+/**
+ * Represents a single todo task with a stable unique identifier.
+ */
+interface TodoItem {
+    id: string
+    text: string
 }
 
+/**
+ * State challenge 4: controlled todo list form appending new tasks with stable UUID keys.
+ *
+ * @returns Todo list manager component.
+ */
 const TodoList = () => {
-   // Initialize the state with an empty array
-   const [todos, setTodos] = useState<TodoItem[]>([])
-   const [inputValue, setInputValue] = useState("")
+    const todoInputId = useId()
+    const [todos, setTodos] = useState<TodoItem[]>([])
+    const [todoText, setTodoText] = useState("")
 
-   // Handle form submission to add a new todo item
-   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      if (inputValue.trim()) {
-         setTodos([...todos, { text: inputValue }])
-         setInputValue("")
-      }
-   }
+    const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const trimmedText = todoText.trim()
+        if (!trimmedText) return
 
-   // Handle input change
-   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setInputValue(e.target.value)
-   }
+        setTodos((prevTodos) => [...prevTodos, { id: crypto.randomUUID(), text: trimmedText }])
+        setTodoText("")
+    }
 
-   return (
-      <div>
-         <h1>Todo List</h1>
-         <form onSubmit={handleSubmit}>
-            <input
-               type="text"
-               value={inputValue}
-               onChange={handleChange}
-               placeholder="Add a new todo"
-            />
-            <button type="submit">Add Todo</button>
-         </form>
+    const handleTodoTextChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setTodoText(event.target.value)
+    }
 
-         <ul>
-            {todos.map((todo, index) => (
-               <li key={index}>{todo.text}</li>
-            ))}
-         </ul>
-      </div>
-   )
+    return (
+        <div>
+            <h2>Todo List</h2>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor={todoInputId}>New Todo: </label>
+                <input
+                    id={todoInputId}
+                    type="text"
+                    value={todoText}
+                    onChange={handleTodoTextChange}
+                    placeholder="Add a new todo"
+                />
+                <button type="submit">Add Todo</button>
+            </form>
+
+            <ul>
+                {todos.map((todo) => (
+                    <li key={todo.id}>{todo.text}</li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default TodoList

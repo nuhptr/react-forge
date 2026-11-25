@@ -1,26 +1,34 @@
-type User = {
-   id: number
-   name: string
-   age: number
+/**
+ * Represents a user record displayed in {@link UserList}.
+ */
+interface User {
+    id: number
+    name: string
+    age: number
 }
 
-const UserList = () => {
-   const users: User[] = [
-      { id: 1, name: "Alice", age: 25 },
-      { id: 2, name: "Bob", age: 30 },
-      { id: 3, name: "Charlie", age: 22 },
-   ]
+const USERS: User[] = [
+    { id: 1, name: "Alice", age: 25 },
+    { id: 2, name: "Bob", age: 30 },
+    { id: 3, name: "Charlie", age: 22 },
+]
 
-   return (
-      <div>
-         {users.map((user) => (
-            <div key={user.id}>
-               <h1>Name: {user.name}</h1>
-               <p>Age: {user.age}</p>
-            </div>
-         ))}
-      </div>
-   )
+/**
+ * Renders a collection of users mapped with stable `user.id` keys.
+ *
+ * @returns Unordered list of user entries.
+ */
+const UserList = () => {
+    return (
+        <ul>
+            {USERS.map((user) => (
+                <li key={user.id}>
+                    <h2>Name: {user.name}</h2>
+                    <p>Age: {user.age}</p>
+                </li>
+            ))}
+        </ul>
+    )
 }
 
 export default UserList

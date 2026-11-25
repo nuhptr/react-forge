@@ -1,29 +1,40 @@
-type ShoppingData = {
-   items: string[]
+/**
+ * Props for the {@link ShoppingItemsList} component.
+ */
+interface ShoppingItemsListProps {
+    /** Ordered array of shopping item labels. */
+    items: string[]
 }
 
-const Shopping = ({ items }: ShoppingData) => {
-   console.log(items)
-
-   return (
-      <section>
-         <ol>
+/**
+ * Renders an ordered list of shopping items using stable item keys.
+ *
+ * @param props Component properties.
+ * @returns Semantic `<ol>` shopping list.
+ */
+const ShoppingItemsList = ({ items }: ShoppingItemsListProps) => {
+    return (
+        <ol>
             {items.map((item) => (
-               <li key={Math.random() * 5}>{item}</li>
+                <li key={item}>{item}</li>
             ))}
-         </ol>
-      </section>
-   )
+        </ol>
+    )
 }
 
-const ListOfData = () => {
-   const data: string[] = ["Wireless Earbuds", "Power Bank", "New SSD", "Hoddie"]
+const SHOPPING_ITEMS: string[] = ["Wireless Earbuds", "Power Bank", "New SSD", "Hoodie"]
 
-   return (
-      <section>
-         <Shopping items={data} />
-      </section>
-   )
+/**
+ * Demonstrates rendering arrays of data with `.map()` and unique `key` props.
+ *
+ * @returns Shopping list showcase section.
+ */
+const ListOfData = () => {
+    return (
+        <section>
+            <ShoppingItemsList items={SHOPPING_ITEMS} />
+        </section>
+    )
 }
 
 export default ListOfData

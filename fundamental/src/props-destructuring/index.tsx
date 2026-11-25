@@ -1,36 +1,55 @@
-type UserProps = {
-   img?: string
-   name?: string
-   age?: number
-   isMarried?: boolean
-   hobbies?: string[]
+/**
+ * Props for the destructured {@link UserProfileCard} component.
+ */
+interface UserProfileCardProps {
+    avatarUrl?: string
+    name?: string
+    age?: number
+    isMarried?: boolean
+    hobbies?: string[]
 }
 
-// In here call props one by one not by 1 variable only
-const User = ({ img, name, age, isMarried, hobbies }: UserProps) => {
-   return (
-      <section>
-         <img src={img} alt={name} width={200} />
-         <h1>Name: {name}</h1>
-         <p>Age: {age}</p>
-         <p>Is married: {isMarried}</p>
-         <p>Hobbies: {hobbies} </p>
-      </section>
-   )
+/**
+ * Displays user profile fields extracted directly via parameter destructuring.
+ *
+ * @param props Destructured user attributes with sensible defaults.
+ * @returns User profile section.
+ */
+const UserProfileCard = ({
+    avatarUrl,
+    name = "Guest",
+    age = 0,
+    isMarried = false,
+    hobbies = [],
+}: UserProfileCardProps) => {
+    return (
+        <section>
+            {avatarUrl && <img src={avatarUrl} alt={name} width={200} />}
+            <h1>Name: {name}</h1>
+            <p>Age: {age}</p>
+            <p>Is married: {isMarried ? "Yes" : "No"}</p>
+            <p>Hobbies: {hobbies.join(", ")}</p>
+        </section>
+    )
 }
 
+/**
+ * Demonstrates cleaner component signatures using object destructuring on `props`.
+ *
+ * @returns Showcase wrapper rendering {@link UserProfileCard}.
+ */
 const PropsDestructuring = () => {
-   return (
-      <div>
-         <User
-            img="https://avatars.githubusercontent.com/u/85052811?v=4"
-            name="Anmastery"
-            age={18}
-            isMarried={true}
-            hobbies={["Coding", "Reading", "Sleeping"]}
-         />
-      </div>
-   )
+    return (
+        <div>
+            <UserProfileCard
+                avatarUrl="https://avatars.githubusercontent.com/u/85052811?v=4"
+                name="Anmastery"
+                age={18}
+                isMarried={true}
+                hobbies={["Coding", "Reading", "Sleeping"]}
+            />
+        </div>
+    )
 }
 
 export default PropsDestructuring
