@@ -53,7 +53,7 @@ const updateProductDetails = asyncHandler(async (req, res) => {
     const product = await Product.findByIdAndUpdate(
       req.params.id,
       { ...req.fields },
-      { new: true }
+      { new: true },
     );
 
     await product.save();
@@ -139,7 +139,7 @@ const addProductReview = asyncHandler(async (req, res) => {
 
     if (product) {
       const alreadyReviewed = product.reviews.find(
-        (r) => r.user.toString() === req.user._id.toString()
+        (r) => r.user.toString() === req.user._id.toString(),
       );
 
       if (alreadyReviewed) {

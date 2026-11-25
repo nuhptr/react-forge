@@ -1,0 +1,24 @@
+/** Layout bersama playground fundamental. */
+@layer components {
+    .playground {
+        @apply mx-auto grid w-full max-w-4xl gap-8 px-4 py-8;
+    }
+    .playground-header {
+        @apply grid gap-2;
+    }
+    .playground-header p {
+        @apply max-w-3xl text-slate-400;
+    }
+    .demo-card {
+        @apply rounded-xl border border-slate-700 bg-slate-800/60 p-4 text-left transition hover:border-blue-500;
+    }
+    .demo-card[data-active="true"] {
+        @apply border-blue-500 bg-blue-500/10;
+    }
+    .demo-card h3 {
+        @apply font-semibold text-slate-100;
+    }
+    .demo-card p {
+        @apply mt-1 text-sm text-slate-400;
+    }
+}

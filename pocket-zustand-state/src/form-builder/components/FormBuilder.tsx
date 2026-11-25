@@ -23,7 +23,7 @@ const FormBuilder = () => {
   };
 
   const handleFieldChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setNewField((prev) => ({ ...prev, [name]: value }));

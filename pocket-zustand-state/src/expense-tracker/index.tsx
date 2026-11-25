@@ -1,11 +1,11 @@
-import ExpenseTracker from "./components/ExpenseTracker"
+import ExpenseTracker from "./components/ExpenseTracker";
 
 const App = () => {
-    return (
-        <div>
-            <ExpenseTracker />
-        </div>
-    )
-}
+  return (
+    <div>
+      <ExpenseTracker />
+    </div>
+  );
+};
 
-export default App
+export default App;

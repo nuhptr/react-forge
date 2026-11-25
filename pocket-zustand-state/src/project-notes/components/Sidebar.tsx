@@ -5,7 +5,7 @@ const Sidebar = () => {
   const { notes, search, selectNote, setSearch } = useNotesStore();
 
   const filteredNotes = notes.filter((note) =>
-    note.text.toLowerCase().includes(search.toLowerCase())
+    note.text.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (

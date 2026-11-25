@@ -1,4 +1,4 @@
-import AccessibleFieldGroup from "./components/accessible-field-group"
+import AccessibleFieldGroup from "./components/accessible-field-group";
 
 /**
  * Mendemonstrasikan keunggulan `useId()` ketika merender beberapa instans form identik
@@ -7,13 +7,13 @@ import AccessibleFieldGroup from "./components/accessible-field-group"
  * @returns Halaman demonstrasi `useId`.
  */
 const UniqueIdentifiers = () => {
-    return (
-        <main>
-            <h1>Unique Identifiers (useId)</h1>
-            <AccessibleFieldGroup groupTitle="Formulir Peserta Utama" />
-            <AccessibleFieldGroup groupTitle="Formulir Peserta Pendamping" />
-        </main>
-    )
-}
+  return (
+    <main>
+      <h1>Unique Identifiers (useId)</h1>
+      <AccessibleFieldGroup groupTitle="Formulir Peserta Utama" />
+      <AccessibleFieldGroup groupTitle="Formulir Peserta Pendamping" />
+    </main>
+  );
+};
 
-export default UniqueIdentifiers
+export default UniqueIdentifiers;

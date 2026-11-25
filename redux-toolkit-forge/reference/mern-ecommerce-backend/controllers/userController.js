@@ -44,7 +44,7 @@ const loginUser = asyncHandler(async (req, res) => {
   if (existingUser) {
     const isPasswordValid = await bcrypt.compare(
       password,
-      existingUser.password
+      existingUser.password,
     );
 
     if (isPasswordValid) {

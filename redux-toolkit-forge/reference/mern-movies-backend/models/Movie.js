@@ -12,7 +12,7 @@ const reviewSchema = mongoose.Schema(
       ref: "User",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const movieSchema = new mongoose.Schema(
@@ -27,7 +27,7 @@ const movieSchema = new mongoose.Schema(
     numReviews: { type: Number, required: true, default: 0 },
     createdAt: { type: Date, default: Date.now },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Movie = mongoose.model("Movie", movieSchema);

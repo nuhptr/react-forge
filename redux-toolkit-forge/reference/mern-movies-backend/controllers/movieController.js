@@ -57,7 +57,7 @@ const movieReview = async (req, res) => {
 
     if (movie) {
       const alreadyReviewed = movie.reviews.find(
-        (r) => r.user.toString() === req.user._id.toString()
+        (r) => r.user.toString() === req.user._id.toString(),
       );
 
       if (alreadyReviewed) {
@@ -115,7 +115,7 @@ const deleteComment = async (req, res) => {
     }
 
     const reviewIndex = movie.reviews.findIndex(
-      (r) => r._id.toString() === reviewId
+      (r) => r._id.toString() === reviewId,
     );
 
     if (reviewIndex === -1) {

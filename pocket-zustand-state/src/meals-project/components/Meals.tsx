@@ -8,7 +8,7 @@ function Meals() {
     const fetchMeals = async () => {
       try {
         const response = await fetch(
-          "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+          "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood",
         );
         const data = await response.json();
         setMeals(data.meals);
@@ -21,7 +21,7 @@ function Meals() {
   }, [setMeals]);
 
   const filteredMeals = meals.filter((meal) =>
-    meal.strMeal.toLowerCase().includes(searchQuery.toLowerCase())
+    meal.strMeal.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (

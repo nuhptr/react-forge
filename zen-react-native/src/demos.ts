@@ -18,8 +18,28 @@ export interface Demo {
  * Single Responsibility: hanya mendefinisikan daftar modul; tidak merender UI.
  */
 export const demos: Demo[] = [
-    { id: "expo-router", title: "Expo Router", description: "Navigasi berbasis file.", Component: M0 },
-    { id: "input", title: "Input", description: "Input React Native.", Component: M1 },
-    { id: "prop-drilling", title: "Prop Drilling", description: "Alur props.", Component: M2 },
-    { id: "use-effect", title: "useEffect", description: "Efek samping.", Component: M3 }
+    {
+        id: "expo-router",
+        title: "Expo Router",
+        description: "Navigasi berbasis file.",
+        Component: M0,
+    },
+    {
+        id: "input",
+        title: "Input",
+        description: "Input React Native.",
+        Component: M1,
+    },
+    {
+        id: "prop-drilling",
+        title: "Prop Drilling",
+        description: "Alur props.",
+        Component: M2,
+    },
+    {
+        id: "use-effect",
+        title: "useEffect",
+        description: "Efek samping.",
+        Component: M3,
+    },
 ]

@@ -11,7 +11,7 @@ interface FormFieldProps {
       label: string;
       type: "text" | "number" | "password" | "textarea" | "date" | "file";
       value: string;
-    }
+    },
   ) => void;
   onRemove: (index: number) => void;
 }
@@ -23,7 +23,7 @@ const FormField: React.FC<FormFieldProps> = ({
   onRemove,
 }) => {
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     onUpdate(index, { ...field, value: e.target.value });
   };
