@@ -1,20 +1,45 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+
 /**
- * Materi 3: arsitektur komponen milik sendiri berbasis primitif aksesibel dan utilitas Tailwind CSS ala shadcn/ui.
+ * Demo shadcn/ui dengan komponen hasil CLI (`shadcn add button card`).
  *
- * Kerangka awal siap diisi sesuai progres pembelajaran.
+ * Komponen disalin ke project oleh CLI ke `src/components/ui/`, lalu dipakai
+ * lewat alias `@/*` sesuai dokumentasi instalasi Vite.
  *
- * @returns Tampilan kerangka awal untuk modul `shadcn-ui`.
+ * @returns Komponen Button dan Card dari registry shadcn/ui.
  */
-const ShadcnUi = () => {
+export default function ShadcnUi() {
     return (
-        <main className="max-w-2xl p-6 mx-auto">
-            <h1 className="text-2xl font-bold text-slate-900">shadcn/ui Primitives</h1>
-            <p className="mt-2 text-sm text-slate-600">
-                Materi 3: arsitektur komponen milik sendiri berbasis primitif aksesibel dan utilitas
-                Tailwind CSS ala shadcn/ui.
-            </p>
-        </main>
+        <section className="grid gap-6" aria-labelledby="shadcn-title">
+            <div>
+                <h2 id="shadcn-title" className="text-2xl font-bold text-slate-900">
+                    shadcn/ui Primitives
+                </h2>
+                <p className="mt-1 text-sm text-slate-600">
+                    Komponen asli dari CLI: <code>shadcn add button card</code>.
+                </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+                <Button>Default</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="outline">Outline</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button size="sm">Small</Button>
+            </div>
+
+            <Card className="max-w-md">
+                <CardHeader>
+                    <CardTitle>Card dari CLI</CardTitle>
+                    <CardDescription>
+                        Disalin oleh shadcn ke src/components/ui/card.tsx.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    Import memakai alias <code>@/components/ui/card</code>.
+                </CardContent>
+            </Card>
+        </section>
     )
 }
-
-export default ShadcnUi
