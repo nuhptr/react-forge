@@ -1,10 +1,10 @@
-import { useId } from "react"
+import { useId } from "react";
 
 /**
  * Props untuk komponen {@link AccessibleFieldGroup}.
  */
 export interface AccessibleFieldGroupProps {
-    groupTitle: string
+  groupTitle: string;
 }
 
 /**
@@ -15,32 +15,32 @@ export interface AccessibleFieldGroupProps {
  * @returns Kartu kelompok input nama dan email berlabel aksesibel.
  */
 const AccessibleFieldGroup = ({ groupTitle }: AccessibleFieldGroupProps) => {
-    const baseId = useId()
-    const nameInputId = `${baseId}-name`
-    const emailInputId = `${baseId}-email`
+  const baseId = useId();
+  const nameInputId = `${baseId}-name`;
+  const emailInputId = `${baseId}-email`;
 
-    return (
-        <section className="card">
-            <h2>{groupTitle}</h2>
-            <div className="controls">
-                <label htmlFor={nameInputId}>Nama:</label>
-                <input
-                    id={nameInputId}
-                    type="text"
-                    autoComplete="name"
-                    placeholder="Nama lengkap"
-                />
+  return (
+    <section className="card">
+      <h2>{groupTitle}</h2>
+      <div className="controls">
+        <label htmlFor={nameInputId}>Nama:</label>
+        <input
+          id={nameInputId}
+          type="text"
+          autoComplete="name"
+          placeholder="Nama lengkap"
+        />
 
-                <label htmlFor={emailInputId}>Email:</label>
-                <input
-                    id={emailInputId}
-                    type="email"
-                    autoComplete="email"
-                    placeholder="nama@domain.com"
-                />
-            </div>
-        </section>
-    )
-}
+        <label htmlFor={emailInputId}>Email:</label>
+        <input
+          id={emailInputId}
+          type="email"
+          autoComplete="email"
+          placeholder="nama@domain.com"
+        />
+      </div>
+    </section>
+  );
+};
 
-export default AccessibleFieldGroup
+export default AccessibleFieldGroup;

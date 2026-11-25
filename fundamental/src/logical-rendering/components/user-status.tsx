@@ -2,8 +2,8 @@
  * Props untuk komponen {@link UserStatus}.
  */
 export interface UserStatusProps {
-    isLoggedIn: boolean
-    isAdmin: boolean
+  isLoggedIn: boolean;
+  isAdmin: boolean;
 }
 
 /**
@@ -13,10 +13,10 @@ export interface UserStatusProps {
  * @returns Pesan sambutan berdasarkan peran.
  */
 const UserStatus = ({ isAdmin, isLoggedIn }: UserStatusProps) => {
-    if (!isLoggedIn) return <div>Please sign in to continue.</div>
-    if (isAdmin) return <div>Welcome Admin!</div>
+  if (!isLoggedIn) return <div>Please sign in to continue.</div>;
+  if (isAdmin) return <div>Welcome Admin!</div>;
 
-    return <div>Welcome User!</div>
-}
+  return <div>Welcome User!</div>;
+};
 
-export default UserStatus
+export default UserStatus;

@@ -1,7 +1,7 @@
-import { useState, type ReactNode } from "react"
+import { useState, type ReactNode } from "react";
 
 interface RenderPropsProps {
-    render: (value: number) => ReactNode
+  render: (value: number) => ReactNode;
 }
 
 /**
@@ -10,15 +10,19 @@ interface RenderPropsProps {
  * Dependency Inversion: pemilik data tidak tahu bagaimana data ditampilkan.
  */
 const CounterRender = ({ render }: RenderPropsProps) => {
-    const [value, setValue] = useState(0)
-    return (
-        <div className="panel">
-            <button type="button" className="btn" onClick={() => setValue((v) => v + 1)}>
-                Tambah
-            </button>
-            {render(value)}
-        </div>
-    )
-}
+  const [value, setValue] = useState(0);
+  return (
+    <div className="panel">
+      <button
+        type="button"
+        className="btn"
+        onClick={() => setValue((v) => v + 1)}
+      >
+        Tambah
+      </button>
+      {render(value)}
+    </div>
+  );
+};
 
-export default CounterRender
+export default CounterRender;

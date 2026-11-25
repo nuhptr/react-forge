@@ -22,7 +22,7 @@ const useStore = create<NoteStore>((set) => ({
   updateNote: (id, updatedNote) =>
     set((state) => ({
       notes: state.notes.map((note) =>
-        note.id === id ? { ...note, ...updatedNote } : note
+        note.id === id ? { ...note, ...updatedNote } : note,
       ),
     })),
   removeNote: (id) =>

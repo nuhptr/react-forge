@@ -1,10 +1,10 @@
-import { use } from "react"
+import { use } from "react";
 
 interface Todo {
-    userId: number
-    id: number
-    title: string
-    completed: boolean
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
 /**
@@ -14,12 +14,12 @@ interface Todo {
  * pengelolaan Suspense ditanggalkan ke komponen pemanggil.
  */
 const fetchTodo = async (): Promise<Todo> => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1")
-    if (!res.ok) {
-        throw new Error(`Gagal mengambil data: ${res.statusText}`)
-    }
-    return res.json()
-}
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  if (!res.ok) {
+    throw new Error(`Gagal mengambil data: ${res.statusText}`);
+  }
+  return res.json();
+};
 
 /**
  * Komponen data fetching menggunakan React 19 `use()` dengan Suspense.
@@ -28,17 +28,15 @@ const fetchTodo = async (): Promise<Todo> => {
  * status penanganan ditangani oleh batas Suspense di luar komponen.
  */
 export const TodoFetchReactNineteen = () => {
-    const data: Todo = use(fetchTodo())
+  const data: Todo = use(fetchTodo());
 
-    return (
-        <section className="fetch-card" aria-labelledby="todo-nineteen-title">
-            <h3 id="todo-nineteen-title">Todo (React 19 use())</h3>
-            <div>
-                <h4>{data.title}</h4>
-                <p>
-                    Status: {data.completed ? "Selesai" : "Belum selesai"}
-                </p>
-            </div>
-        </section>
-    )
-}
+  return (
+    <section className="fetch-card" aria-labelledby="todo-nineteen-title">
+      <h3 id="todo-nineteen-title">Todo (React 19 use())</h3>
+      <div>
+        <h4>{data.title}</h4>
+        <p>Status: {data.completed ? "Selesai" : "Belum selesai"}</p>
+      </div>
+    </section>
+  );
+};

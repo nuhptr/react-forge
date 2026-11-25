@@ -12,7 +12,7 @@ bun install
 bun run dev
 ```
 
-Untuk mencoba setiap topik atau *challenge*, buka [`src/App.tsx`](./src/App.tsx) dan pilih komponen dari folder materi yang diinginkan.
+Pilih topik atau *challenge* langsung lewat dropdown/kartu di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/components/module-picker.tsx`](./src/components/module-picker.tsx).
 
 ---
 

@@ -12,18 +12,15 @@ bun install
 bun run dev
 ```
 
-Untuk mencoba materi atau challenge tertentu, buka [`src/App.tsx`](./src/App.tsx) lalu ubah komponen yang dirender:
+Pilih topik langsung lewat **dropdown atau kartu** di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/components/module-picker.tsx`](./src/components/module-picker.tsx).
 
-```tsx
-import TeleportedPortals from "./teleported-portals"
-// import VerifiedChallenges from "./reactive-state/verified-challenges"
-// import UniqueKeys from "./unique-keys"
-
-const App = () => {
-    return <TeleportedPortals />
-}
-
-export default App
+```text
+src/
+├── App.tsx                       # compose saja
+├── demos.ts                      # 15 topik + interface Demo
+├── components/module-picker.tsx  # dropdown + kartu
+├── globals.css                   # hanya @import
+└── styles/                       # base.css, layout.css (@layer + @apply)
 ```
 
 ---

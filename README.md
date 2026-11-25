@@ -44,11 +44,12 @@ React Forge bukan sekadar kumpulan contoh kode. Setiap workspace dirancang denga
 | **Arsitektur**|Logika, data, dan presentasi dipisah. Blok JSX yang berulang diekstrak jadi fungsi lokal atau komponen tersendiri.|
 | **Styling**|Tailwind CSS v4 saja. `globals.css` hanya berisi `@import`; aturan kustom lives di `src/styles/*.css` via `@layer` + `@apply`.|
 
-Tiga pola antarmuka digunakan sesuai kebutuhan materi:
+Dua pola antarmuka digunakan di seluruh modul:
 
-- **Topik tunggal** (modul 1–7): satu komponen aktif diganti di `App.tsx` untuk mencoba materi lain.
 - **Playground** (modul 8–9): kartu navigasi + seluruh section dirender sekaligus.
-- **Pemilih modul** (modul 10–22): dropdown + kartu memilih demo lewat state — `App.tsx` tidak perlu disunting.
+- **Pemilih modul** (modul 1–7 dan 10–22): dropdown + kartu memilih demo lewat state — `App.tsx` tidak perlu disunting.
+
+Konvensi ini seragam: semua modul memakai `src/demos.ts` sebagai katalog dan `src/components/module-picker.tsx` sebagai UI pemilih.
 
 ---
 

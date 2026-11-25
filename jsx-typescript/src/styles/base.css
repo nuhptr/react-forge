@@ -1,0 +1,11 @@
+@layer base {
+    body {
+        @apply min-h-svh bg-slate-50 text-slate-900 antialiased;
+    }
+    h1, h2, h3, h4, p { @apply m-0; }
+    a { @apply text-inherit no-underline; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

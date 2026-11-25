@@ -1,4 +1,4 @@
-import { useFormStatus } from "react-dom"
+import { useFormStatus } from "react-dom";
 
 /**
  * Tombol submit yang menampilkan status pending.
@@ -7,11 +7,11 @@ import { useFormStatus } from "react-dom"
  * dari konteks form terdekat; logika aksi form tidak diketahui oleh tombol ini.
  */
 export const FormButton = () => {
-    const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
 
-    return (
-        <button type="submit" disabled={pending} className="action-button">
-            {pending ? "Mengirim..." : "Kirim"}
-        </button>
-    )
-}
+  return (
+    <button type="submit" disabled={pending} className="action-button">
+      {pending ? "Mengirim..." : "Kirim"}
+    </button>
+  );
+};

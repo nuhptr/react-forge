@@ -18,7 +18,9 @@ export default function UseEffect() {
     return (
         <section className="panel" aria-label="useEffect demo">
             <h3 className="text-lg font-semibold text-blue-400">useEffect</h3>
-            <p className="tabular-nums text-2xl" aria-live="polite">{seconds} detik</p>
+            <p className="tabular-nums text-2xl" aria-live="polite">
+                {seconds} detik
+            </p>
         </section>
     )
 }

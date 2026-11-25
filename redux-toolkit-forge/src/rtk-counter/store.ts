@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit";
 
-import counterReducer from "./counter-slice"
+import counterReducer from "./counter-slice";
 
 /**
  * Store khusus modul counter.
@@ -9,8 +9,8 @@ import counterReducer from "./counter-slice"
  * di sini, bukan pada instance store secara langsung.
  */
 export const counterStore = configureStore({
-    reducer: { counter: counterReducer },
-})
+  reducer: { counter: counterReducer },
+});
 
-export type CounterRootState = ReturnType<typeof counterStore.getState>
-export type CounterAppDispatch = typeof counterStore.dispatch
+export type CounterRootState = ReturnType<typeof counterStore.getState>;
+export type CounterAppDispatch = typeof counterStore.dispatch;

@@ -4,11 +4,11 @@
  * @returns Elemen landmark `<footer>` semantik.
  */
 const Footer = () => {
-    return (
-        <footer>
-            <p>© 2026 My Website</p>
-        </footer>
-    )
-}
+  return (
+    <footer>
+      <p>© 2026 My Website</p>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

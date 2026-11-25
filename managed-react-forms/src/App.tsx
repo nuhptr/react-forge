@@ -1,26 +1,31 @@
-import type { SubmitHandler } from "react-hook-form"
+import { useState } from "react"
 
-import RegistrationForm from "./registration-form"
-import type { RegistrationFormData } from "./registration-form/validation"
+import ModulePicker from "./components/module-picker"
+import { demos } from "./demos"
 
 /**
- * Komponen utama (playground) untuk workspace Managed Forms.
+ * Komponen utama playground React Hook Form.
  *
- * Ganti komponen yang dirender di bawah ini (misalnya `./registration-form`
- * atau `./simple-form`) untuk mencoba materi tertentu.
- *
- * Daftar modul berurutan abjad (A–Z) sesuai urutan pembelajaran:
- * - `./registration-form` — Registration Form (banyak field)
- * - `./simple-form` — Simple Form (dasar React Hook Form)
- *
- * @returns Komponen topik yang sedang aktif ditampilkan.
+ * @returns Halaman pemilih modul dan demo aktif.
  */
 const App = () => {
-    const handleSubmit: SubmitHandler<RegistrationFormData> = (data) => {
-        console.log("RegistrationForm submitted:", data)
-    }
+    const [activeId, setActiveId] = useState(demos[0].id)
+    const activeDemo = demos.find((demo) => demo.id === activeId) ?? demos[0]
+    const ActiveComponent = activeDemo.Component
 
-    return <RegistrationForm onSubmit={handleSubmit} />
+    return (
+        <main className="playground">
+            <header className="playground-header">
+                <h1 className="text-2xl font-bold">React Hook Form</h1>
+                <p>Pilih modul yang ingin dibuka. Demo aktif dirender di bawah.</p>
+            </header>
+            <ModulePicker demos={demos} activeId={activeId} onSelect={setActiveId} />
+            <section aria-labelledby="active-title" className="grid gap-2">
+                <h2 id="active-title" className="text-xl font-semibold text-blue-600">{activeDemo.title}</h2>
+                <ActiveComponent />
+            </section>
+        </main>
+    )
 }
 
 export default App

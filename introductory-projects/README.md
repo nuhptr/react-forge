@@ -12,7 +12,7 @@ bun install
 bun run dev
 ```
 
-Pilih proyek yang sedang dikerjakan melalui [`src/App.tsx`](./src/App.tsx).
+Pilih proyek langsung lewat dropdown/kartu di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar proyek ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/components/module-picker.tsx`](./src/components/module-picker.tsx).
 
 ---
 

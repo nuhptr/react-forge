@@ -41,14 +41,12 @@ const ToastNotification = ({
                 aria-live="polite"
                 onFocus={onPauseDismiss}
                 onBlur={onResumeDismiss}
-                className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-950 px-4 py-3 text-sm font-medium text-emerald-50 shadow-lg"
-            >
+                className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-950 px-4 py-3 text-sm font-medium text-emerald-50 shadow-lg">
                 <span>{message}</span>
                 <button
                     type="button"
                     onClick={onDismiss}
-                    className="rounded px-2 py-1 text-xs font-semibold text-emerald-200 hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-                >
+                    className="rounded px-2 py-1 text-xs font-semibold text-emerald-200 hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">
                     Close
                 </button>
             </div>

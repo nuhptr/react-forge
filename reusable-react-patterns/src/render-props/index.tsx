@@ -1,4 +1,4 @@
-import CounterRender from "./counter-render"
+import CounterRender from "./counter-render";
 
 /**
  * Demo render props.
@@ -6,9 +6,11 @@ import CounterRender from "./counter-render"
  * @returns Counter dengan tampilan yang disuntikkan lewat prop render.
  */
 export default function RenderProps() {
-    return (
-        <CounterRender
-            render={(value) => <p className="text-lg font-semibold">Nilai: {value}</p>}
-        />
-    )
+  return (
+    <CounterRender
+      render={(value) => (
+        <p className="text-lg font-semibold">Nilai: {value}</p>
+      )}
+    />
+  );
 }
