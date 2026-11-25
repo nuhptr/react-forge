@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * Represents a movie entry inside a stateful collection.
+ * Struktur item film di dalam koleksi state.
  */
 interface MovieItem {
     id: number
@@ -15,9 +15,9 @@ const INITIAL_MOVIES: MovieItem[] = [
 ]
 
 /**
- * Demonstrates immutably updating a single object inside an array of objects via `.map()`.
+ * Mendemonstrasikan pembaruan satu objek tertentu di dalam array of objects secara immutable menggunakan `.map()`.
  *
- * @returns Movie list component with title update action.
+ * @returns Komponen daftar film beserta tombol pengubah judul film pertama.
  */
 const UpdatingArrayOfObjects = () => {
     const [movies, setMovies] = useState<MovieItem[]>(INITIAL_MOVIES)

@@ -1,10 +1,10 @@
 # React Hooks (`hooks`)
 
-Dedicated Vite + React 19 + TypeScript workspace for mastering built-in React Hooks and custom hook composition.
+Workspace Vite + React 19 + TypeScript yang didedikasikan untuk mempelajari built-in React Hooks serta perancangan custom hooks yang bersih dan dapat digunakan kembali.
 
 ---
 
-## Quick Start
+## Mulai Cepat
 
 ```bash
 cd hooks
@@ -14,24 +14,24 @@ bun run dev
 
 ---
 
-## Planned Curriculum
+## Peta Materi Pembelajaran
 
-Folders in `src/` follow natural, prefix-free naming:
+Setiap folder di dalam `src/` menggunakan penamaan natural tanpa awalan angka:
 
-1. **Side Effects (`use-effect`)** — Data fetching, subscriptions, dependency arrays, and cleanup functions.
-2. **Context (`context` & `use-context`)** — Prop-drilling elimination and typed context providers.
-3. **Complex State (`use-reducer`)** — Deterministic state transitions with discriminated-union actions.
-4. **Mutable Refs (`use-ref`)** — Imperative DOM focus/scroll access and render-independent mutable values.
-5. **Custom Hooks (`custom-hooks`)** — Extracting reusable stateful logic (`useFetch`, `useLocalStorage`, `useToggle`).
-6. **Unique IDs (`use-id`)** — SSR-safe deterministic ID generation for accessible form controls.
+1. **Side Effects (`use-effect`)** — Pengambilan data (*data fetching*), sinkronisasi eksternal, dependency array, dan fungsi pembersih (*cleanup*).
+2. **Context (`context` & `use-context`)** — Menghindari *prop drilling* dan membuat penyedia konteks (*context provider*) bertipe aman.
+3. **State Kompleks (`use-reducer`)** — Transisi state terprediksi menggunakan pola *reducer* dan *discriminated union action*.
+4. **Referensi Mutable (`use-ref`)** — Mengakses elemen DOM secara imperatif (fokus/scroll) serta menyimpan nilai tanpa memicu render ulang.
+5. **Custom Hooks (`custom-hooks`)** — Mengekstrak logika ber-state agar dapat dipakai ulang (`useFetch`, `useLocalStorage`, `useToggle`).
+6. **ID Unik (`use-id`)** — Pembuatan ID deterministik yang aman untuk menghubungkan atribut aksesibilitas elemen form.
 
 ---
 
-## Scripts
+## Daftar Perintah
 
-| Command | Description |
+| Perintah | Kegunaan |
 | :--- | :--- |
-| `bun run dev` | Start Vite development server |
-| `bun run build` | Type-check (`tsc -b`) and build production assets |
-| `bun run lint` | Run ESLint across all TypeScript/React files |
-| `bun run preview` | Preview production bundle locally |
+| `bun run dev` | Menjalankan server pengembangan Vite |
+| `bun run build` | Memeriksa tipe TypeScript (`tsc -b`) dan mem-build aset produksi |
+| `bun run lint` | Menjalankan pemeriksaan ESLint pada seluruh file TypeScript/React |
+| `bun run preview` | Menjalankan pratinjau hasil build produksi secara lokal |

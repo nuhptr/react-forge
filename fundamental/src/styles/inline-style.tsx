@@ -7,9 +7,11 @@ const HEADING_STYLES: CSSProperties = {
 }
 
 /**
- * Demonstrates styling JSX elements with typed `CSSProperties` objects.
+ * Mendemonstrasikan pemberian gaya pada elemen JSX menggunakan objek bertipe `CSSProperties`.
  *
- * @returns Inline-styled heading section.
+ * Properti inline style di React ditulis dengan format camelCase (`backgroundColor`, bukan `background-color`).
+ *
+ * @returns Section judul dengan inline style.
  */
 const InlineStyle = () => {
     return (

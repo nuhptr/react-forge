@@ -1,8 +1,8 @@
 /**
- * Demonstrates essential JSX attribute rules such as `htmlFor` on `<label>`
- * and self-closing `<input />` tags.
+ * Mendemonstrasikan aturan penulisan atribut pada JSX seperti `htmlFor` pada `<label>`
+ * serta tag `<input />` yang wajib ditutup (self-closing).
  *
- * @returns Labeled name input form.
+ * @returns Form input nama dengan label terhubung.
  */
 const JsxRules = () => {
     return (

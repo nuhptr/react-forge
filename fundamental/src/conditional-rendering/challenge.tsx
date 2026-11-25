@@ -3,9 +3,9 @@ import UserStatus from "./components/user-status"
 import Weather from "./components/weather"
 
 /**
- * Conditional rendering challenge solution combining `Weather`, `UserStatus`, and `Greeting`.
+ * Solusi challenge Conditional Rendering yang memadukan `Weather`, `UserStatus`, dan `Greeting`.
  *
- * @returns Composed conditional UI examples.
+ * @returns Gabungan contoh tampilan kondisional.
  */
 const ConditionalRenderingChallenge = () => {
     return (

@@ -2,23 +2,23 @@ import type { ReactNode } from "react"
 import { createPortal } from "react-dom"
 
 /**
- * Props for the {@link Portal} component.
+ * Props untuk komponen {@link Portal}.
  */
 export interface PortalProps {
-    /** Content to render outside the parent component's DOM hierarchy. */
+    /** Elemen anak yang akan dirender di luar hierarki DOM komponen induknya. */
     children: ReactNode
-    /** Target DOM element `id` defined in `index.html`. Defaults to `"portal-root"`. */
+    /** Atribut `id` elemen kontainer tujuan pada `index.html`. Nilai bawaan `"portal-root"`. */
     containerId?: string
 }
 
 /**
- * Reusable React Portal primitive that mounts children into a dedicated DOM container.
+ * Komponen abstraksi React Portal yang me-mount `children` ke dalam kontainer DOM khusus.
  *
- * Applies Dependency Inversion (DIP) by isolating DOM node lookup from
- * presentational overlay/notification components.
+ * Menerapkan Dependency Inversion Principle (DIP) dengan memisahkan pencarian node DOM
+ * dari komponen UI overlay atau notifikasi.
  *
- * @param props Portal configuration props.
- * @returns A React portal bound to the target container, or `null` if unavailable.
+ * @param props Konfigurasi tujuan portal.
+ * @returns Elemen React Portal yang terhubung ke kontainer target, atau `null` jika tidak ditemukan.
  */
 const Portal = ({ children, containerId = "portal-root" }: PortalProps) => {
     if (typeof document === "undefined") return null

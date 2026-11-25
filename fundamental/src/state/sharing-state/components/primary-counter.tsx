@@ -1,5 +1,5 @@
 /**
- * Shared contract for counter consumer components in the lifting-state example.
+ * Kontrak props bersama untuk komponen anak yang berbagi state hitungan.
  */
 export interface SharedCounterProps {
     count: number
@@ -7,10 +7,10 @@ export interface SharedCounterProps {
 }
 
 /**
- * First consumer component displaying shared count state lifted to {@link SharingState}.
+ * Komponen konsumen pertama yang menampilkan dan memperbarui state bersama dari {@link SharingState}.
  *
- * @param props Shared counter value and increment callback.
- * @returns Counter display and trigger button.
+ * @param props Nilai hitungan saat ini dan callback penambah nilai.
+ * @returns Tampilan angka dan tombol tambah pertama.
  */
 const PrimaryCounter = ({ count, onIncrement }: SharedCounterProps) => {
     return (

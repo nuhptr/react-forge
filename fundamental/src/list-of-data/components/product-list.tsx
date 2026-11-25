@@ -1,5 +1,5 @@
 /**
- * Represents a catalog item displayed in {@link ProductList}.
+ * Struktur item katalog produk yang ditampilkan pada {@link ProductList}.
  */
 interface Product {
     id: number
@@ -14,9 +14,9 @@ const PRODUCTS: Product[] = [
 ]
 
 /**
- * Renders a collection of products mapped with stable `product.id` keys.
+ * Merender daftar produk menggunakan iterasi `.map()` dengan `product.id` sebagai `key` stabil.
  *
- * @returns Unordered list of product entries.
+ * @returns Elemen `<ul>` berisi daftar produk.
  */
 const ProductList = () => {
     return (

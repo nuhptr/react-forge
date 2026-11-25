@@ -1,7 +1,7 @@
 /**
- * Demonstrates core JSX syntax using semantic HTML elements and `className`.
+ * Mendemonstrasikan sintaks dasar JSX menggunakan elemen HTML semantik dan atribut `className`.
  *
- * @returns Semantic section markup rendered via JSX.
+ * @returns Markup section semantik yang dirender melalui JSX.
  */
 const JsxDemo = () => {
     return (

@@ -2,9 +2,9 @@ import Person from "./components/person"
 import Product from "./components/product"
 
 /**
- * Props challenge solution rendering typed `Person` and `Product` components.
+ * Solusi challenge Props yang merender komponen `Person` dan `Product` dengan tipe eksplisit.
  *
- * @returns Composed person and product cards.
+ * @returns Gabungan tampilan profil orang dan informasi produk.
  */
 const PropsChallenge = () => {
     return (

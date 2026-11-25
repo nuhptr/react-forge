@@ -4,10 +4,10 @@ import ShoppingList from "./components/shopping-list"
 import TodoList from "./components/todo-list"
 
 /**
- * Aggregates all four `useState` practice challenges (`Counter`, `Profile`,
- * `ShoppingList`, and `TodoList`) into a single view.
+ * Menggabungkan keempat latihan `useState` (`Counter`, `Profile`,
+ * `ShoppingList`, dan `TodoList`) ke dalam satu halaman.
  *
- * @returns Composed state challenges page.
+ * @returns Halaman kumpulan challenge state.
  */
 const StateChallenge = () => {
     return (

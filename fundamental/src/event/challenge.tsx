@@ -1,9 +1,9 @@
 import EventPlayground from "./components/event-playground"
 
 /**
- * Event handling challenge solution rendering {@link EventPlayground}.
+ * Solusi challenge Event yang merender komponen interaktif {@link EventPlayground}.
  *
- * @returns Interactive event challenge view.
+ * @returns Tampilan challenge penanganan event.
  */
 const EventChallenge = () => {
     return <EventPlayground />

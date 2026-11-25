@@ -1,7 +1,7 @@
 import Card from "./components/card"
 
 /**
- * Represents content rendered inside each {@link Card} instance.
+ * Struktur data materi yang dirender ke dalam setiap komponen {@link Card}.
  */
 interface LearningCardItem {
     id: number
@@ -28,9 +28,9 @@ const LEARNING_CARDS: LearningCardItem[] = [
 ]
 
 /**
- * Demonstrates passing arbitrary nested JSX elements via `children`.
+ * Mendemonstrasikan pengiriman elemen JSX bersarang secara fleksibel melalui prop `children`.
  *
- * @returns List of composed `Card` components.
+ * @returns Daftar komponen `Card` hasil komposisi.
  */
 const PropsChildren = () => {
     return (

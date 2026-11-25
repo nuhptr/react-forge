@@ -1,5 +1,5 @@
 /**
- * Props for the destructured {@link UserProfileCard} component.
+ * Props untuk komponen {@link UserProfileCard} dengan parameter destructuring.
  */
 interface UserProfileCardProps {
     avatarUrl?: string
@@ -10,10 +10,10 @@ interface UserProfileCardProps {
 }
 
 /**
- * Displays user profile fields extracted directly via parameter destructuring.
+ * Menampilkan data profil pengguna dengan mengekstrak `props` langsung di parameter fungsi.
  *
- * @param props Destructured user attributes with sensible defaults.
- * @returns User profile section.
+ * @param props Atribut profil pengguna beserta nilai bawaan (default value).
+ * @returns Section profil pengguna.
  */
 const UserProfileCard = ({
     avatarUrl,
@@ -34,9 +34,9 @@ const UserProfileCard = ({
 }
 
 /**
- * Demonstrates cleaner component signatures using object destructuring on `props`.
+ * Mendemonstrasikan penulisan komponen yang lebih ringkas menggunakan teknik object destructuring pada `props`.
  *
- * @returns Showcase wrapper rendering {@link UserProfileCard}.
+ * @returns Pembungkus contoh yang merender {@link UserProfileCard}.
  */
 const PropsDestructuring = () => {
     return (

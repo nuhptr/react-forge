@@ -1,10 +1,10 @@
 import ClipboardCopyForm from "./components/clipboard-copy-form"
 
 /**
- * Demonstrates React Portals (`createPortal`) by rendering clipboard feedback
- * into `#portal-root` outside the `#root` component hierarchy.
+ * Mendemonstrasikan fitur React Portal (`createPortal`) dengan merender notifikasi
+ * penyalinan clipboard ke dalam elemen `#portal-root` di luar pohon DOM `#root`.
  *
- * @returns The portal topic showcase component.
+ * @returns Komponen utama materi React Portal.
  */
 const PortalShowcase = () => {
     return (

@@ -1,8 +1,8 @@
 /**
- * Demonstrates embedding JavaScript expressions, variables, arrays, function calls,
- * and dynamic class names inside JSX curly braces `{}`.
+ * Mendemonstrasikan penyisipan ekspresi JavaScript, variabel, array, pemanggilan fungsi,
+ * serta nama class dinamis menggunakan kurung kurawal `{}` di JSX.
  *
- * @returns Dynamic JSX showcase section.
+ * @returns Section contoh konten dinamis pada JSX.
  */
 const DynamicContent = () => {
     const userName = "Anmastery"
@@ -12,19 +12,19 @@ const DynamicContent = () => {
 
     return (
         <section>
-            {/* Arithmetic expression */}
+            {/* Ekspresi aritmatika langsung */}
             <p>2 + 2 = {2 + 2}</p>
 
-            {/* String variable */}
+            {/* Nilai variabel string */}
             <h1>{userName}</h1>
 
-            {/* Formatted array expression */}
+            {/* Ekspresi array yang diformat */}
             <p>My friend list: {friendNames.join(", ")}</p>
 
-            {/* Function invocation */}
+            {/* Pemanggilan fungsi helper */}
             <p>2 * 2 = {multiplyNumbers(2, 2)}</p>
 
-            {/* Dynamic attribute binding */}
+            {/* Binding nama class secara dinamis */}
             <p className={highlightedClassName}>This paragraph uses a dynamic class name</p>
         </section>
     )

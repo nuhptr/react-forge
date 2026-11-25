@@ -1,7 +1,7 @@
 /**
- * JSX challenge solution rendering a heading and welcome message inside a single parent element.
+ * Solusi challenge JSX: merender judul dan pesan sambutan di dalam satu elemen induk.
  *
- * @returns Welcome message challenge component.
+ * @returns Komponen pesan sambutan.
  */
 const JsxChallenge = () => {
     return (

@@ -1,16 +1,18 @@
 /**
- * Props for the {@link ShoppingItemsList} component.
+ * Props untuk komponen daftar belanja {@link ShoppingItemsList}.
  */
 interface ShoppingItemsListProps {
-    /** Ordered array of shopping item labels. */
+    /** Daftar nama barang belanjaan. */
     items: string[]
 }
 
 /**
- * Renders an ordered list of shopping items using stable item keys.
+ * Merender daftar terurut barang belanjaan menggunakan `key` yang stabil.
  *
- * @param props Component properties.
- * @returns Semantic `<ol>` shopping list.
+ * Menghindari penggunaan `Math.random()` sebagai `key` agar proses rekonsiliasi DOM React tetap konsisten.
+ *
+ * @param props Properti komponen.
+ * @returns Elemen `<ol>` berisi daftar belanjaan.
  */
 const ShoppingItemsList = ({ items }: ShoppingItemsListProps) => {
     return (
@@ -25,9 +27,9 @@ const ShoppingItemsList = ({ items }: ShoppingItemsListProps) => {
 const SHOPPING_ITEMS: string[] = ["Wireless Earbuds", "Power Bank", "New SSD", "Hoodie"]
 
 /**
- * Demonstrates rendering arrays of data with `.map()` and unique `key` props.
+ * Mendemonstrasikan cara merender koleksi array menggunakan `.map()` dan prop `key` unik.
  *
- * @returns Shopping list showcase section.
+ * @returns Section daftar belanjaan.
  */
 const ListOfData = () => {
     return (

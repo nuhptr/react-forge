@@ -1,126 +1,126 @@
 # React Forge
 
-A structured, clean-code **React 19 + TypeScript** learning repository and engineering reference. Every concept, interactive example, and coding challenge is written with strict static typing, accessible HTML semantics, JSDoc documentation, and **SOLID** design principles.
+Repositori pembelajaran dan referensi rekayasa **React 19 + TypeScript** yang terstruktur serta berorientasi pada **clean code**. Setiap materi konsep, contoh interaktif, dan latihan (*challenge*) ditulis dengan tipe statis ketat, HTML semantik yang aksesibel, dokumentasi JSDoc berbahasa Indonesia, serta menerapkan prinsip **SOLID**.
 
 ---
 
-## Overview
+## Gambaran Umum
 
-**React Forge** organizes React concepts into standalone Vite workspaces using natural, prefix-free directory names while preserving a clear progressive curriculum from core JSX rendering to advanced reconciliation and hooks.
+**React Forge** membagi kurikulum React ke dalam beberapa workspace Vite mandiri menggunakan penamaan folder yang natural tanpa awalan angka, sambil tetap mempertahankan alur belajar bertahap mulai dari dasar JSX hingga rekonsiliasi lanjutan dan React Hooks.
 
-### Key Engineering Principles
+### Prinsip Arsitektur & Clean Code
 
-- **Single Responsibility (SRP):** Side effects, timers, and browser APIs (such as Clipboard I/O in `useClipboardCopy`) live in dedicated hooks, keeping components focused on UI state and rendering.
-- **Open/Closed (OCP):** Reusable primitives (`Card`, `Portal`, `ToastNotification`) expose typed props and `children` composition rather than hardcoded markup.
-- **Dependency Inversion (DIP):** Overlay components render through the `<Portal>` abstraction instead of querying DOM selectors directly during render.
-- **Strict TypeScript:** Explicit prop interfaces, union types, immutable state updates, and zero `any` escapes.
-- **Web Accessibility:** Semantic landmarks (`<header>`, `<main>`, `<nav>`, `<footer>`), programmatic `<label htmlFor>` bindings via `useId()`, keyboard-safe toast controls, and polite ARIA live regions (`role="status"`).
+- **Single Responsibility Principle (SRP):** Efek samping, timer, dan pemanggilan Web API (seperti akses Clipboard pada `useClipboardCopy`) dipisahkan ke dalam custom hook khusus sehingga komponen hanya fokus pada state tampilan dan proses render.
+- **Open/Closed Principle (OCP):** Komponen dasar yang dapat digunakan ulang (`Card`, `Portal`, `ToastNotification`) menerima kontrak `props` dan komposisi `children` tanpa mengunci isi tampilan secara kaku.
+- **Dependency Inversion Principle (DIP):** Komponen overlay/notifikasi dirender melalui abstraksi `<Portal>`, bukan memanggil `document.querySelector` secara langsung di dalam fungsi render.
+- **TypeScript Ketat:** Kontrak `interface` eksplisit pada props, union type, pembaruan state secara *immutable*, bebas dari tipe `any` maupun API yang sudah *deprecated*.
+- **Aksesibilitas Web:** Elemen landmark semantik (`<header>`, `<main>`, `<nav>`, `<footer>`), relasi `<label htmlFor>` terprogram melalui `useId()`, kontrol toast ramah keyboard, serta *live region* sopan (`role="status"`).
 
 ---
 
-## Repository Structure
+## Struktur Repositori
 
 ```text
 react-forge/
-├── fundamental/          # Core React 19 concepts, state patterns, portals & challenges
-│   ├── public/           # Static assets & icons
-│   ├── src/              # Topic modules (15 progressive lessons + challenges)
-│   ├── index.html        # App shell (#root + #portal-root notification region)
-│   └── README.md         # Detailed curriculum & topic guide for Fundamentals
-├── hooks/                # Dedicated workspace for React Hooks & custom hook patterns
-│   ├── public/           # Static assets & icons
-│   ├── src/              # Hooks playground entry
-│   └── README.md         # Hooks workspace guide & learning roadmap
-├── LICENSE               # MIT License
-└── README.md             # Repository overview & quickstart
+├── fundamental/          # Konsep inti React 19, pola state, portal & latihan (challenge)
+│   ├── public/           # Aset statis & ikon
+│   ├── src/              # Modul materi (15 topik bertahap + challenge)
+│   ├── index.html        # Kerangka HTML (#root + region notifikasi #portal-root)
+│   └── README.md         # Panduan kurikulum lengkap modul Fundamental
+├── hooks/                # Workspace khusus pendalaman React Hooks & custom hooks
+│   ├── public/           # Aset statis & ikon
+│   ├── src/              # Pintu masuk playground Hooks
+│   └── README.md         # Panduan workspace & peta belajar Hooks
+├── LICENSE               # Lisensi MIT
+└── README.md             # Dokumentasi utama repositori
 ```
 
 ---
 
-## Tech Stack
+## Teknologi yang Digunakan
 
-| Layer | Technology |
+| Lapisan | Teknologi |
 | :--- | :--- |
-| **UI Library** | React `^19.3.1`, React DOM `^19.3.1` |
-| **Language** | TypeScript `~7.0.2` (strict bundler mode) |
+| **Pustaka UI** | React `^19.3.1`, React DOM `^19.3.1` |
+| **Bahasa** | TypeScript `~7.0.2` (mode bundler ketat) |
 | **Build Tool** | Vite `^8.3.5` (`@vitejs/plugin-react`) |
-| **Styling** | Tailwind CSS `^4.3.3` (`@tailwindcss/vite`), CSS Modules / Scoped CSS |
-| **Icons** | `react-icons` `^5.7.0` |
-| **Linting** | ESLint `^10.13.0`, `typescript-eslint`, `eslint-plugin-react-hooks` |
+| **Styling** | Tailwind CSS `^4.3.3` (`@tailwindcss/vite`), CSS Eksternal |
+| **Ikon** | `react-icons` `^5.7.0` |
+| **Linter** | ESLint `^10.13.0`, `typescript-eslint`, `eslint-plugin-react-hooks` |
 | **Package Manager** | Bun (`bun.lock`) |
 
 ---
 
-## Getting Started
+## Cara Menjalankan Proyek
 
-### Prerequisites
+### Prasyarat
 
-- **[Bun](https://bun.sh/)** `>= 1.1` (recommended) or **Node.js** `>= 20`
+- **[Bun](https://bun.sh/)** `>= 1.1` (direkomendasikan) atau **Node.js** `>= 20`
 
-### Run a Workspace
+### Menjalankan Workspace
 
-Choose the module you want to explore (`fundamental` or `hooks`):
+Pilih modul yang ingin dipelajari (`fundamental` atau `hooks`):
 
 ```bash
-# 1. Navigate into a module
+# 1. Masuk ke direktori modul
 cd fundamental
 
-# 2. Install dependencies
+# 2. Pasang seluruh dependensi
 bun install
 
-# 3. Start the Vite development server
+# 3. Jalankan server pengembangan Vite
 bun run dev
 ```
 
-### Available Scripts
+### Daftar Perintah (`package.json`)
 
-Each workspace provides the same standardized scripts in `package.json`:
+Setiap workspace memiliki skrip standar yang seragam:
 
-| Command | Description |
+| Perintah | Kegunaan |
 | :--- | :--- |
-| `bun run dev` | Start the local Vite dev server with HMR |
-| `bun run build` | Run `tsc -b` type-checking followed by production Vite bundle |
-| `bun run lint` | Analyze `.ts` and `.tsx` sources with ESLint |
-| `bun run preview` | Preview the production build locally |
+| `bun run dev` | Menjalankan server pengembangan lokal Vite dengan HMR |
+| `bun run build` | Memeriksa tipe TypeScript (`tsc -b`) lalu mem-build aset produksi |
+| `bun run lint` | Memeriksa kualitas kode `.ts` dan `.tsx` dengan ESLint |
+| `bun run preview` | Menjalankan pratinjau hasil build produksi secara lokal |
 
 ---
 
-## Learning Path
+## Alur Pembelajaran
 
-### 1. [`fundamental/`](./fundamental/README.md) — React Fundamentals (Completed)
+### 1. [`fundamental/`](./fundamental/README.md) — Dasar-Dasar React (Selesai)
 
-1. **Basic Components** — `src/basic`
-2. **JSX Syntax** — `src/jsx`
-3. **JSX Rules** — `src/jsx-rules`
-4. **Multiple Components** — `src/multiple-components`
-5. **Dynamic Content** — `src/dynamic-content`
-6. **List of Data** — `src/list-of-data`
+1. **Komponen Dasar** — `src/basic`
+2. **Sintaks JSX** — `src/jsx`
+3. **Aturan JSX** — `src/jsx-rules`
+4. **Komposisi Multi-Komponen** — `src/multiple-components`
+5. **Konten Dinamis** — `src/dynamic-content`
+6. **Render Daftar Data** — `src/list-of-data`
 7. **Props** — `src/props`
-8. **Props Destructuring** — `src/props-destructuring`
+8. **Destructuring Props** — `src/props-destructuring`
 9. **Props Children** — `src/props-children`
 10. **Conditional Rendering** — `src/conditional-rendering`
-11. **Styling & Icons** — `src/styles`
-12. **DOM Events** — `src/event`
-13. **State (`useState`)** — `src/state` (counters, arrays, objects, lifting state, lazy initializers & challenges)
-14. **React Portals** — `src/portal`
+11. **Styling & Ikon** — `src/styles`
+12. **Penanganan Event DOM** — `src/event`
+13. **Manajemen State (`useState`)** — `src/state` (counter, array, objek, berbagi state, lazy initializer & challenge)
+14. **React Portal** — `src/portal`
 15. **Advanced Keys** — `src/advanced-keys`
 
-> See [`fundamental/README.md`](./fundamental/README.md) for the complete file-by-file breakdown and challenge index.
+> Lihat [`fundamental/README.md`](./fundamental/README.md) untuk rincian per file dan daftar challenge lengkap.
 
-### 2. [`hooks/`](./hooks/README.md) — React Hooks (In Progress)
+### 2. [`hooks/`](./hooks/README.md) — React Hooks (Tahap Berikutnya)
 
-Dedicated workspace covering `useEffect`, Context API & `useContext`, `useReducer`, `useRef`, custom hooks, and `useId`.
-
----
-
-## Development Workflow
-
-- **Branching:** Short-lived branches off `main` (`feature/<name>`, `fix/<name>`, `hotfix/<name>`, `docs/<name>`). `main` always stays clean and release-ready.
-- **Commits:** Follows [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`).
-- **Quality Gate:** Run `bun run lint` and `bun run build` inside any modified workspace before opening a Pull Request.
+Workspace khusus untuk mempelajari `useEffect`, Context API & `useContext`, `useReducer`, `useRef`, pembuatan custom hooks, serta `useId`.
 
 ---
 
-## License
+## Alur Kerja Pengembangan (Git Workflow)
 
-Released under the [MIT License](./LICENSE).
+- **Percabangan (Branching):** Gunakan branch berumur pendek dari `main` (`feature/<nama>`, `fix/<nama>`, `hotfix/<nama>`, `docs/<nama>`). Branch `main` selalu dijaga bersih dan siap rilis.
+- **Format Commit:** Mengikuti standar [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`).
+- **Pemeriksaan Kualitas:** Pastikan `bun run build` berjalan tanpa error pada workspace yang diubah sebelum membuka Pull Request.
+
+---
+
+## Lisensi
+
+Didistribusikan di bawah [Lisensi MIT](./LICENSE).

@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 /**
- * Represents a movie record with a numeric rating.
+ * Struktur data film beserta nilai rating-nya.
  */
 interface Movie {
     title: string
@@ -14,9 +14,9 @@ const INITIAL_MOVIE: Movie = {
 }
 
 /**
- * Demonstrates immutable object state updates using object spread syntax (`{ ...prev }`).
+ * Mendemonstrasikan pembaruan state objek secara immutable menggunakan spread syntax (`{ ...prevMovie }`).
  *
- * @returns Movie rating updater component.
+ * @returns Komponen pengubah rating film.
  */
 const UpdatingObject = () => {
     const [movie, setMovie] = useState<Movie>(INITIAL_MOVIE)

@@ -1,7 +1,7 @@
 import { useId, useState, type SubmitEvent } from "react"
 
 /**
- * Represents an entry in the shopping list state.
+ * Struktur satu barang pada daftar belanja.
  */
 interface ShoppingItem {
     id: string
@@ -10,9 +10,9 @@ interface ShoppingItem {
 }
 
 /**
- * State challenge 3: validated form managing an array of `{ id, name, quantity }` objects.
+ * State challenge 3: form tervalidasi untuk mengelola koleksi objek `{ id, name, quantity }`.
  *
- * @returns Shopping list manager component.
+ * @returns Komponen pengelola daftar belanja.
  */
 const ShoppingList = () => {
     const itemNameInputId = useId()
