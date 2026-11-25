@@ -255,12 +255,6 @@ Tipe umum: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, 
 
 ---
 
-## Referensi & Atribusi
-
-Materi modul 08–22 diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET) oleh HuXn WebDev sebagai referensi pembelajaran. Nama folder disesuaikan dengan konvensi kurikulum React Forge.
-
----
-
 ## Lisensi
 
 Didistribusikan di bawah [Lisensi MIT](./LICENSE).
