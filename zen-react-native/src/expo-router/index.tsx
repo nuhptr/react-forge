@@ -1,14 +1,17 @@
+import { Link } from "expo-router"
+import { View, Text } from "react-native"
+
 /**
- * Demo Expo Router: Navigasi berbasis file.
+ * Demo navigasi Expo Router via komponen Link.
  *
- * @returns Tampilan modul Expo Router.
+ * @returns Tautan ke几个 rute contoh.
  */
-export default function ExpoRouter() {
+export default function ExpoRouterTopic() {
     return (
-        <section className="panel" aria-label="Expo Router">
-            <h3 className="text-lg font-semibold text-blue-400">Expo Router</h3>
-            <p className="text-sm text-slate-400">Navigasi berbasis file.</p>
-            <p className="text-sm text-slate-500">Modul pembelajaran kurikulum.</p>
-        </section>
+        <View>
+            <Text>Navigasi Expo Router</Text>
+            <Link href="/">Ke Beranda</Link>
+            <Link href="/state">Ke State</Link>
+        </View>
     )
 }

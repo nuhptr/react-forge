@@ -1,91 +1,91 @@
 /** Style untuk latihan (practice-*). */
 @layer components {
-  .practice-demo {
-    @apply grid items-start gap-6;
-  }
-  .practice-grid,
-  .keyframes-grid,
-  .gesture-grid,
-  .view-demo-group,
-  .spring-demo-group,
-  .mv-demo-group {
-    @apply grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))];
-  }
-  .transition-controls {
-    @apply grid items-start gap-4;
-  }
-  .practice-box,
-  .practice-circle,
-  .practice-icon,
-  .practice-rect,
-  .practice-complex,
-  .practice-sequential {
-    @apply mb-2 h-15 w-15 rounded-lg;
-  }
-  .practice-box,
-  .practice-ball,
-  .loader-pulse {
-    @apply bg-blue-500;
-  }
-  .practice-circle {
-    @apply h-12 w-12 rounded-full bg-rose-400;
-  }
-  .practice-icon {
-    @apply flex h-12 w-12 items-center justify-center rounded bg-emerald-400 font-bold;
-  }
-  .practice-rect {
-    @apply h-10 w-15 bg-purple-400;
-  }
-  .practice-complex {
-    @apply h-17 w-17 rounded-xl bg-amber-500;
-  }
-  .practice-sequential {
-    @apply h-12 w-12 rounded bg-blue-500;
-  }
-  .practice-fade {
-    @apply h-25 w-25 rounded-lg bg-blue-500;
-  }
-  .practice-sidebar {
-    @apply w-55 rounded-xl border border-slate-700 bg-slate-800/60 p-6;
-  }
-  .practice-modal-overlay {
-    @apply fixed inset-0 bg-black/50 backdrop-blur-sm;
-  }
-  .practice-modal {
-    @apply fixed top-1/2 left-1/2 z-20 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-slate-700 bg-slate-800/60 p-6;
-  }
-  .close-btn {
-    @apply mt-4 cursor-pointer rounded-lg bg-rose-400 px-4 py-2 font-semibold text-white hover:opacity-80;
-  }
-  .practice-ball {
-    @apply h-10 w-10 rounded-full;
-  }
-  .practice-pulse-btn {
-    @apply cursor-pointer rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white;
-  }
-  .practice-color-square {
-    @apply h-15 w-15 rounded-lg;
-  }
-  .practice-sliding-text,
-  .practice-bg,
-  .practice-wave {
-    @apply rounded-lg p-4 text-center;
-  }
-  .practice-zigzag {
-    @apply h-5 w-5 rounded bg-rose-400;
-  }
-  .practice-swipe-card,
-  .practice-draggable-box,
-  .practice-rotate-box,
-  .practice-tap-color,
-  .practice-longpress,
-  .practice-gesture-gallery {
-    @apply rounded-xl border border-slate-700 bg-slate-800/60 p-6 text-center;
-  }
-  .mv-slider-group,
-  .mv-linked-group,
-  .spring-slider-group,
-  .spring-rotation-group {
-    @apply flex flex-col items-center gap-4;
-  }
+    .practice-demo {
+        @apply grid items-start gap-6;
+    }
+    .practice-grid,
+    .keyframes-grid,
+    .gesture-grid,
+    .view-demo-group,
+    .spring-demo-group,
+    .mv-demo-group {
+        @apply grid gap-4 grid-cols-[repeat(auto-fit,minmax(140px,1fr))];
+    }
+    .transition-controls {
+        @apply grid items-start gap-4;
+    }
+    .practice-box,
+    .practice-circle,
+    .practice-icon,
+    .practice-rect,
+    .practice-complex,
+    .practice-sequential {
+        @apply mb-2 h-15 w-15 rounded-lg;
+    }
+    .practice-box,
+    .practice-ball,
+    .loader-pulse {
+        @apply bg-blue-500;
+    }
+    .practice-circle {
+        @apply h-12 w-12 rounded-full bg-rose-400;
+    }
+    .practice-icon {
+        @apply flex h-12 w-12 items-center justify-center rounded bg-emerald-400 font-bold;
+    }
+    .practice-rect {
+        @apply h-10 w-15 bg-purple-400;
+    }
+    .practice-complex {
+        @apply h-17 w-17 rounded-xl bg-amber-500;
+    }
+    .practice-sequential {
+        @apply h-12 w-12 rounded bg-blue-500;
+    }
+    .practice-fade {
+        @apply h-25 w-25 rounded-lg bg-blue-500;
+    }
+    .practice-sidebar {
+        @apply w-55 rounded-xl border border-slate-700 bg-slate-800/60 p-6;
+    }
+    .practice-modal-overlay {
+        @apply fixed inset-0 bg-black/50 backdrop-blur-sm;
+    }
+    .practice-modal {
+        @apply fixed top-1/2 left-1/2 z-20 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-slate-700 bg-slate-800/60 p-6;
+    }
+    .close-btn {
+        @apply mt-4 cursor-pointer rounded-lg bg-rose-400 px-4 py-2 font-semibold text-white hover:opacity-80;
+    }
+    .practice-ball {
+        @apply h-10 w-10 rounded-full;
+    }
+    .practice-pulse-btn {
+        @apply cursor-pointer rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white;
+    }
+    .practice-color-square {
+        @apply h-15 w-15 rounded-lg;
+    }
+    .practice-sliding-text,
+    .practice-bg,
+    .practice-wave {
+        @apply rounded-lg p-4 text-center;
+    }
+    .practice-zigzag {
+        @apply h-5 w-5 rounded bg-rose-400;
+    }
+    .practice-swipe-card,
+    .practice-draggable-box,
+    .practice-rotate-box,
+    .practice-tap-color,
+    .practice-longpress,
+    .practice-gesture-gallery {
+        @apply rounded-xl border border-slate-700 bg-slate-800/60 p-6 text-center;
+    }
+    .mv-slider-group,
+    .mv-linked-group,
+    .spring-slider-group,
+    .spring-rotation-group {
+        @apply flex flex-col items-center gap-4;
+    }
 }

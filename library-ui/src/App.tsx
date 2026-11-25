@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import ModulePicker from "./components/module-picker"
+import SectionList from "./section-list"
 import { demos } from "./demos"
 
 /**
@@ -19,9 +19,11 @@ const App = () => {
                 <h1 className="text-2xl font-bold">React UI Libraries</h1>
                 <p>Pilih modul yang ingin dibuka. Demo aktif dirender di bawah.</p>
             </header>
-            <ModulePicker demos={demos} activeId={activeId} onSelect={setActiveId} />
+            <SectionList demos={demos} activeId={activeId} onSelect={setActiveId} />
             <section aria-labelledby="active-title" className="grid gap-2">
-                <h2 id="active-title" className="text-xl font-semibold text-blue-600">{activeDemo.title}</h2>
+                <h2 id="active-title" className="text-xl font-semibold text-blue-600">
+                    {activeDemo.title}
+                </h2>
                 <ActiveComponent />
             </section>
         </main>

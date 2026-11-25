@@ -1,5 +1,5 @@
-import MiddleSection from "./middle-section";
-import type { InnerGreetingProps } from "./inner-greeting";
+import MiddleSection from "./middle-section"
+import type { InnerGreetingProps } from "./inner-greeting"
 
 /**
  * Komponen perantara terluar yang meneruskan `userName` ke {@link MiddleSection}
@@ -9,7 +9,7 @@ import type { InnerGreetingProps } from "./inner-greeting";
  * @returns Pembungkus komponen terluar.
  */
 const OuterSection = ({ userName }: InnerGreetingProps) => {
-  return <MiddleSection userName={userName} />;
-};
+    return <MiddleSection userName={userName} />
+}
 
-export default OuterSection;
+export default OuterSection

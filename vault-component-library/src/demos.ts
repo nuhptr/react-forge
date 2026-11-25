@@ -1,38 +1,60 @@
-import type { ComponentType } from "react";
-import M0 from "./button";
-import M1 from "./card";
-import M2 from "./input";
+import type { ComponentType } from "react"
+
+import Accordion from "./accordion"
+import Button from "./button"
+import Card from "./card"
+import DatePicker from "./date-picker"
+import Input from "./input"
+import Pagination from "./pagination"
+import Select from "./select"
 
 /** Kontrak satu entri katalog modul. */
 export interface Demo {
-  id: string;
-  title: string;
-  description: string;
-  Component: ComponentType;
+    id: string
+    title: string
+    description: string
+    Component: ComponentType
 }
 
 /**
- * Katalog modul berurutan abjad (A-Z).
- *
- * Single Responsibility: hanya mendefinisikan daftar modul; tidak merender UI.
+ * Katalog 7 komponen library berurutan abjad (A-Z).
  */
 export const demos: Demo[] = [
-  {
-    id: "button",
-    title: "Button",
-    description: "Komponen button library.",
-    Component: M0,
-  },
-  {
-    id: "card",
-    title: "Card",
-    description: "Komponen card library.",
-    Component: M1,
-  },
-  {
-    id: "input",
-    title: "Input",
-    description: "Komponen input library.",
-    Component: M2,
-  },
-];
+    {
+        id: "accordion",
+        title: "Accordion",
+        description: "Section yang bisa dibuka tutup.",
+        Component: Accordion,
+    },
+    {
+        id: "button",
+        title: "Button",
+        description: "Tombol dengan varian dan status disabled.",
+        Component: Button,
+    },
+    {
+        id: "card",
+        title: "Card",
+        description: "Kartu dengan judul dan deskripsi.",
+        Component: Card,
+    },
+    {
+        id: "date-picker",
+        title: "Date Picker",
+        description: "Input tanggal terkontrol.",
+        Component: DatePicker,
+    },
+    { id: "input", title: "Input", description: "Input dengan label aksesibel.", Component: Input },
+    {
+        id: "pagination",
+        title: "Pagination",
+        description: "Navigasi halaman.",
+        Component: Pagination,
+    },
+    {
+        id: "select",
+        title: "Select",
+        description: "Dropdown dengan opsi bertipe.",
+        Component: Select,
+    },
+]

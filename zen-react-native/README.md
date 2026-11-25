@@ -1,19 +1,8 @@
 # Zen React Native (`zen-react-native`)
 
-Pola React Native: Expo Router, input, prop drilling, dan useEffect.
+Modul **React Native sungguhan** (Expo SDK 54 + Expo Router 6 + React Native 0.81), bukan React web. Seluruh UI memakai primitif `View`, `Text`, `FlatList`, `TextInput`, `Pressable`, `StyleSheet`, dan `Button`.
 
-Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
-
----
-
-## Daftar Modul
-
-| Folder | Topik | Pintu Masuk |
-| :--- | :--- | :--- |
-| `expo-router` | Expo Router | `src/expo-router/index.tsx` |
-| `input` | Input | `src/input/index.tsx` |
-| `prop-drilling` | Prop Drilling | `src/prop-drilling/index.tsx` |
-| `use-effect` | useEffect | `src/use-effect/index.tsx` |
+Bagian dari kurikulum [React Forge](../readme.md).
 
 ---
 
@@ -22,39 +11,68 @@ Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti
 ```bash
 cd zen-react-native
 bun install
-bun run dev
+
+bun run start     # Expo dev server (QR untuk HP / emulator)
+bun run android   # Android emulator
+bun run ios       # iOS simulator
+bun run web       # preview web via react-native-web
+
+bun run typecheck # tsc --noEmit
+bunx expo export --platform web  # build statis
 ```
 
-`bun run build` menjalankan `tsc -b` lalu `vite build` dan merupakan gate pemeriksaan tipe yang resmi.
+Module ini **tidak memakai Vite** — berbeda dari 21 modul lain. Build memakai Metro/Expo.
 
 ---
 
-## Struktur Kode
+## 17 Topik (sesuai sumber referensi)
+
+| Topik | Rute Expo | Fokus |
+| :--- | :--- | :--- |
+| Components | `/components` | View, Text, komponen composable |
+| JSX | `/jsx` | Markup deklaratif & ekspresi |
+| Dynamic Content | `/dynamic-content` | Variabel, fungsi, ternary |
+| Styles | `/styles` | `StyleSheet.create` + inline |
+| FlatList | `/flat-list` | Daftar dari array objek |
+| Props | `/props` | Aliran data induk → anak |
+| Conditional Rendering | `/conditional-rendering` | Ternary & guard |
+| State | `/state` | `useState`, `Pressable`, `Button` |
+| Input | `/input` | `TextInput` terkontrol |
+| useEffect | `/use-effect` | Timer + cleanup |
+| useReducer | `/use-reducer` | Reducer + action union |
+| Prop Drilling | `/prop-drilling` | Propsi lewat perantara |
+| Context | `/context` | Context API |
+| Custom Hook | `/custom-hook` | Hook kustom reusable |
+| NativeWind | `/nativewind` | className Tailwind di RN |
+| Expo Router | `/expo-router` | `Link` navigasi file-based |
+| Zustand | `/zustand` | Store global tanpa Provider |
+
+---
+
+## Struktur
 
 ```text
-src/
-├── App.tsx                  # compose saja
-├── demos.ts                 # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
-├── globals.css              # hanya @import
-├── styles/                  # base.css, layout.css (@layer + @apply)
-└── <topik>/index.tsx        # demo/orkestrasi singkat
-```
+app/
+├── _layout.tsx        # Stack navigator + global.css
+├── index.tsx          # beranda: 17 tautan topik
+└── <topik>.tsx        # 17 rute Expo Router
 
-Pilih topik lewat dropdown atau kartu di halaman — tidak perlu menyunting `App.tsx`.
+src/
+├── demos.ts           # katalog 17 topik
+└── <topik>/index.tsx  # kode React Native asli
+
+app.json               # konfigurasi Expo
+babel.config.js        # babel-preset-expo + nativewind
+tailwind.config.js     # preset nativewind
+global.css             # @tailwind base/components/utilities
+```
 
 ---
 
 ## Prinsip
 
-- **SRP:** data dan konfigurasi dipisah dari presentasi (`data.ts`, `demos.ts`).
-- **OCP:** varian/opsi baru ditambah lewat konfigurasi tanpa mengubah komponen.
-- **ISP:** props didefinisikan seminimal mungkin per komponen.
-- **DIP:** handler diinjeksikan lewat props, komponen tidak mengakses implementasi langsung.
-- **Aksesibilitas:** HTML semantik, label/ARIA, dan `prefers-reduced-motion`.
-
----
+SRP: logika (`useCounter`, reducer, store) dipisah dari komponen tampilan. OCP: komponen menerima props. ISP: interface props seminimal mungkin. DIP: state diakses lewat hook/context, bukan langsung.
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Diadaptasi dari referensi kursus React.

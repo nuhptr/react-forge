@@ -1,8 +1,8 @@
-import { FormButton } from "./form-button";
+import { FormButton } from "./form-button"
 
 interface PostData {
-  title: string;
-  email: string;
+    title: string
+    email: string
 }
 
 /**
@@ -12,16 +12,16 @@ interface PostData {
  * presentasi ditanggalkan ke komponen form dan tombol.
  */
 const handlePostSubmit = async (formData: FormData): Promise<void> => {
-  const post: PostData = {
-    title: formData.get("title") as string,
-    email: formData.get("email") as string,
-  };
+    const post: PostData = {
+        title: formData.get("title") as string,
+        email: formData.get("email") as string,
+    }
 
-  console.log("Post submitted:", post);
+    console.log("Post submitted:", post)
 
-  // Simulasi jaringan
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-};
+    // Simulasi jaringan
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+}
 
 /**
  * Komponen form dengan `useFormStatus` untuk status pending.
@@ -30,21 +30,21 @@ const handlePostSubmit = async (formData: FormData): Promise<void> => {
  * tombol hanya merespons status pending dari konteks form.
  */
 export default function FormStatus() {
-  return (
-    <form action={handlePostSubmit} className="form-container" noValidate>
-      <div className="field">
-        <label htmlFor="status-title">Judul:</label>
-        <input id="status-title" name="title" type="text" required />
-      </div>
+    return (
+        <form action={handlePostSubmit} className="form-container" noValidate>
+            <div className="field">
+                <label htmlFor="status-title">Judul:</label>
+                <input id="status-title" name="title" type="text" required />
+            </div>
 
-      <div className="field">
-        <label htmlFor="status-email">Email:</label>
-        <input id="status-email" name="email" type="email" required />
-      </div>
+            <div className="field">
+                <label htmlFor="status-email">Email:</label>
+                <input id="status-email" name="email" type="email" required />
+            </div>
 
-      <div className="field">
-        <FormButton />
-      </div>
-    </form>
-  );
+            <div className="field">
+                <FormButton />
+            </div>
+        </form>
+    )
 }

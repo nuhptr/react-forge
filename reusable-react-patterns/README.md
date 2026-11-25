@@ -1,20 +1,24 @@
 # React Design Patterns (`reusable-react-patterns`)
 
-Pola komposisi komponen: compound component, HOC, render props, container/presentational, dan controlled vs uncontrolled.
+Pola komposisi komponen: layout component, container/presentational, controlled vs uncontrolled, custom hooks, factory, HOC, compound component, slots, dan render props.
 
-Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
+Modul ini adalah bagian dari kurikulum [React Forge](../readme.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
 
 ---
 
 ## Daftar Modul
 
-| Folder | Topik | Pintu Masuk |
-| :--- | :--- | :--- |
-| `compound-component` | Compound Component | `src/compound-component/index.tsx` |
-| `container-presentational` | Container / Presentational | `src/container-presentational/index.tsx` |
+| Folder                       | Topik                      | Pintu Masuk                                |
+| :--------------------------- | :------------------------- | :----------------------------------------- |
+| `compound-component`         | Compound Component         | `src/compound-component/index.tsx`         |
+| `container-presentational`   | Container / Presentational | `src/container-presentational/index.tsx`   |
 | `controlled-vs-uncontrolled` | Controlled vs Uncontrolled | `src/controlled-vs-uncontrolled/index.tsx` |
-| `hoc` | HOC | `src/hoc/index.tsx` |
-| `render-props` | Render Props | `src/render-props/index.tsx` |
+| `custom-hooks`               | Custom Hooks               | `src/custom-hooks/index.tsx`               |
+| `factory`                    | Factory                    | `src/factory/index.tsx`                    |
+| `hoc`                        | HOC                        | `src/hoc/index.tsx`                        |
+| `layout-component`           | Layout Component           | `src/layout-component/index.tsx`           |
+| `render-props`               | Render Props               | `src/render-props/index.tsx`               |
+| `slots`                      | Slots                      | `src/slots/index.tsx`                      |
 
 ---
 
@@ -36,7 +40,7 @@ bun run dev
 src/
 ├── App.tsx                  # compose saja
 ├── demos.ts                 # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
+├── section-list.tsx  # dropdown + kartu pemilih modul
 ├── globals.css              # hanya @import
 ├── styles/                  # base.css, layout.css (@layer + @apply)
 └── <topik>/index.tsx        # demo/orkestrasi singkat
@@ -58,4 +62,4 @@ Pilih topik lewat dropdown atau kartu di halaman — tidak perlu menyunting `App
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Materi diadaptasi dari referensi kursus React.

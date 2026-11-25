@@ -15,7 +15,22 @@ export interface Demo {
  * Katalog modul berurutan abjad (A-Z) sesuai kurikulum.
  */
 export const demos: Demo[] = [
-    { id: "daisy-ui", title: "DaisyUI", description: "Komponen DaisyUI di atas Tailwind.", Component: C0 },
-    { id: "radix-themes", title: "Radix Themes", description: "Tema dan komponen Radix UI.", Component: C1 },
-    { id: "shadcn-ui", title: "shadcn/ui", description: "Primitif shadcn/ui yang dikustomisasi.", Component: C2 }
+    {
+        id: "daisy-ui",
+        title: "DaisyUI",
+        description: "Komponen DaisyUI di atas Tailwind.",
+        Component: C0,
+    },
+    {
+        id: "radix-themes",
+        title: "Radix Themes",
+        description: "Tema dan komponen Radix UI.",
+        Component: C1,
+    },
+    {
+        id: "shadcn-ui",
+        title: "shadcn/ui",
+        description: "Primitif shadcn/ui yang dikustomisasi.",
+        Component: C2,
+    },
 ]

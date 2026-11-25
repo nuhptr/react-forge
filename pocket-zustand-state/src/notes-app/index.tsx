@@ -1,11 +1,11 @@
-import NotesApp from "./components/NotesApp";
+import NotesApp from "./components/NotesApp"
 
 const App = () => {
-  return (
-    <div>
-      <NotesApp />
-    </div>
-  );
-};
+    return (
+        <div>
+            <NotesApp />
+        </div>
+    )
+}
 
-export default App;
+export default App

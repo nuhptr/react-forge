@@ -1,0 +1,19 @@
+import { View, Text } from "react-native"
+
+import Topic from "../src/use-effect"
+
+/**
+ * Rute Expo Router untuk topik use-effect.
+ *
+ * @returns Layar topik use-effect.
+ */
+export default function Screen() {
+    return (
+        <View style={{ flex: 1, backgroundColor: "#020617", padding: 16, gap: 12 }}>
+            <Text style={{ color: "#6b96ff", fontSize: 20, fontWeight: "700" }}>
+                {"use-effect"}
+            </Text>
+            <Topic />
+        </View>
+    )
+}

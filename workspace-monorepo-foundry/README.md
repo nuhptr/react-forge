@@ -2,7 +2,7 @@
 
 Dasar monorepo: struktur workspace dan konvensi penamaan paket.
 
-Modul ini adalah bagian dari kurikulum [React Forge](../README.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
+Modul ini adalah bagian dari kurikulum [React Forge](../readme.md) dan mengikuti konvensi yang sama: Vite + React 19 + TypeScript strict + Tailwind CSS v4.
 
 ---
 
@@ -33,7 +33,7 @@ bun run dev
 src/
 ├── App.tsx                  # compose saja
 ├── demos.ts                 # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
+├── section-list.tsx  # dropdown + kartu pemilih modul
 ├── globals.css              # hanya @import
 ├── styles/                  # base.css, layout.css (@layer + @apply)
 └── <topik>/index.tsx        # demo/orkestrasi singkat
@@ -55,4 +55,4 @@ Pilih topik lewat dropdown atau kartu di halaman — tidak perlu menyunting `App
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Materi diadaptasi dari referensi kursus React.

@@ -1,4 +1,4 @@
-import { Tabs } from "./tabs";
+import { Tabs } from "./tabs"
 
 /**
  * Daftar tab yang diekstrak jadi fungsi lokal dalam file yang sama.
@@ -9,12 +9,12 @@ import { Tabs } from "./tabs";
  * @returns Elemen Tabs.List berisi tiga Tabs.Tab.
  */
 const TabNavigation = () => (
-  <Tabs.List>
-    <Tabs.Tab id="satu">Satu</Tabs.Tab>
-    <Tabs.Tab id="dua">Dua</Tabs.Tab>
-    <Tabs.Tab id="tiga">Tiga</Tabs.Tab>
-  </Tabs.List>
-);
+    <Tabs.List>
+        <Tabs.Tab id="satu">Satu</Tabs.Tab>
+        <Tabs.Tab id="dua">Dua</Tabs.Tab>
+        <Tabs.Tab id="tiga">Tiga</Tabs.Tab>
+    </Tabs.List>
+)
 
 /**
  * Kumpulan panel yang diekstrak jadi fungsi lokal.
@@ -22,12 +22,12 @@ const TabNavigation = () => (
  * @returns Elemen Tabs.Panel untuk tiap tab.
  */
 const TabContents = () => (
-  <>
-    <Tabs.Panel id="satu">Konten panel satu.</Tabs.Panel>
-    <Tabs.Panel id="dua">Konten panel dua.</Tabs.Panel>
-    <Tabs.Panel id="tiga">Konten panel tiga.</Tabs.Panel>
-  </>
-);
+    <>
+        <Tabs.Panel id="satu">Konten panel satu.</Tabs.Panel>
+        <Tabs.Panel id="dua">Konten panel dua.</Tabs.Panel>
+        <Tabs.Panel id="tiga">Konten panel tiga.</Tabs.Panel>
+    </>
+)
 
 /**
  * Demo compound component tabs.
@@ -35,10 +35,10 @@ const TabContents = () => (
  * @returns Tabs dengan navigasi dan panel yang sudah diekstrak.
  */
 export default function CompoundComponent() {
-  return (
-    <Tabs initial="satu">
-      <TabNavigation />
-      <TabContents />
-    </Tabs>
-  );
+    return (
+        <Tabs initial="satu">
+            <TabNavigation />
+            <TabContents />
+        </Tabs>
+    )
 }

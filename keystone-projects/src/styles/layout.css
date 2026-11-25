@@ -1,10 +1,24 @@
 /** Layout bersama playground (tema terang, mengikuti gaya modul lama). */
 @layer components {
-    .playground { @apply mx-auto grid w-full max-w-4xl gap-8 px-4 py-8; }
-    .playground-header { @apply grid gap-2; }
-    .playground-header p { @apply max-w-3xl text-slate-500; }
-    .demo-card { @apply rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:border-blue-500; }
-    .demo-card[data-active="true"] { @apply border-blue-500 bg-blue-50; }
-    .demo-card h3 { @apply font-semibold text-slate-900; }
-    .demo-card p { @apply mt-1 text-sm text-slate-500; }
+    .playground {
+        @apply mx-auto grid w-full max-w-4xl gap-8 px-4 py-8;
+    }
+    .playground-header {
+        @apply grid gap-2;
+    }
+    .playground-header p {
+        @apply max-w-3xl text-slate-500;
+    }
+    .demo-card {
+        @apply rounded-xl border border-slate-200 bg-white p-4 text-left shadow-sm transition hover:border-blue-500;
+    }
+    .demo-card[data-active="true"] {
+        @apply border-blue-500 bg-blue-50;
+    }
+    .demo-card h3 {
+        @apply font-semibold text-slate-900;
+    }
+    .demo-card p {
+        @apply mt-1 text-sm text-slate-500;
+    }
 }

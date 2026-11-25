@@ -12,13 +12,13 @@ bun install
 bun run dev
 ```
 
-Pilih topik langsung lewat **dropdown atau kartu** di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/components/module-picker.tsx`](./src/components/module-picker.tsx).
+Pilih topik langsung lewat **dropdown atau kartu** di halaman — tidak perlu menyunting [`src/App.tsx`](./src/App.tsx). Daftar topik ada di [`src/demos.ts`](./src/demos.ts), UI pemilih di [`src/section-list.tsx`](./src/section-list.tsx).
 
 ```text
 src/
 ├── App.tsx                       # compose saja
 ├── demos.ts                      # 15 topik + interface Demo
-├── components/module-picker.tsx  # dropdown + kartu
+├── section-list.tsx  # dropdown + kartu
 ├── globals.css                   # hanya @import
 └── styles/                       # base.css, layout.css (@layer + @apply)
 ```

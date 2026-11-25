@@ -1,4 +1,4 @@
-import StepCounter from "./components/step-counter";
+import StepCounter from "./components/step-counter"
 
 /**
  * Halaman solusi challenge `useReducer`.
@@ -6,12 +6,12 @@ import StepCounter from "./components/step-counter";
  * @returns Tampilan challenge `StepCounter`.
  */
 const ReducerDispatchChallenge = () => {
-  return (
-    <main>
-      <h1>useReducer Challenge</h1>
-      <StepCounter />
-    </main>
-  );
-};
+    return (
+        <main>
+            <h1>useReducer Challenge</h1>
+            <StepCounter />
+        </main>
+    )
+}
 
-export default ReducerDispatchChallenge;
+export default ReducerDispatchChallenge

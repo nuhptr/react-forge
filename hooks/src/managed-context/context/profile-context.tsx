@@ -1,23 +1,21 @@
-import { createContext, useContext, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react"
 
 /**
  * Kontrak data profil statis yang disediakan melalui Context.
  */
 export interface ProfileContextValue {
-  name: string;
-  age: number;
+    name: string
+    age: number
 }
 
-const ProfileContext = createContext<ProfileContextValue | undefined>(
-  undefined,
-);
+const ProfileContext = createContext<ProfileContextValue | undefined>(undefined)
 
 /**
  * Props untuk provider {@link ProfileProvider}.
  */
 export interface ProfileProviderProps {
-  value: ProfileContextValue;
-  children: ReactNode;
+    value: ProfileContextValue
+    children: ReactNode
 }
 
 /**
@@ -27,10 +25,8 @@ export interface ProfileProviderProps {
  * @returns Provider konteks profil.
  */
 export const ProfileProvider = ({ value, children }: ProfileProviderProps) => {
-  return (
-    <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>
-  );
-};
+    return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>
+}
 
 /**
  * Custom hook aman untuk membaca {@link ProfileContext}.
@@ -40,11 +36,9 @@ export const ProfileProvider = ({ value, children }: ProfileProviderProps) => {
  * @returns Nilai profil pengguna dari Context.
  */
 export const useProfileContext = (): ProfileContextValue => {
-  const context = useContext(ProfileContext);
-  if (!context) {
-    throw new Error(
-      "useProfileContext wajib dipanggil di dalam ProfileProvider.",
-    );
-  }
-  return context;
-};
+    const context = useContext(ProfileContext)
+    if (!context) {
+        throw new Error("useProfileContext wajib dipanggil di dalam ProfileProvider.")
+    }
+    return context
+}

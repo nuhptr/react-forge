@@ -1,26 +1,28 @@
 import { useState } from "react"
+import { TextInput, View, Text } from "react-native"
 
 /**
- * Input dengan state terkontrol (adaptasi pola React Native ke web).
+ * Demo TextInput terkontrol.
  *
- * @returns Input teks dengan karakter terhitung.
+ * @returns Input nama beserta teks yang diketik pengguna.
  */
-export default function Input() {
-    const [value, setValue] = useState("")
-
+export default function InputTopic() {
+    const [name, setName] = useState("")
     return (
-        <section className="panel" aria-label="Input demo">
-            <h3 className="text-lg font-semibold text-blue-400">Input</h3>
-            <div className="field">
-                <label htmlFor="rn-input">Nama</label>
-                <input
-                    id="rn-input"
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                    placeholder="Masukkan nama"
-                />
-            </div>
-            <p className="text-sm text-slate-400">Panjang teks: {value.length}</p>
-        </section>
+        <View>
+            <TextInput
+                value={name}
+                onChangeText={setName}
+                placeholder="Masukkan nama"
+                style={{
+                    borderWidth: 1,
+                    borderColor: "#334155",
+                    padding: 10,
+                    borderRadius: 8,
+                    color: "#fff",
+                }}
+            />
+            <Text>Halo, {name || "..."}!</Text>
+        </View>
     )
 }

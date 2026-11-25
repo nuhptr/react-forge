@@ -49,7 +49,7 @@ Dua pola antarmuka digunakan di seluruh modul:
 - **Playground** (modul 8–9): kartu navigasi + seluruh section dirender sekaligus.
 - **Pemilih modul** (modul 1–7 dan 10–22): dropdown + kartu memilih demo lewat state — `App.tsx` tidak perlu disunting.
 
-Konvensi ini seragam: semua modul memakai `src/demos.ts` sebagai katalog dan `src/components/module-picker.tsx` sebagai UI pemilih.
+Konvensi ini seragam: semua modul memakai `src/demos.ts` sebagai katalog dan `src/section-list.tsx` sebagai UI pemilih.
 
 ---
 
@@ -143,10 +143,10 @@ react-forge/
 ├── yield-react-auth/           # [21] React Auth — pemilih modul
 ├── zen-react-native/           # [22] React Native — pemilih modul
 ├── LICENSE                     # Lisensi MIT
-└── README.md                   # Dokumentasi ini
+└── readme.md                   # Dokumentasi ini
 ```
 
-Detail isi tiap modul ada di `README.md` masing-masing (tersedia untuk modul 1–11); modul 12–22 memakai pola struktur yang sama.
+Detail isi tiap modul ada di `readme.md` masing-masing (tersedia untuk modul 1–11); modul 12–22 memakai pola struktur yang sama.
 
 ---
 
@@ -168,8 +168,7 @@ Detail isi tiap modul ada di `README.md` masing-masing (tersedia untuk modul 1�
 src/
 ├── demos.ts                    # katalog modul + interface Demo (data & tipe, bukan UI)
 ├── App.tsx                     # compose saja (≤ 50 baris)
-├── components/
-│   └── module-picker.tsx       # UI pemilih: dropdown + kartu
+├── section-list.tsx            # UI daftar/pemilih modul: dropdown + kartu
 ├── globals.css                 # hanya @import
 ├── styles/
 │   ├── base.css                # @layer base

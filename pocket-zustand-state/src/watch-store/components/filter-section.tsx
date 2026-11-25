@@ -1,18 +1,18 @@
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi"
 
 interface FilterOption {
-  label: string;
-  value: string;
-  checked: boolean;
+    label: string
+    value: string
+    checked: boolean
 }
 
 interface FilterSectionProps {
-  title: string;
-  isOpen: boolean;
-  onToggle: () => void;
-  options: FilterOption[];
-  onSelect: (value: string) => void;
-  inputType?: "checkbox" | "radio";
+    title: string
+    isOpen: boolean
+    onToggle: () => void
+    options: FilterOption[]
+    onSelect: (value: string) => void
+    inputType?: "checkbox" | "radio"
 }
 
 /**
@@ -25,42 +25,38 @@ interface FilterSectionProps {
  * struktur komponen ini.
  */
 const FilterSection = ({
-  title,
-  isOpen,
-  onToggle,
-  options,
-  onSelect,
-  inputType = "checkbox",
+    title,
+    isOpen,
+    onToggle,
+    options,
+    onSelect,
+    inputType = "checkbox",
 }: FilterSectionProps) => (
-  <div>
-    <button
-      type="button"
-      className="flex w-full items-center justify-between text-left"
-      onClick={onToggle}
-    >
-      <span className="font-medium">{title}</span>
-      <FiChevronDown className={`transform ${isOpen ? "rotate-180" : ""}`} />
-    </button>
+    <div>
+        <button
+            type="button"
+            className="flex w-full items-center justify-between text-left"
+            onClick={onToggle}>
+            <span className="font-medium">{title}</span>
+            <FiChevronDown className={`transform ${isOpen ? "rotate-180" : ""}`} />
+        </button>
 
-    {isOpen && (
-      <div className="mt-2 space-y-2">
-        {options.map((option) => (
-          <label
-            key={option.value}
-            className="flex cursor-pointer items-center"
-          >
-            <input
-              type={inputType}
-              checked={option.checked}
-              onChange={() => onSelect(option.value)}
-              className="mr-2"
-            />
-            <span>{option.label}</span>
-          </label>
-        ))}
-      </div>
-    )}
-  </div>
-);
+        {isOpen && (
+            <div className="mt-2 space-y-2">
+                {options.map((option) => (
+                    <label key={option.value} className="flex cursor-pointer items-center">
+                        <input
+                            type={inputType}
+                            checked={option.checked}
+                            onChange={() => onSelect(option.value)}
+                            className="mr-2"
+                        />
+                        <span>{option.label}</span>
+                    </label>
+                ))}
+            </div>
+        )}
+    </div>
+)
 
-export default FilterSection;
+export default FilterSection

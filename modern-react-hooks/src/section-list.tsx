@@ -1,4 +1,4 @@
-import { demos } from "./demos";
+import { demos } from "./demos"
 
 /**
  * Merender semua section topik secara statis.
@@ -9,17 +9,17 @@ import { demos } from "./demos";
  * @returns Daftar section topik.
  */
 export default function SectionList() {
-  return (
-    <>
-      {demos.map((demo) => {
-        const Component = demo.Component;
-        return (
-          <section key={demo.id} id={demo.id} className="demo-section">
-            <h2>{demo.title}</h2>
-            <Component />
-          </section>
-        );
-      })}
-    </>
-  );
+    return (
+        <>
+            {demos.map((demo) => {
+                const Component = demo.Component
+                return (
+                    <section key={demo.id} id={demo.id} className="demo-section">
+                        <h2>{demo.title}</h2>
+                        <Component />
+                    </section>
+                )
+            })}
+        </>
+    )
 }

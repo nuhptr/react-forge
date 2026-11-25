@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-import UserList, { type User } from "./user-list";
+import UserList, { type User } from "./user-list"
 
 interface UserContainerProps {
-  fetchUsers: () => Promise<User[]>;
+    fetchUsers: () => Promise<User[]>
 }
 
 /**
@@ -12,13 +12,13 @@ interface UserContainerProps {
  * Dependency Inversion: sumber data diinjeksi lewat prop `fetchUsers`.
  */
 const UserContainer = ({ fetchUsers }: UserContainerProps) => {
-  const [users, setUsers] = useState<User[]>([]);
+    const [users, setUsers] = useState<User[]>([])
 
-  useEffect(() => {
-    fetchUsers().then(setUsers);
-  }, [fetchUsers]);
+    useEffect(() => {
+        fetchUsers().then(setUsers)
+    }, [fetchUsers])
 
-  return <UserList users={users} />;
-};
+    return <UserList users={users} />
+}
 
-export default UserContainer;
+export default UserContainer

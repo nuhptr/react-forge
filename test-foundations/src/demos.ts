@@ -1,16 +1,20 @@
-import type { ComponentType } from "react";
-import M0 from "./boundary-testing";
-import M1 from "./matchers";
-import M2 from "./parameterized-testing";
-import M3 from "./positive-negative-testing";
-import M4 from "./tdd";
+import type { ComponentType } from "react"
+
+import BasicTests from "./basic-tests"
+import BoundaryTesting from "./boundary-testing"
+import Matchers from "./matchers"
+import ParameterizedTesting from "./parameterized-testing"
+import PositiveNegativeTesting from "./positive-negative-testing"
+import Tdd from "./tdd"
+import TestingAsync from "./testing-async"
+import TestsSyntaxIntro from "./tests-syntax-intro"
 
 /** Kontrak satu entri katalog modul. */
 export interface Demo {
-  id: string;
-  title: string;
-  description: string;
-  Component: ComponentType;
+    id: string
+    title: string
+    description: string
+    Component: ComponentType
 }
 
 /**
@@ -19,34 +23,52 @@ export interface Demo {
  * Single Responsibility: hanya mendefinisikan daftar modul; tidak merender UI.
  */
 export const demos: Demo[] = [
-  {
-    id: "boundary-testing",
-    title: "Boundary Testing",
-    description: "Uji nilai batas.",
-    Component: M0,
-  },
-  {
-    id: "matchers",
-    title: "Matchers",
-    description: "Jest/Vitest matchers.",
-    Component: M1,
-  },
-  {
-    id: "parameterized-testing",
-    title: "Parameterized Testing",
-    description: "it.each untuk banyak kasus.",
-    Component: M2,
-  },
-  {
-    id: "positive-negative-testing",
-    title: "Positive & Negative",
-    description: "Kasus valid dan invalid.",
-    Component: M3,
-  },
-  {
-    id: "tdd",
-    title: "TDD",
-    description: "Red-green-refactor.",
-    Component: M4,
-  },
-];
+    {
+        id: "basic-tests",
+        title: "Basic Tests",
+        description: "Assertion pada angka, string, array, objek.",
+        Component: BasicTests,
+    },
+    {
+        id: "boundary-testing",
+        title: "Boundary Testing",
+        description: "Uji nilai batas.",
+        Component: BoundaryTesting,
+    },
+    {
+        id: "matchers",
+        title: "Matchers",
+        description: "Jest/Vitest matchers.",
+        Component: Matchers,
+    },
+    {
+        id: "parameterized-testing",
+        title: "Parameterized Testing",
+        description: "it.each untuk banyak kasus.",
+        Component: ParameterizedTesting,
+    },
+    {
+        id: "positive-negative-testing",
+        title: "Positive & Negative",
+        description: "Kasus valid dan invalid.",
+        Component: PositiveNegativeTesting,
+    },
+    {
+        id: "tdd",
+        title: "TDD",
+        description: "Red-green-refactor.",
+        Component: Tdd,
+    },
+    {
+        id: "testing-async",
+        title: "Testing Async",
+        description: "await, resolves, dan rejects.",
+        Component: TestingAsync,
+    },
+    {
+        id: "tests-syntax-intro",
+        title: "Tests Syntax Intro",
+        description: "describe, it, expect, dan AAA.",
+        Component: TestsSyntaxIntro,
+    },
+]

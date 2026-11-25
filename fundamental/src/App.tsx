@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import ModulePicker from "./module-picker"
+import SectionList from "./section-list"
 import { demos } from "./demos"
 
 /**
@@ -25,7 +25,7 @@ const App = () => {
                 </p>
             </header>
 
-            <ModulePicker demos={demos} activeId={activeId} onSelect={setActiveId} />
+            <SectionList demos={demos} activeId={activeId} onSelect={setActiveId} />
 
             <section aria-labelledby="active-title" className="grid gap-2">
                 <h2 id="active-title" className="text-xl font-semibold text-blue-400">

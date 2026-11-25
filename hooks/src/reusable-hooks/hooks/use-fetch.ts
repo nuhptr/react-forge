@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 /**
  * Kontrak hasil pengambilan data generik dari {@link useFetch}.
  */
 export interface UseFetchResult<TData> {
-  data: TData | null;
-  isLoading: boolean;
-  errorMessage: string | null;
+    data: TData | null
+    isLoading: boolean
+    errorMessage: string | null
 }
 
 /**
@@ -17,45 +17,43 @@ export interface UseFetchResult<TData> {
  * @returns Objek status `{ data, isLoading, errorMessage }`.
  */
 export const useFetch = <TData>(url: string): UseFetchResult<TData> => {
-  const [data, setData] = useState<TData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [data, setData] = useState<TData | null>(null)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
-  useEffect(() => {
-    const abortController = new AbortController();
+    useEffect(() => {
+        const abortController = new AbortController()
 
-    const executeFetch = async () => {
-      try {
-        setIsLoading(true);
-        setErrorMessage(null);
+        const executeFetch = async () => {
+            try {
+                setIsLoading(true)
+                setErrorMessage(null)
 
-        const response = await fetch(url, { signal: abortController.signal });
-        if (!response.ok) {
-          throw new Error(`Permintaan gagal dengan status ${response.status}`);
+                const response = await fetch(url, { signal: abortController.signal })
+                if (!response.ok) {
+                    throw new Error(`Permintaan gagal dengan status ${response.status}`)
+                }
+
+                const parsedJson = (await response.json()) as TData
+                setData(parsedJson)
+            } catch (error) {
+                if (abortController.signal.aborted) return
+                setErrorMessage(
+                    error instanceof Error ? error.message : "Gagal memuat data dari server.",
+                )
+            } finally {
+                if (!abortController.signal.aborted) {
+                    setIsLoading(false)
+                }
+            }
         }
 
-        const parsedJson = (await response.json()) as TData;
-        setData(parsedJson);
-      } catch (error) {
-        if (abortController.signal.aborted) return;
-        setErrorMessage(
-          error instanceof Error
-            ? error.message
-            : "Gagal memuat data dari server.",
-        );
-      } finally {
-        if (!abortController.signal.aborted) {
-          setIsLoading(false);
+        void executeFetch()
+
+        return () => {
+            abortController.abort()
         }
-      }
-    };
+    }, [url])
 
-    void executeFetch();
-
-    return () => {
-      abortController.abort();
-    };
-  }, [url]);
-
-  return { data, isLoading, errorMessage };
-};
+    return { data, isLoading, errorMessage }
+}

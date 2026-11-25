@@ -1,11 +1,11 @@
-import Meals from "./components/Meals";
+import Meals from "./components/Meals"
 
 const App = () => {
-  return (
-    <div>
-      <Meals />
-    </div>
-  );
-};
+    return (
+        <div>
+            <Meals />
+        </div>
+    )
+}
 
-export default App;
+export default App

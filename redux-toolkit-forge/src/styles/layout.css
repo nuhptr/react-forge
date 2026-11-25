@@ -1,42 +1,42 @@
 /** Layout bersama playground redux-toolkit-forge. */
 @layer components {
-  .playground {
-    @apply grid w-full max-w-4xl gap-8 px-4 py-8 mx-auto;
-  }
-  .playground-header {
-    @apply grid gap-2;
-  }
-  .playground-header p {
-    @apply max-w-3xl text-slate-400;
-  }
-  .demo-card {
-    @apply p-4 text-left transition border rounded-xl border-slate-700 bg-slate-800/60 hover:border-blue-500;
-  }
-  .demo-card[data-active="true"] {
-    @apply border-blue-500 bg-blue-500/10;
-  }
-  .demo-card h3 {
-    @apply font-semibold text-slate-100;
-  }
-  .demo-card p {
-    @apply mt-1 text-sm text-slate-400;
-  }
-  .panel {
-    @apply grid gap-4 p-6 border rounded-xl border-slate-700 bg-slate-800/60;
-  }
-  .field {
-    @apply grid gap-1;
-  }
-  .field label {
-    @apply text-sm font-semibold text-slate-400;
-  }
-  .field input {
-    @apply px-3 py-2 border rounded-lg border-slate-700 bg-slate-900 text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none;
-  }
-  .btn {
-    @apply px-4 py-2 font-semibold text-white transition bg-blue-600 rounded-lg hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60;
-  }
-  .btn-danger {
-    @apply px-3 py-1 text-sm font-semibold text-white rounded-lg bg-rose-500 hover:bg-rose-400;
-  }
+    .playground {
+        @apply grid w-full max-w-4xl gap-8 px-4 py-8 mx-auto;
+    }
+    .playground-header {
+        @apply grid gap-2;
+    }
+    .playground-header p {
+        @apply max-w-3xl text-slate-400;
+    }
+    .demo-card {
+        @apply p-4 text-left transition border rounded-xl border-slate-700 bg-slate-800/60 hover:border-blue-500;
+    }
+    .demo-card[data-active="true"] {
+        @apply border-blue-500 bg-blue-500/10;
+    }
+    .demo-card h3 {
+        @apply font-semibold text-slate-100;
+    }
+    .demo-card p {
+        @apply mt-1 text-sm text-slate-400;
+    }
+    .panel {
+        @apply grid gap-4 p-6 border rounded-xl border-slate-700 bg-slate-800/60;
+    }
+    .field {
+        @apply grid gap-1;
+    }
+    .field label {
+        @apply text-sm font-semibold text-slate-400;
+    }
+    .field input {
+        @apply px-3 py-2 border rounded-lg border-slate-700 bg-slate-900 text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none;
+    }
+    .btn {
+        @apply px-4 py-2 font-semibold text-white transition bg-blue-600 rounded-lg hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+    .btn-danger {
+        @apply px-3 py-1 text-sm font-semibold text-white rounded-lg bg-rose-500 hover:bg-rose-400;
+    }
 }

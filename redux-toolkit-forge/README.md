@@ -31,7 +31,7 @@ bun run dev
 src/
 ├── App.tsx                       # compose saja
 ├── demos.ts                      # katalog modul + tipe Demo
-├── components/module-picker.tsx  # dropdown + kartu pemilih modul
+├── section-list.tsx  # dropdown + kartu pemilih modul
 ├── globals.css                   # hanya @import
 ├── styles/                       # base.css, layout.css (@layer + @apply)
 ├── mern-ecommerce-store/         # cart-slice.ts, store.ts, index.tsx
@@ -58,4 +58,4 @@ Pilih modul lewat dropdown atau kartu di halaman — tidak perlu menyunting `App
 
 ## Referensi
 
-Materi diadaptasi dari [THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET](https://github.com/HuXn-WebDev/THE-BIGGEST-REACT-COURSE-ON-THE-INTERNET).
+Materi diadaptasi dari referensi kursus React.

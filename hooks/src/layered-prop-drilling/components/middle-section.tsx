@@ -1,4 +1,4 @@
-import InnerGreeting, { type InnerGreetingProps } from "./inner-greeting";
+import InnerGreeting, { type InnerGreetingProps } from "./inner-greeting"
 
 /**
  * Komponen perantara tingkat tengah yang hanya meneruskan `userName` ke {@link InnerGreeting}.
@@ -7,7 +7,7 @@ import InnerGreeting, { type InnerGreetingProps } from "./inner-greeting";
  * @returns Pembungkus komponen tingkat tengah.
  */
 const MiddleSection = ({ userName }: InnerGreetingProps) => {
-  return <InnerGreeting userName={userName} />;
-};
+    return <InnerGreeting userName={userName} />
+}
 
-export default MiddleSection;
+export default MiddleSection

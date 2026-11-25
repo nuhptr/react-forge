@@ -1,12 +1,12 @@
-import { useCallback, useState, type ChangeEvent } from "react";
+import { useCallback, useState, type ChangeEvent } from "react"
 
 /**
  * Kontrak nilai dan pengendali untuk satu field input terkontrol dari {@link useFormInput}.
  */
 export interface UseFormInputResult {
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  reset: () => void;
+    value: string
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void
+    reset: () => void
 }
 
 /**
@@ -16,15 +16,15 @@ export interface UseFormInputResult {
  * @returns Objek binding input beserta fungsi `reset`.
  */
 export const useFormInput = (initialValue = ""): UseFormInputResult => {
-  const [value, setValue] = useState<string>(initialValue);
+    const [value, setValue] = useState<string>(initialValue)
 
-  const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  }, []);
+    const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value)
+    }, [])
 
-  const reset = useCallback(() => {
-    setValue(initialValue);
-  }, [initialValue]);
+    const reset = useCallback(() => {
+        setValue(initialValue)
+    }, [initialValue])
 
-  return { value, onChange, reset };
-};
+    return { value, onChange, reset }
+}

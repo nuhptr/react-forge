@@ -16,8 +16,28 @@ export interface Demo {
  * Katalog modul berurutan abjad (A-Z) sesuai kurikulum.
  */
 export const demos: Demo[] = [
-    { id: "client-table-filtering", title: "Client Table Filtering", description: "Filter tabel dashboard.", Component: C0 },
-    { id: "profile-navigation-tabs", title: "Profile Navigation Tabs", description: "Profil dan tab navigasi.", Component: C1 },
-    { id: "publishing-blog-platform", title: "Publishing Blog Platform", description: "Platform penerbitan blog.", Component: C2 },
-    { id: "storefront-advanced-filtering", title: "Storefront Advanced Filtering", description: "Filter lanjut E-Commerce.", Component: C3 }
+    {
+        id: "client-table-filtering",
+        title: "Client Table Filtering",
+        description: "Filter tabel dashboard.",
+        Component: C0,
+    },
+    {
+        id: "profile-navigation-tabs",
+        title: "Profile Navigation Tabs",
+        description: "Profil dan tab navigasi.",
+        Component: C1,
+    },
+    {
+        id: "publishing-blog-platform",
+        title: "Publishing Blog Platform",
+        description: "Platform penerbitan blog.",
+        Component: C2,
+    },
+    {
+        id: "storefront-advanced-filtering",
+        title: "Storefront Advanced Filtering",
+        description: "Filter lanjut E-Commerce.",
+        Component: C3,
+    },
 ]
