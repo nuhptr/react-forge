@@ -1,20 +1,21 @@
 /**
- * Props for the {@link Weather} component.
+ * Props untuk komponen {@link Weather}.
  */
 export interface WeatherProps {
-    /** Ambient temperature in degrees Celsius. Defaults to `26`. */
+    /** Suhu udara dalam derajat Celsius. Nilai bawaan `26`. */
     temperature?: number
 }
 
 /**
- * Classifies outdoor comfort based on temperature thresholds (`< 15`, `15..25`, `> 25`).
+ * Mengelompokkan kondisi cuaca luar ruangan berdasarkan ambang suhu (`< 15`, `15..25`, `> 25`).
  *
- * @param props Optional temperature reading.
- * @returns Weather summary message.
+ * @param props Nilai suhu opsional.
+ * @returns Pesan kondisi cuaca.
  */
 const Weather = ({ temperature = 26 }: WeatherProps) => {
     if (temperature < 15) return <div>It&apos;s cold outside!</div>
     if (temperature <= 25) return <div>It&apos;s nice outside!</div>
+
     return <div>It&apos;s hot outside!</div>
 }
 

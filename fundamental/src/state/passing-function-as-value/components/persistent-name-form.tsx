@@ -3,7 +3,7 @@ import { useEffect, useId, useState } from "react"
 const USER_NAME_STORAGE_KEY = "react-forge:user-name"
 
 /**
- * Reads the persisted user name from `localStorage` once during initial mount.
+ * Membaca nama pengguna yang tersimpan di `localStorage` satu kali saat komponen pertama kali di-mount.
  */
 const readStoredUserName = (): string => {
     if (typeof window === "undefined") return ""
@@ -17,10 +17,10 @@ const readStoredUserName = (): string => {
 }
 
 /**
- * Demonstrates real-world lazy `useState` initialization backed by `localStorage`
- * and synchronized via `useEffect`.
+ * Mendemonstrasikan kasus nyata inisialisasi malas `useState` dari `localStorage`
+ * yang disinkronkan secara otomatis melalui `useEffect`.
  *
- * @returns Persistent name input widget.
+ * @returns Form input nama yang tersimpan secara persisten di browser.
  */
 const PersistentNameForm = () => {
     const nameInputId = useId()
@@ -30,7 +30,7 @@ const PersistentNameForm = () => {
         try {
             window.localStorage.setItem(USER_NAME_STORAGE_KEY, JSON.stringify(userName))
         } catch {
-            // Ignore storage quota or private-mode write errors.
+            // Abaikan kegagalan penyimpanan akibat kuota penuh atau mode privat browser.
         }
     }, [userName])
 

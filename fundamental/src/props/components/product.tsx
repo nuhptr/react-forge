@@ -1,5 +1,5 @@
 /**
- * Props for the {@link Product} component.
+ * Props untuk komponen {@link Product}.
  */
 export interface ProductProps {
     name: string
@@ -7,10 +7,10 @@ export interface ProductProps {
 }
 
 /**
- * Displays a product's name and price passed through `props`.
+ * Menampilkan nama dan harga produk yang diterima melalui `props`.
  *
- * @param props Product display properties.
- * @returns Product summary block.
+ * @param props Properti data produk.
+ * @returns Blok ringkasan produk.
  */
 const Product = (props: ProductProps) => {
     return (

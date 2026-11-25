@@ -2,9 +2,9 @@ import Icons from "./icons"
 import InlineStyle from "./inline-style"
 
 /**
- * Aggregates inline styling and `react-icons` demonstrations into a single entry point.
+ * Menggabungkan contoh penggunaan inline style dan `react-icons` ke dalam satu pintu masuk modul.
  *
- * @returns Styling showcase section.
+ * @returns Section kumpulan contoh styling.
  */
 const StylesShowcase = () => {
     return (

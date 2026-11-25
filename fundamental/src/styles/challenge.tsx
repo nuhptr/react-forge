@@ -3,9 +3,9 @@ import ProfileCard from "./components/profile-card"
 import StyledCard from "./components/styled-card"
 
 /**
- * Styling challenge solution combining inline styles, style objects, and `react-icons`.
+ * Solusi challenge Styling yang memadukan objek inline style dan variasi ikon `react-icons`.
  *
- * @returns Composed styled cards and icon showcase.
+ * @returns Gabungan komponen kartu bergaya dan deretan ikon.
  */
 const StylesChallenge = () => {
     return (

@@ -3,12 +3,12 @@ import { useState } from "react"
 const INITIAL_FRIENDS: string[] = ["Alex", "John"]
 
 /**
- * Demonstrates immutable array state updates (`spread`, `filter`, and `map`).
+ * Mendemonstrasikan pembaruan state bertipe array secara immutable (`spread`, `filter`, dan `map`).
  *
- * Never mutates the existing array in place (`push`/`splice`), ensuring React
- * detects reference changes and triggers predictable re-renders.
+ * Tidak memodifikasi array secara langsung (`push`/`splice`) agar React selalu mendeteksi
+ * perubahan referensi dan menjadwalkan render ulang dengan benar.
  *
- * @returns Friends list manager component.
+ * @returns Komponen pengelola daftar teman.
  */
 const UpdatingArrays = () => {
     const [friends, setFriends] = useState<string[]>(INITIAL_FRIENDS)

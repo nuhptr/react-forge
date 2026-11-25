@@ -13,9 +13,9 @@ const TITLE_STYLES: CSSProperties = {
 }
 
 /**
- * Renders a decorative card styled via inline `CSSProperties` constants.
+ * Merender kartu dekoratif menggunakan konstanta objek bertipe `CSSProperties`.
  *
- * @returns Styled card component.
+ * @returns Komponen kartu bergaya.
  */
 const StyledCard = () => {
     return (

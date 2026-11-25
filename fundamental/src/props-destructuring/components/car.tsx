@@ -1,5 +1,5 @@
 /**
- * Props for the {@link Car} component.
+ * Props untuk komponen {@link Car}.
  */
 export interface CarProps {
     modelName?: string
@@ -7,10 +7,10 @@ export interface CarProps {
 }
 
 /**
- * Renders single vehicle details using destructured props with fallback defaults.
+ * Merender informasi satu unit mobil menggunakan destructuring `props` dan nilai default.
  *
- * @param props Optional vehicle model name and body type.
- * @returns Vehicle summary block.
+ * @param props Nama model dan tipe bodi kendaraan opsional.
+ * @returns Blok informasi kendaraan.
  */
 const Car = ({ modelName = "Default", bodyType = "MPV" }: CarProps) => {
     return (

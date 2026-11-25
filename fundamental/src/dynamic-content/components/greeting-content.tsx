@@ -1,7 +1,7 @@
 /**
- * Displays a dynamic greeting message and the current day of the month using JS expressions in JSX.
+ * Menampilkan teks sapaan dinamis dan tanggal hari ini menggunakan ekspresi JavaScript di dalam JSX.
  *
- * @returns Greeting and current date block.
+ * @returns Blok tampilan sapaan dan tanggal saat ini.
  */
 const GreetingContent = () => {
     const greetingMessage = "Hello"

@@ -1,5 +1,5 @@
 /**
- * Props for the {@link UserProfileCard} component.
+ * Props untuk komponen kartu profil {@link UserProfileCard}.
  */
 interface UserProfileCardProps {
     avatarUrl?: string
@@ -10,10 +10,10 @@ interface UserProfileCardProps {
 }
 
 /**
- * Displays user profile details accessed through the `props` object parameter.
+ * Menampilkan rincian profil pengguna yang diakses melalui parameter objek `props`.
  *
- * @param props Optional user attributes passed from the parent component.
- * @returns User profile section.
+ * @param props Atribut profil opsional yang dikirim dari komponen induk.
+ * @returns Section profil pengguna.
  */
 const UserProfileCard = (props: UserProfileCardProps) => {
     return (
@@ -30,9 +30,9 @@ const UserProfileCard = (props: UserProfileCardProps) => {
 }
 
 /**
- * Demonstrates passing typed data from parent to child components via `props`.
+ * Mendemonstrasikan pengiriman data bertipe dari komponen induk ke komponen anak melalui `props`.
  *
- * @returns `UserProfileCard` populated with sample props.
+ * @returns Komponen `UserProfileCard` dengan data contoh.
  */
 const PropsDemo = () => {
     return (

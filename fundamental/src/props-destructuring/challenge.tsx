@@ -2,9 +2,9 @@ import Car from "./components/car"
 import Dealer from "./components/dealer"
 
 /**
- * Props destructuring challenge solution pairing `Dealer` and `Car` components.
+ * Solusi challenge Props Destructuring yang memadukan komponen `Dealer` dan `Car`.
  *
- * @returns Composed dealer and vehicle summary.
+ * @returns Ringkasan informasi dealer beserta unit kendaraan.
  */
 const PropsDestructuringChallenge = () => {
     return (

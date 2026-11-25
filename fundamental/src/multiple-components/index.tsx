@@ -3,10 +3,10 @@ import Header from "./components/header"
 import MainContent from "./components/main-content"
 
 /**
- * Composes independent layout landmarks (`Header`, `MainContent`, and `Footer`)
- * into a complete page shell.
+ * Menggabungkan komponen tata letak terpisah (`Header`, `MainContent`, dan `Footer`)
+ * menjadi satu kerangka halaman utuh.
  *
- * @returns Assembled multi-component page layout.
+ * @returns Kerangka halaman hasil komposisi beberapa komponen.
  */
 const MultipleComponents = () => {
     return (

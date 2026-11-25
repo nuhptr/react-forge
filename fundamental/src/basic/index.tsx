@@ -1,9 +1,9 @@
 import GreetingMessage from "./components/greeting-message"
 
 /**
- * Demonstrates creating and nesting functional React components.
+ * Mendemonstrasikan pembuatan dan penyusunan (nesting) functional component di React.
  *
- * @returns Composed basic greeting view.
+ * @returns Tampilan sapaan gabungan.
  */
 const BasicComponent = () => {
     return (

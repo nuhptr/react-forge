@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client"
 import App from "./App.tsx"
 
 /**
- * Bootstraps the React Hooks application into the `#root` DOM node.
+ * Me-mount aplikasi React Hooks ke dalam elemen DOM `#root`.
  */
 createRoot(document.getElementById("root")!).render(
     <StrictMode>

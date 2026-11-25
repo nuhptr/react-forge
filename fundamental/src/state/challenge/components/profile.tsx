@@ -1,7 +1,7 @@
 import { useId, useState, type ChangeEvent } from "react"
 
 /**
- * Represents editable user profile fields.
+ * Struktur data profil pengguna yang dapat disunting.
  */
 interface UserProfile {
     name: string
@@ -9,11 +9,11 @@ interface UserProfile {
 }
 
 /**
- * State challenge 2: controlled form inputs updating a typed `UserProfile` object.
+ * State challenge 2: form input terkontrol (controlled input) yang memperbarui objek `UserProfile`.
  *
- * Preserves numeric type safety on `age` when handling string values from `<input type="number" />`.
+ * Menjaga tipe angka pada `age` tetap aman saat mengonversi nilai string dari `<input type="number" />`.
  *
- * @returns Editable user profile form and live preview.
+ * @returns Form penyunting profil pengguna beserta pratinjau langsung.
  */
 const Profile = () => {
     const nameInputId = useId()
@@ -29,6 +29,7 @@ const Profile = () => {
 
     const handleAgeChange = (event: ChangeEvent<HTMLInputElement>) => {
         const parsedAge = Number.parseInt(event.target.value, 10)
+
         setProfile((prevProfile) => ({
             ...prevProfile,
             age: Number.isNaN(parsedAge) ? 0 : Math.max(0, parsedAge),

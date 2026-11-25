@@ -1,9 +1,9 @@
 import { AiOutlineHourglass } from "react-icons/ai"
 
 /**
- * Demonstrates rendering third-party vector icons using `react-icons`.
+ * Mendemonstrasikan cara merender ikon vektor dari pustaka `react-icons`.
  *
- * @returns Heading displaying an accessible hourglass icon.
+ * @returns Judul yang memuat ikon jam pasir dengan label aksesibilitas.
  */
 const Icons = () => {
     return (

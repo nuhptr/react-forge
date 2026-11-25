@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 /**
- * State challenge 1: functional counter updates with a zero floor.
+ * State challenge 1: pembaruan penghitung fungsional dengan batas minimum nol.
  *
- * @returns Counter challenge component.
+ * @returns Komponen challenge penghitung.
  */
 const Counter = () => {
     const [count, setCount] = useState<number>(0)

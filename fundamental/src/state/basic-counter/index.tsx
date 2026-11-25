@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 /**
- * Demonstrates basic numeric state management with `useState` and non-negative bounds.
+ * Mendemonstrasikan pengelolaan state angka dasar menggunakan `useState` dengan batas bawah nol.
  *
- * @returns Increment/decrement counter widget.
+ * @returns Komponen penghitung tambah/kurang.
  */
 const BasicCounter = () => {
     const [count, setCount] = useState(0)

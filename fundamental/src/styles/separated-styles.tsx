@@ -1,9 +1,9 @@
 import "./separated-styles.css"
 
 /**
- * Demonstrates importing an external stylesheet (`separated-styles.css`) into a component module.
+ * Mendemonstrasikan cara mengimpor file CSS eksternal (`separated-styles.css`) ke dalam komponen.
  *
- * @returns Section styled via external CSS rules.
+ * @returns Section yang diberi gaya melalui file CSS terpisah.
  */
 const SeparatedStyles = () => {
     return (

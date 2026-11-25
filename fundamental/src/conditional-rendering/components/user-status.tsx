@@ -1,5 +1,5 @@
 /**
- * Props for the {@link UserStatus} component.
+ * Props untuk komponen {@link UserStatus}.
  */
 export interface UserStatusProps {
     isLoggedIn: boolean
@@ -7,10 +7,10 @@ export interface UserStatusProps {
 }
 
 /**
- * Renders role-aware welcome text based on authentication and admin flags.
+ * Merender pesan sambutan sesuai status autentikasi dan hak akses admin.
  *
- * @param props Authentication and authorization flags.
- * @returns Role-specific welcome message.
+ * @param props Status login dan peran pengguna.
+ * @returns Pesan sambutan berdasarkan peran.
  */
 const UserStatus = ({ isAdmin, isLoggedIn }: UserStatusProps) => {
     if (!isLoggedIn) return <div>Please sign in to continue.</div>

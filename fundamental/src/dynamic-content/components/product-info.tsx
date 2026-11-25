@@ -1,5 +1,5 @@
 /**
- * Represents catalog metadata for a single product.
+ * Struktur data informasi katalog produk tunggal.
  */
 interface Product {
     name: string
@@ -8,9 +8,9 @@ interface Product {
 }
 
 /**
- * Renders dynamic object properties (name, price, and stock availability) inside JSX.
+ * Merender properti objek produk (nama, harga, dan ketersediaan stok) secara dinamis di dalam JSX.
  *
- * @returns Product details block.
+ * @returns Blok rincian informasi produk.
  */
 const ProductInfo = () => {
     const product: Product = {

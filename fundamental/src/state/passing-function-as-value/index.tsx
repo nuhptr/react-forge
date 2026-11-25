@@ -3,12 +3,12 @@ import PersistentNameForm from "./components/persistent-name-form"
 import RandomNumberGenerator from "./components/random-number-generator"
 
 /**
- * Showcases three progressively practical patterns for passing initializer functions to `useState`:
- * 1. Static lazy initializer (`LazyCounter`)
- * 2. Random value initializer (`RandomNumberGenerator`)
- * 3. `localStorage` hydration initializer (`PersistentNameForm`)
+ * Menampilkan tiga pola bertahap penerusan fungsi inisialisasi ke `useState`:
+ * 1. Inisialisasi nilai statis (`LazyCounter`)
+ * 2. Inisialisasi nilai acak (`RandomNumberGenerator`)
+ * 3. Hidrasi data dari `localStorage` (`PersistentNameForm`)
  *
- * @returns Composed lazy-initializer examples.
+ * @returns Gabungan contoh penggunaan fungsi inisialisasi state.
  */
 const PassingFunctionAsState = () => {
     return (

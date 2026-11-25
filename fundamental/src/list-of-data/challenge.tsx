@@ -2,9 +2,9 @@ import ProductList from "./components/product-list"
 import UserList from "./components/user-list"
 
 /**
- * List-of-data challenge solution rendering typed user and product collections.
+ * Solusi challenge List of Data yang merender daftar pengguna dan daftar produk bertipe ketat.
  *
- * @returns Composed user and product list components.
+ * @returns Komposisi komponen `UserList` dan `ProductList`.
  */
 const ListOfDataChallenge = () => {
     return (

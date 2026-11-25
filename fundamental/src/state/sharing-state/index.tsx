@@ -4,10 +4,10 @@ import PrimaryCounter from "./components/primary-counter"
 import SecondaryCounter from "./components/secondary-counter"
 
 /**
- * Demonstrates lifting state up so sibling components (`PrimaryCounter` and `SecondaryCounter`)
- * read and update a single source of truth.
+ * Mendemonstrasikan pola Lifting State Up agar dua komponen sejajar (`PrimaryCounter` dan `SecondaryCounter`)
+ * membaca serta memperbarui satu sumber data yang sama.
  *
- * @returns Synchronized sibling counter section.
+ * @returns Section dua penghitung yang tersinkronisasi.
  */
 const SharingState = () => {
     const [count, setCount] = useState(0)

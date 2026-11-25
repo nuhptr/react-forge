@@ -1,22 +1,29 @@
 /**
- * Props for the {@link ShoppingItemsList} component.
+ * Props untuk komponen daftar belanja {@link ShoppingItemsList}.
  */
 interface ShoppingItemsListProps {
-    /** Ordered array of shopping item labels. */
+    /** Daftar nama barang belanjaan. */
     items: string[]
 }
 
 /**
- * Renders an ordered list of shopping items using stable item keys.
+ * Merender daftar terurut barang belanjaan menggunakan kelas utilitas Tailwind CSS
+ * dan `key` yang stabil.
  *
- * @param props Component properties.
- * @returns Semantic `<ol>` shopping list.
+ * Menghindari penggunaan `Math.random()` sebagai `key` agar proses rekonsiliasi DOM React tetap konsisten.
+ *
+ * @param props Properti komponen.
+ * @returns Elemen `<ol>` berisi daftar belanjaan bergaya kartu.
  */
 const ShoppingItemsList = ({ items }: ShoppingItemsListProps) => {
     return (
-        <ol>
+        <ol role="list" className="w-full max-w-125 list-none font-sans">
             {items.map((item) => (
-                <li key={item}>{item}</li>
+                <li
+                    key={item}
+                    className="m-2.5 bg-[#f7ffff] p-8 font-bold shadow-sm transition-transform duration-300 ease-out hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100">
+                    {item}
+                </li>
             ))}
         </ol>
     )
@@ -25,13 +32,14 @@ const ShoppingItemsList = ({ items }: ShoppingItemsListProps) => {
 const SHOPPING_ITEMS: string[] = ["Wireless Earbuds", "Power Bank", "New SSD", "Hoodie"]
 
 /**
- * Demonstrates rendering arrays of data with `.map()` and unique `key` props.
+ * Mendemonstrasikan cara merender koleksi array menggunakan `.map()` dan prop `key` unik
+ * dengan tata letak Tailwind CSS.
  *
- * @returns Shopping list showcase section.
+ * @returns Section daftar belanjaan.
  */
 const ListOfData = () => {
     return (
-        <section>
+        <section className="flex min-h-screen items-center justify-center bg-[#e3ffff] p-4">
             <ShoppingItemsList items={SHOPPING_ITEMS} />
         </section>
     )

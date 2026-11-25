@@ -1,28 +1,28 @@
 /**
- * Props for the {@link Password} validation display component.
+ * Props untuk komponen validasi kata sandi {@link Password}.
  */
 interface PasswordProps {
     isValid: boolean
 }
 
-/** Renders feedback when a password satisfies validation constraints. */
+/** Merender pesan ketika kata sandi memenuhi aturan validasi. */
 const ValidPassword = () => <h1>Valid Password</h1>
 
-/** Renders feedback when a password fails validation constraints. */
+/** Merender pesan ketika kata sandi tidak memenuhi aturan validasi. */
 const InvalidPassword = () => <h1>Invalid Password</h1>
 
 /**
- * Selects between {@link ValidPassword} and {@link InvalidPassword} using a ternary expression.
+ * Memilih antara {@link ValidPassword} dan {@link InvalidPassword} menggunakan operator ternary.
  *
- * @param props Validation state props.
- * @returns Matching password status indicator.
+ * @param props Status validasi kata sandi.
+ * @returns Indikator status validitas kata sandi.
  */
 const Password = ({ isValid }: PasswordProps) => (isValid ? <ValidPassword /> : <InvalidPassword />)
 
 /**
- * Demonstrates conditional JSX rendering based on boolean props.
+ * Mendemonstrasikan conditional rendering pada JSX berdasarkan nilai boolean.
  *
- * @returns Conditional rendering showcase section.
+ * @returns Section contoh conditional rendering.
  */
 const ConditionalRendering = () => {
     return (
