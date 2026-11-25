@@ -1,7 +1,7 @@
 /**
- * Renders the top site banner and primary navigation links.
+ * Merender bagian header halaman beserta tautan navigasi utama.
  *
- * @returns Semantic `<header>` landmark element.
+ * @returns Elemen landmark `<header>` semantik.
  */
 const Header = () => {
     return (

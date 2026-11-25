@@ -1,5 +1,5 @@
 /**
- * Props for the {@link Person} component.
+ * Props untuk komponen {@link Person}.
  */
 export interface PersonProps {
     name: string
@@ -7,10 +7,10 @@ export interface PersonProps {
 }
 
 /**
- * Displays a person's name and age passed through `props`.
+ * Menampilkan nama dan usia seseorang yang dikirim melalui `props`.
  *
- * @param props Person display properties.
- * @returns Person summary block.
+ * @param props Properti data orang.
+ * @returns Blok informasi nama dan usia.
  */
 const Person = (props: PersonProps) => {
     return (

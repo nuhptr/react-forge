@@ -1,10 +1,10 @@
 import { useState } from "react"
 
 /**
- * Interactive event playground demonstrating stateful `onClick`, `onCopy`,
- * `onMouseEnter`, and `onMouseLeave` handlers.
+ * Komponen interaktif yang memadukan state dengan event `onClick`, `onCopy`,
+ * `onMouseEnter`, dan `onMouseLeave`.
  *
- * @returns Stateful event demonstration block.
+ * @returns Blok demonstrasi event berbasis state.
  */
 const EventPlayground = () => {
     const [clickMessage, setClickMessage] = useState("")

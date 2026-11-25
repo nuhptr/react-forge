@@ -1,14 +1,14 @@
 import { useState } from "react"
 
 /**
- * Generates a random integer between `0` and `99`.
+ * Menghasilkan bilangan bulat acak di antara `0` sampai `99`.
  */
 const generateRandomInteger = (): number => Math.floor(Math.random() * 100)
 
 /**
- * Demonstrates lazy `useState` initialization with a non-deterministic generator (`Math.random`).
+ * Mendemonstrasikan inisialisasi malas pada `useState` menggunakan fungsi generator angka acak (`Math.random`).
  *
- * @returns Random number generator widget.
+ * @returns Komponen generator angka acak.
  */
 const RandomNumberGenerator = () => {
     const [randomNumber, setRandomNumber] = useState<number>(generateRandomInteger)

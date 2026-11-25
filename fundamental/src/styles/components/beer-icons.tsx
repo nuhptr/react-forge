@@ -1,9 +1,9 @@
 import { FaBeer } from "react-icons/fa"
 
 /**
- * Demonstrates customizing `react-icons` size and color props.
+ * Mendemonstrasikan pengaturan ukuran (`size`) dan warna (`color`) pada komponen `react-icons`.
  *
- * @returns Row of styled beer icons.
+ * @returns Deretan variasi ikon gelas bir.
  */
 const BeerIcons = () => {
     return (

@@ -1,13 +1,13 @@
 import { useId, useState } from "react"
 
 /**
- * Demonstrates using React's `key` prop to force-reset uncontrolled/internal DOM state
- * when switching modes (`"dark"` vs `"light"`).
+ * Mendemonstrasikan pemanfaatan prop `key` untuk mereset paksa state internal elemen DOM
+ * ketika mode tampilan berpindah (`"dark"` vs `"light"`).
  *
- * Changing `key` instructs React to unmount the previous `<input />` instance
- * and mount a fresh one instead of reusing the existing DOM node.
+ * Mengubah nilai `key` memerintahkan React untuk meng-unmount elemen `<input />` lama
+ * dan me-mount instans baru sehingga isian tidak terkontrol ikut ter-reset.
  *
- * @returns Theme switcher with key-reset input.
+ * @returns Komponen pengubah tema dengan input yang ter-reset saat `key` berubah.
  */
 const ThemeSwitcher = () => {
     const noteInputId = useId()
@@ -39,8 +39,7 @@ const ThemeSwitcher = () => {
                 <button
                     type="button"
                     onClick={() => setIsDarkMode((prevMode) => !prevMode)}
-                    className="rounded bg-slate-900 px-3 py-1.5 text-sm font-medium text-white"
-                >
+                    className="rounded bg-slate-900 px-3 py-1.5 text-sm font-medium text-white">
                     Switch to {isDarkMode ? "Light" : "Dark"}
                 </button>
             </div>

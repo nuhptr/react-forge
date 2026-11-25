@@ -1,7 +1,7 @@
 /**
- * Renders the primary body area of the multi-component page layout.
+ * Merender area konten utama dari tata letak halaman multi-komponen.
  *
- * @returns Semantic `<main>` landmark element.
+ * @returns Elemen landmark `<main>` semantik.
  */
 const MainContent = () => {
     return (

@@ -1,7 +1,7 @@
 /**
- * JSX rules challenge solution summarizing the three foundational JSX syntax rules.
+ * Solusi challenge JSX Rules yang merangkum tiga aturan utama sintaks JSX.
  *
- * @returns Summary card of JSX rules.
+ * @returns Bagian ringkasan aturan dasar JSX.
  */
 const JsxRulesChallenge = () => {
     return (

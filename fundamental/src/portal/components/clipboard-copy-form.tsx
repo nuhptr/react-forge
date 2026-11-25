@@ -4,15 +4,14 @@ import { useClipboardCopy } from "../hooks/use-clipboard-copy"
 import ToastNotification from "./toast-notification"
 
 /**
- * Renders a labeled text input form that copies its value to the clipboard
- * and surfaces feedback both inline and via a portaled {@link ToastNotification}.
+ * Merender form input berlabel untuk menyalin teks ke clipboard dan menampilkan
+ * umpan balik langsung di tombol sekaligus melalui {@link ToastNotification} berbasis portal.
  *
- * @returns The clipboard copy form component.
+ * @returns Komponen form penyalin teks ke clipboard.
  */
 const ClipboardCopyForm = () => {
     const textInputId = useId()
     const [textToCopy, setTextToCopy] = useState("")
-
     const {
         isCopied,
         errorMessage,
@@ -49,7 +48,8 @@ const ClipboardCopyForm = () => {
                 <button
                     type="submit"
                     disabled={isSubmitDisabled}
-                    className="min-h-9.5 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50">
+                    className="min-h-9.5 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                >
                     {isCopied ? "Copied!" : "Copy"}
                 </button>
             </form>

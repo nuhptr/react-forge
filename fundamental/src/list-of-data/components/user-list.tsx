@@ -1,5 +1,5 @@
 /**
- * Represents a user record displayed in {@link UserList}.
+ * Struktur data pengguna yang ditampilkan pada {@link UserList}.
  */
 interface User {
     id: number
@@ -14,9 +14,9 @@ const USERS: User[] = [
 ]
 
 /**
- * Renders a collection of users mapped with stable `user.id` keys.
+ * Merender daftar pengguna menggunakan `.map()` dengan `user.id` sebagai `key` stabil.
  *
- * @returns Unordered list of user entries.
+ * @returns Elemen `<ul>` berisi daftar pengguna.
  */
 const UserList = () => {
     return (

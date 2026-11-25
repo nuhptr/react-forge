@@ -1,7 +1,7 @@
 /**
- * Renders the page footer containing copyright metadata.
+ * Merender bagian kaki halaman (footer) yang memuat informasi hak cipta.
  *
- * @returns Semantic `<footer>` landmark element.
+ * @returns Elemen landmark `<footer>` semantik.
  */
 const Footer = () => {
     return (

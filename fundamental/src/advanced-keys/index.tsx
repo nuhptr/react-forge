@@ -1,10 +1,10 @@
 import ThemeSwitcher from "./components/theme-switcher"
 
 /**
- * Demonstrates advanced reconciliation behavior using dynamic `key` props
- * to reset component state on identity change.
+ * Mendemonstrasikan perilaku rekonsiliasi lanjutan React menggunakan prop `key` dinamis
+ * untuk mereset state komponen ketika identitasnya berubah.
  *
- * @returns Advanced keys showcase component.
+ * @returns Komponen materi Advanced Keys.
  */
 const AdvancedKeys = () => {
     return (

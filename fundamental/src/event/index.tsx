@@ -1,5 +1,5 @@
 /**
- * Logs a random integer between `0` and `10` when clicked.
+ * Mencetak bilangan bulat acak antara `0` hingga `10` ke konsol saat tombol diklik.
  */
 const RandomNumberButton = () => {
     const handleClick = () => {
@@ -14,7 +14,7 @@ const RandomNumberButton = () => {
 }
 
 /**
- * Logs a warning message whenever the user copies text from the paragraph.
+ * Mencetak pesan peringatan ke konsol ketika pengguna menyalin teks paragraf.
  */
 const CopyProtectedText = () => {
     const handleCopy = () => {
@@ -25,7 +25,7 @@ const CopyProtectedText = () => {
 }
 
 /**
- * Logs a message when the pointer enters the paragraph element.
+ * Mencetak pesan ke konsol saat kursor masuk ke area elemen paragraf.
  */
 const HoverTrackerText = () => {
     const handleMouseEnter = () => {
@@ -40,9 +40,9 @@ const HoverTrackerText = () => {
 }
 
 /**
- * Demonstrates attaching DOM event handlers (`onClick`, `onCopy`, `onMouseEnter`) in JSX.
+ * Mendemonstrasikan pemasangan event handler DOM (`onClick`, `onCopy`, `onMouseEnter`) pada JSX.
  *
- * @returns Interactive event handler showcase.
+ * @returns Kumpulan contoh interaksi event dasar.
  */
 const EventExamples = () => {
     return (

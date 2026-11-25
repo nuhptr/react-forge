@@ -1,17 +1,17 @@
 import { useState } from "react"
 
 /**
- * Computes the initial counter value lazily on mount only.
+ * Menghitung nilai awal penghitung secara malas (lazy) hanya saat pertama kali komponen dipasang (mount).
  */
 const getInitialCount = (): number => 10
 
 /**
- * Demonstrates lazy state initialization by passing an initializer function to `useState`.
+ * Mendemonstrasikan lazy state initialization dengan meneruskan referensi fungsi ke `useState`.
  *
- * Passing `getInitialCount` (without invoking it on every render) ensures expensive
- * initialization logic runs only during the initial mount.
+ * Meneruskan `getInitialCount` (tanpa memanggilnya langsung di tiap render) memastikan proses
+ * inisialisasi hanya dijalankan satu kali pada render pertama.
  *
- * @returns Lazy-initialized counter component.
+ * @returns Komponen penghitung dengan inisialisasi malas.
  */
 const LazyCounter = () => {
     const [count, setCount] = useState<number>(getInitialCount)

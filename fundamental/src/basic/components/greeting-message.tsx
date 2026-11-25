@@ -1,7 +1,7 @@
 /**
- * Renders a child greeting message to demonstrate basic component composition.
+ * Merender pesan sapaan sederhana untuk mendemonstrasikan komposisi komponen anak.
  *
- * @returns Greeting message element.
+ * @returns Elemen paragraf sapaan.
  */
 const GreetingMessage = () => {
     return <p>Welcome to React Fundamentals</p>

@@ -1,5 +1,5 @@
 /**
- * Props for the {@link Dealer} component.
+ * Props untuk komponen {@link Dealer}.
  */
 export interface DealerProps {
     dealerName?: string
@@ -7,10 +7,10 @@ export interface DealerProps {
 }
 
 /**
- * Renders dealership metadata using destructured props with fallback defaults.
+ * Merender informasi dealer menggunakan destructuring `props` beserta nilai default.
  *
- * @param props Optional dealership name and country of origin.
- * @returns Dealer details block.
+ * @param props Nama dealer dan negara asal opsional.
+ * @returns Blok rincian dealer.
  */
 const Dealer = ({ dealerName = "Default", originCountry = "Indonesia" }: DealerProps) => {
     return (

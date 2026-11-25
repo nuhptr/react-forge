@@ -1,29 +1,29 @@
 import Portal from "./portal"
 
 /**
- * Props for the {@link ToastNotification} component.
+ * Props untuk komponen {@link ToastNotification}.
  */
 export interface ToastNotificationProps {
-    /** Controls whether the toast notification is rendered. */
+    /** Menentukan apakah notifikasi toast ditampilkan atau disembunyikan. */
     isVisible: boolean
-    /** Notification text announced and displayed to the user. */
+    /** Teks pesan yang ditampilkan dan dibacakan oleh pembaca layar. */
     message?: string
-    /** Callback invoked when the user manually closes the notification. */
+    /** Callback saat pengguna menutup notifikasi secara manual. */
     onDismiss: () => void
-    /** Optional callback to pause auto-dismiss while keyboard focus is inside the toast. */
+    /** Callback opsional untuk menjeda penutupan otomatis ketika fokus keyboard berada di dalam toast. */
     onPauseDismiss?: () => void
-    /** Optional callback to resume auto-dismiss when focus leaves the toast. */
+    /** Callback opsional untuk melanjutkan penutupan otomatis ketika fokus meninggalkan toast. */
     onResumeDismiss?: () => void
 }
 
 /**
- * Renders an accessible toast notification outside `#root` via {@link Portal}.
+ * Merender notifikasi toast yang aksesibel di luar `#root` menggunakan {@link Portal}.
  *
- * Uses `role="status"` (`aria-live="polite"`) for non-intrusive screen reader
- * announcements and provides an explicit keyboard-focusable dismiss control.
+ * Memanfaatkan `role="status"` (`aria-live="polite"`) untuk pembaca layar tanpa memotong fokus,
+ * serta menyediakan tombol tutup yang ramah navigasi keyboard.
  *
- * @param props Component properties.
- * @returns The portaled toast element when active, or `null` when hidden.
+ * @param props Properti konfigurasi toast.
+ * @returns Elemen toast di dalam portal ketika aktif, atau `null` saat disembunyikan.
  */
 const ToastNotification = ({
     isVisible,
@@ -41,12 +41,14 @@ const ToastNotification = ({
                 aria-live="polite"
                 onFocus={onPauseDismiss}
                 onBlur={onResumeDismiss}
-                className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-950 px-4 py-3 text-sm font-medium text-emerald-50 shadow-lg">
+                className="fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-950 px-4 py-3 text-sm font-medium text-emerald-50 shadow-lg"
+            >
                 <span>{message}</span>
                 <button
                     type="button"
                     onClick={onDismiss}
-                    className="rounded px-2 py-1 text-xs font-semibold text-emerald-200 hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">
+                    className="rounded px-2 py-1 text-xs font-semibold text-emerald-200 hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                >
                     Close
                 </button>
             </div>

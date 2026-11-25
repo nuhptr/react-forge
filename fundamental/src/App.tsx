@@ -1,12 +1,12 @@
 import PortalShowcase from "./portal"
 
 /**
- * Root playground component for the React Fundamentals workspace.
+ * Komponen utama (playground) untuk workspace React Fundamentals.
  *
- * Swap the rendered component below (for example `./basic`, `./jsx`, `./props`,
- * `./state/challenge`, `./portal`, or `./advanced-keys`) to preview any lesson.
+ * Ganti komponen yang dirender di bawah ini (misalnya `./basic`, `./jsx`, `./props`,
+ * `./state/challenge`, `./portal`, atau `./advanced-keys`) untuk mencoba materi tertentu.
  *
- * @returns The active topic showcase component.
+ * @returns Komponen topik yang sedang aktif ditampilkan.
  */
 const App = () => {
     return <PortalShowcase />

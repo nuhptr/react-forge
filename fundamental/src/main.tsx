@@ -5,7 +5,7 @@ import App from "./App.tsx"
 import "./globals.css"
 
 /**
- * Bootstraps the React Fundamentals application into the `#root` DOM node.
+ * Me-mount aplikasi React Fundamentals ke dalam elemen DOM `#root`.
  */
 createRoot(document.getElementById("root")!).render(
     <StrictMode>

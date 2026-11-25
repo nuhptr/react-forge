@@ -1,9 +1,9 @@
 /**
- * Root playground component for the React Hooks workspace.
+ * Komponen utama (playground) untuk workspace React Hooks.
  *
- * Import and render individual hook lessons here as each topic is implemented.
+ * Impor dan render setiap materi hook di sini seiring penambahan topik pembelajaran.
  *
- * @returns The active hook showcase component.
+ * @returns Komponen materi hook yang sedang aktif ditampilkan.
  */
 const App = () => {
     return (

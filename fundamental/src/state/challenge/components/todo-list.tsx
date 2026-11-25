@@ -1,7 +1,7 @@
 import { useId, useState, type ChangeEvent, type SubmitEvent } from "react"
 
 /**
- * Represents a single todo task with a stable unique identifier.
+ * Struktur satu tugas (todo) dengan pengenal unik yang stabil.
  */
 interface TodoItem {
     id: string
@@ -9,9 +9,9 @@ interface TodoItem {
 }
 
 /**
- * State challenge 4: controlled todo list form appending new tasks with stable UUID keys.
+ * State challenge 4: form daftar tugas (todo list) terkontrol dengan `key` berbasis UUID.
  *
- * @returns Todo list manager component.
+ * @returns Komponen pengelola daftar tugas.
  */
 const TodoList = () => {
     const todoInputId = useId()

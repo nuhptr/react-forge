@@ -8,9 +8,9 @@ const PROFILE_STYLES: CSSProperties = {
 }
 
 /**
- * Renders a profile summary card styled with an extracted `CSSProperties` object.
+ * Merender kartu ringkasan profil yang diberi gaya melalui konstanta `CSSProperties`.
  *
- * @returns Profile card component.
+ * @returns Komponen kartu profil.
  */
 const ProfileCard = () => {
     return (
