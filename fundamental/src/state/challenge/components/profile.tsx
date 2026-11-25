@@ -29,6 +29,7 @@ const Profile = () => {
 
     const handleAgeChange = (event: ChangeEvent<HTMLInputElement>) => {
         const parsedAge = Number.parseInt(event.target.value, 10)
+
         setProfile((prevProfile) => ({
             ...prevProfile,
             age: Number.isNaN(parsedAge) ? 0 : Math.max(0, parsedAge),
