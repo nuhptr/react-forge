@@ -1,0 +1,12 @@
+/** Style untuk modul data-fetching (kartu todo, loading, error). */
+@layer components {
+    .fetch-card {
+        @apply grid gap-2 rounded-xl border border-slate-700 bg-slate-800/60 p-5;
+    }
+    .loading {
+        @apply text-slate-400;
+    }
+    .error {
+        @apply text-rose-400;
+    }
+}

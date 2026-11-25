@@ -1,0 +1,41 @@
+/** Style untuk topik-topik dasar: animasi, gesture, stagger, motion values, scroll. */
+@layer components {
+    .animation-box {
+        @apply mb-4 h-20 w-20 rounded-lg bg-blue-500;
+    }
+    .animation-demo {
+        @apply grid items-start gap-4;
+    }
+    .caption {
+        @apply text-sm text-slate-400;
+    }
+    .control-group {
+        @apply grid items-center gap-2;
+    }
+    .control-group label {
+        @apply text-sm text-slate-400;
+    }
+    .control-group input[type="range"] {
+        @apply w-full accent-blue-500;
+    }
+    .gesture-card {
+        @apply rounded-xl border border-slate-700 bg-slate-800/60 p-6 text-center;
+    }
+    .stagger-list {
+        @apply mt-4 flex list-none flex-col gap-2 p-0;
+    }
+    .stagger-item {
+        @apply rounded-lg border border-slate-700 bg-slate-800/60 p-3;
+    }
+    .spring-track,
+    .transform-track {
+        @apply mt-4 flex h-30 cursor-crosshair items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60;
+    }
+    .scroll-spacer,
+    .view-spacer {
+        @apply h-75;
+    }
+    .scroll-bar {
+        @apply fixed top-4 left-1/2 z-10 h-1.5 -translate-x-1/2 rounded-full bg-blue-500;
+    }
+}
