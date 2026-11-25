@@ -4,36 +4,37 @@ Repositori pembelajaran dan referensi rekayasa **React 19 + TypeScript** yang te
 
 ---
 
-## Gambaran Umum
+## Konvensi Penamaan Urutan Abjad (A–Z)
 
-**React Forge** membagi kurikulum React ke dalam beberapa workspace Vite mandiri menggunakan penamaan folder yang natural tanpa awalan angka, sambil tetap mempertahankan alur belajar bertahap mulai dari dasar JSX hingga rekonsiliasi lanjutan dan React Hooks.
-
-### Prinsip Arsitektur & Clean Code
-
-- **Single Responsibility Principle (SRP):** Efek samping, timer, dan pemanggilan Web API (seperti akses Clipboard pada `useClipboardCopy`) dipisahkan ke dalam custom hook khusus sehingga komponen hanya fokus pada state tampilan dan proses render.
-- **Open/Closed Principle (OCP):** Komponen dasar yang dapat digunakan ulang (`Card`, `Portal`, `ToastNotification`) menerima kontrak `props` dan komposisi `children` tanpa mengunci isi tampilan secara kaku.
-- **Dependency Inversion Principle (DIP):** Komponen overlay/notifikasi dirender melalui abstraksi `<Portal>`, bukan memanggil `document.querySelector` secara langsung di dalam fungsi render.
-- **TypeScript Ketat:** Kontrak `interface` eksplisit pada props, union type, pembaruan state secara *immutable*, bebas dari tipe `any` maupun API yang sudah *deprecated*.
-- **Aksesibilitas Web:** Elemen landmark semantik (`<header>`, `<main>`, `<nav>`, `<footer>`), relasi `<label htmlFor>` terprogram melalui `useId()`, kontrol toast ramah keyboard, serta *live region* sopan (`role="status"`).
+Seluruh folder modul di tingkat root maupun subfolder topik di dalam masing-masing `src/` **tidak menggunakan awalan angka (`01-`) maupun kode huruf (`a-`)**, melainkan dipilih menggunakan istilah natural bahasa Inggris yang apabila diurutkan berdasarkan abjad (`A → Z`) **otomatis mengikuti urutan kurikulum asli dari awal hingga lanjut**.
 
 ---
 
-## Struktur Repositori
+## Struktur Modul Kurikulum (Root A–Z)
 
 ```text
 react-forge/
-├── fundamental/          # Konsep inti React 19, pola state, portal & latihan (challenge)
-│   ├── public/           # Aset statis & ikon
-│   ├── src/              # Modul materi (15 topik bertahap + challenge)
-│   ├── index.html        # Kerangka HTML (#root + region notifikasi #portal-root)
-│   └── README.md         # Panduan kurikulum lengkap modul Fundamental
-├── hooks/                # Workspace khusus pendalaman React Hooks & custom hooks
-│   ├── public/           # Aset statis & ikon
-│   ├── src/              # Pintu masuk playground Hooks
-│   └── README.md         # Panduan workspace & peta belajar Hooks
-├── LICENSE               # Lisensi MIT
-└── README.md             # Dokumentasi utama repositori
+├── fundamental/             # [1] Dasar-dasar React 19, JSX, props, state, portal & keys (Selesai)
+├── hooks/                   # [2] Built-in React Hooks, Context API & custom hooks (Selesai)
+├── introductory-projects/   # [3] 10 proyek mini latihan dasar React (Kerangka siap pakai)
+├── jsx-typescript/          # [4] Pola pengetikan TypeScript mendalam di React (Kerangka siap pakai)
+├── keystone-projects/       # [5] 4 proyek aplikasi menengah-lanjut TypeScript (Kerangka siap pakai)
+├── library-ui/              # [6] Eksplorasi DaisyUI, Radix Themes & shadcn/ui (Kerangka siap pakai)
+├── LICENSE                  # Lisensi MIT
+└── README.md                # Dokumentasi utama repositori
 ```
+
+> Penamaan `F → H → I → J → K → L` menyisakan ruang alfabet `M → Z` untuk modul lanjutan berikutnya (seperti React Hook Form, React 19 Actions, Framer Motion, Zustand, Redux Toolkit, Design Patterns, TanStack Query, hingga Testing).
+
+---
+
+## Prinsip Arsitektur & Clean Code (SOLID)
+
+- **Single Responsibility Principle (SRP):** Efek samping, timer, reducer, dan pemanggilan Web API (`useClipboardCopy`, `useFetch`, `counterReducer`) dipisahkan dari komponen tampilan.
+- **Open/Closed Principle (OCP):** Komponen dasar yang dapat digunakan ulang (`Card`, `Portal`, `ToastNotification`) menerima kontrak `props` dan komposisi `children` tanpa mengunci isi tampilan secara kaku.
+- **Dependency Inversion Principle (DIP):** Komponen overlay dirender melalui abstraksi `<Portal>` dan state lintas-lapisan diakses melalui custom hook Context bertipe aman (`useProfileContext`, `useUserContext`).
+- **TypeScript Ketat:** Kontrak `interface` eksplisit, *discriminated union* pada reducer, bebas dari tipe `any` maupun tipe event lama yang sudah `@deprecated`.
+- **Aksesibilitas Web:** Landmark semantik (`<header>`, `<main>`, `<nav>`, `<footer>`), relasi `<label htmlFor>` terprogram melalui `useId()`, dan ARIA *live region* (`role="status"` / `role="alert"`).
 
 ---
 
@@ -44,37 +45,23 @@ react-forge/
 | **Pustaka UI** | React `^19.3.1`, React DOM `^19.3.1` |
 | **Bahasa** | TypeScript `~7.0.2` (mode bundler ketat) |
 | **Build Tool** | Vite `^8.3.5` (`@vitejs/plugin-react`) |
-| **Styling** | Tailwind CSS `^4.3.3` (`@tailwindcss/vite`), CSS Eksternal |
+| **Styling** | Tailwind CSS `^4.3.3` (`@tailwindcss/vite`), CSS Modern |
 | **Ikon** | `react-icons` `^5.7.0` |
 | **Linter** | ESLint `^10.13.0`, `typescript-eslint`, `eslint-plugin-react-hooks` |
 | **Package Manager** | Bun (`bun.lock`) |
 
 ---
 
-## Cara Menjalankan Proyek
+## Cara Menjalankan Workspace
 
-### Prasyarat
-
-- **[Bun](https://bun.sh/)** `>= 1.1` (direkomendasikan) atau **Node.js** `>= 20`
-
-### Menjalankan Workspace
-
-Pilih modul yang ingin dipelajari (`fundamental` atau `hooks`):
+Pilih workspace modul yang sedang dipelajari:
 
 ```bash
-# 1. Masuk ke direktori modul
-cd fundamental
-
-# 2. Pasang seluruh dependensi
+# Contoh menjalankan modul hooks
+cd hooks
 bun install
-
-# 3. Jalankan server pengembangan Vite
 bun run dev
 ```
-
-### Daftar Perintah (`package.json`)
-
-Setiap workspace memiliki skrip standar yang seragam:
 
 | Perintah | Kegunaan |
 | :--- | :--- |
@@ -85,31 +72,14 @@ Setiap workspace memiliki skrip standar yang seragam:
 
 ---
 
-## Alur Pembelajaran
+## Peta Kurikulum Detail
 
-### 1. [`fundamental/`](./fundamental/README.md) — Dasar-Dasar React (Selesai)
-
-1. **Komponen Dasar** — `src/basic`
-2. **Sintaks JSX** — `src/jsx`
-3. **Aturan JSX** — `src/jsx-rules`
-4. **Komposisi Multi-Komponen** — `src/multiple-components`
-5. **Konten Dinamis** — `src/dynamic-content`
-6. **Render Daftar Data** — `src/list-of-data`
-7. **Props** — `src/props`
-8. **Destructuring Props** — `src/props-destructuring`
-9. **Props Children** — `src/props-children`
-10. **Conditional Rendering** — `src/conditional-rendering`
-11. **Styling & Ikon** — `src/styles`
-12. **Penanganan Event DOM** — `src/event`
-13. **Manajemen State (`useState`)** — `src/state` (counter, array, objek, berbagi state, lazy initializer & challenge)
-14. **React Portal** — `src/portal`
-15. **Advanced Keys** — `src/advanced-keys`
-
-> Lihat [`fundamental/README.md`](./fundamental/README.md) untuk rincian per file dan daftar challenge lengkap.
-
-### 2. [`hooks/`](./hooks/README.md) — React Hooks (Tahap Berikutnya)
-
-Workspace khusus untuk mempelajari `useEffect`, Context API & `useContext`, `useReducer`, `useRef`, pembuatan custom hooks, serta `useId`.
+1. **[`fundamental/`](./fundamental/README.md)** — 15 topik dasar (`atomic-components` s/d `unique-keys`) — **Selesai**
+2. **[`hooks/`](./hooks/README.md)** — 8 topik React Hooks (`basic-state` s/d `unique-identifiers`) — **Selesai**
+3. **[`introductory-projects/`](./introductory-projects/README.md)** — 10 proyek mini (`basic-counter` s/d `shoe-store-filtering`) — **Kerangka Siap**
+4. **[`jsx-typescript/`](./jsx-typescript/README.md)** — 8 topik TypeScript di React (`component-props-typing` s/d `remote-effect-types`) — **Kerangka Siap**
+5. **[`keystone-projects/`](./keystone-projects/README.md)** — 4 proyek TypeScript (`client-table-filtering` s/d `storefront-advanced-filtering`) — **Kerangka Siap**
+6. **[`library-ui/`](./library-ui/README.md)** — 3 pustaka UI (`daisy-ui`, `radix-themes`, `shadcn-ui`) — **Kerangka Siap**
 
 ---
 
@@ -117,7 +87,6 @@ Workspace khusus untuk mempelajari `useEffect`, Context API & `useContext`, `use
 
 - **Percabangan (Branching):** Gunakan branch berumur pendek dari `main` (`feature/<nama>`, `fix/<nama>`, `hotfix/<nama>`, `docs/<nama>`). Branch `main` selalu dijaga bersih dan siap rilis.
 - **Format Commit:** Mengikuti standar [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`).
-- **Pemeriksaan Kualitas:** Pastikan `bun run build` berjalan tanpa error pada workspace yang diubah sebelum membuka Pull Request.
 
 ---
 

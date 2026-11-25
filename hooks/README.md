@@ -1,6 +1,6 @@
 # React Hooks (`hooks`)
 
-Workspace Vite + React 19 + TypeScript yang didedikasikan untuk mempelajari built-in React Hooks serta perancangan custom hooks yang bersih dan dapat digunakan kembali.
+Workspace **Vite + React 19 + TypeScript** berisi implementasi lengkap materi dan *challenge* **React Hooks** dengan arsitektur **SOLID**, tipe statis ketat, dan dokumentasi Bahasa Indonesia.
 
 ---
 
@@ -12,26 +12,21 @@ bun install
 bun run dev
 ```
 
----
-
-## Peta Materi Pembelajaran
-
-Setiap folder di dalam `src/` menggunakan penamaan natural tanpa awalan angka:
-
-1. **Side Effects (`use-effect`)** — Pengambilan data (*data fetching*), sinkronisasi eksternal, dependency array, dan fungsi pembersih (*cleanup*).
-2. **Context (`context` & `use-context`)** — Menghindari *prop drilling* dan membuat penyedia konteks (*context provider*) bertipe aman.
-3. **State Kompleks (`use-reducer`)** — Transisi state terprediksi menggunakan pola *reducer* dan *discriminated union action*.
-4. **Referensi Mutable (`use-ref`)** — Mengakses elemen DOM secara imperatif (fokus/scroll) serta menyimpan nilai tanpa memicu render ulang.
-5. **Custom Hooks (`custom-hooks`)** — Mengekstrak logika ber-state agar dapat dipakai ulang (`useFetch`, `useLocalStorage`, `useToggle`).
-6. **ID Unik (`use-id`)** — Pembuatan ID deterministik yang aman untuk menghubungkan atribut aksesibilitas elemen form.
+Untuk mencoba setiap topik atau *challenge*, buka [`src/App.tsx`](./src/App.tsx) dan pilih komponen dari folder materi yang diinginkan.
 
 ---
 
-## Daftar Perintah
+## Urutan Materi & Kurikulum (A–Z)
 
-| Perintah | Kegunaan |
-| :--- | :--- |
-| `bun run dev` | Menjalankan server pengembangan Vite |
-| `bun run build` | Memeriksa tipe TypeScript (`tsc -b`) dan mem-build aset produksi |
-| `bun run lint` | Menjalankan pemeriksaan ESLint pada seluruh file TypeScript/React |
-| `bun run preview` | Menjalankan pratinjau hasil build produksi secara lokal |
+Seluruh nama folder di dalam `src/` disusun menggunakan istilah teknis React yang natural tanpa awalan angka sehingga urutan abjad (`A → Z`) otomatis mengikuti urutan pembelajaran asli:
+
+| Folder (`A–Z`) | Topik Asli | File Materi | File Challenge | Konsep Utama yang Dipelajari |
+| :--- | :--- | :--- | :--- | :--- |
+| `basic-state` | `useState` | `src/basic-state/index.tsx` | — | Dasar state angka & daftar immutable (`StateCounter`) |
+| `effect-lifecycle` | `useEffect` | `src/effect-lifecycle/index.tsx` | `src/effect-lifecycle/challenge.tsx` | Dependency array, listener cleanup, fetch dengan `AbortController` (`MountLogger`, `DocumentTitleCounter`, `PostsPreview`) |
+| `layered-prop-drilling` | Prop Drilling | `src/layered-prop-drilling/index.tsx` | — | Aliran props berantai (`OuterSection` → `MiddleSection` → `InnerGreeting`) |
+| `managed-context` | Context & `useContext` | `src/managed-context/index.tsx` | `src/managed-context/challenge.tsx` | Typed Context Provider + fail-fast consumer hook (`ProfileProvider`, `UserProvider`) |
+| `reducer-dispatch` | `useReducer` | `src/reducer-dispatch/index.tsx` | `src/reducer-dispatch/challenge.tsx` | Pure reducer dengan discriminated union action (`counterReducer`, `StepCounter`) |
+| `reference-values` | `useRef` | `src/reference-values/index.tsx` | `src/reference-values/challenge.tsx` | Fokus DOM imperatif & penyimpanan ID interval lintas-render (`FocusInput`, `IntervalTimer`) |
+| `reusable-hooks` | Custom Hooks | `src/reusable-hooks/index.tsx` | `src/reusable-hooks/challenge.tsx` | Ekstraksi logika ber-state (`useToggle`, `useFormInput`, generic `useFetch<T>`) |
+| `unique-identifiers` | `useId` | `src/unique-identifiers/index.tsx` | — | ID deterministik bebas bentrok untuk multi-instans form aksesibel (`AccessibleFieldGroup`) |
