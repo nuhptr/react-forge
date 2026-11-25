@@ -1,26 +1,33 @@
+/**
+ * Demonstrates embedding JavaScript expressions, variables, arrays, function calls,
+ * and dynamic class names inside JSX curly braces `{}`.
+ *
+ * @returns Dynamic JSX showcase section.
+ */
 const DynamicContent = () => {
-   const myName: string = "Anmastery"
-   const multiply = (a: number, b: number) => a * b
-   const specialClass = "simple-class"
+    const userName = "Anmastery"
+    const friendNames = ["Alex", "John", "Waheed", "Jordan"]
+    const multiplyNumbers = (first: number, second: number): number => first * second
+    const highlightedClassName = "simple-class"
 
-   return (
-      <section>
-         {/* Rendering expression */}
-         <p>2 + 2 = {2 + 2}</p>
+    return (
+        <section>
+            {/* Arithmetic expression */}
+            <p>2 + 2 = {2 + 2}</p>
 
-         {/* Rendering variable value */}
-         <h1>{myName}</h1>
+            {/* String variable */}
+            <h1>{userName}</h1>
 
-         {/* Rendering Array */}
-         <p>My friend list: {["Alex", "John", "Waheed", "Jordan"]}</p>
+            {/* Formatted array expression */}
+            <p>My friend list: {friendNames.join(", ")}</p>
 
-         {/* Rendering function value */}
-         <p>2 * 2 = {multiply(2, 2)}</p>
+            {/* Function invocation */}
+            <p>2 * 2 = {multiplyNumbers(2, 2)}</p>
 
-         {/* Rendering class */}
-         <p className={specialClass}>This is special class</p>
-      </section>
-   )
+            {/* Dynamic attribute binding */}
+            <p className={highlightedClassName}>This paragraph uses a dynamic class name</p>
+        </section>
+    )
 }
 
 export default DynamicContent

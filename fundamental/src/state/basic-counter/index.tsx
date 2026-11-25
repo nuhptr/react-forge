@@ -1,21 +1,27 @@
 import { useState } from "react"
 
-const Counter = () => {
-   const [count, setCount] = useState(0)
+/**
+ * Demonstrates basic numeric state management with `useState` and non-negative bounds.
+ *
+ * @returns Increment/decrement counter widget.
+ */
+const BasicCounter = () => {
+    const [count, setCount] = useState(0)
 
-   const increment = () => setCount(count + 1)
-   const decrement = () => {
-      if (count < 0) return 0
-      else return count - 1
-   }
+    const handleIncrement = () => setCount((prevCount) => prevCount + 1)
+    const handleDecrement = () => setCount((prevCount) => Math.max(0, prevCount - 1))
 
-   return (
-      <div>
-         <h1>Count</h1>
-         <button onClick={increment}>+</button>
-         <button onClick={decrement}>-</button>
-      </div>
-   )
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button type="button" onClick={handleIncrement}>
+                +
+            </button>
+            <button type="button" onClick={handleDecrement}>
+                -
+            </button>
+        </div>
+    )
 }
 
-export default Counter
+export default BasicCounter

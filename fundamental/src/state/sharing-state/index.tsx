@@ -1,21 +1,27 @@
 import { useState } from "react"
 
-import CompOne from "./comp-one"
-import CompTwo from "./comp-two"
+import PrimaryCounter from "./components/primary-counter"
+import SecondaryCounter from "./components/secondary-counter"
 
+/**
+ * Demonstrates lifting state up so sibling components (`PrimaryCounter` and `SecondaryCounter`)
+ * read and update a single source of truth.
+ *
+ * @returns Synchronized sibling counter section.
+ */
 const SharingState = () => {
-   const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
-   const handleClick = (value: number) => {
-      setCount((currentCount) => currentCount + value)
-   }
+    const handleIncrement = (step = 1) => {
+        setCount((currentCount) => currentCount + step)
+    }
 
-   return (
-      <section>
-         <CompOne count={count} onClickHandler={() => handleClick(1)} />
-         <CompTwo count={count} onClickHandler={() => handleClick(1)} />
-      </section>
-   )
+    return (
+        <section>
+            <PrimaryCounter count={count} onIncrement={() => handleIncrement(1)} />
+            <SecondaryCounter count={count} onIncrement={() => handleIncrement(1)} />
+        </section>
+    )
 }
 
 export default SharingState

@@ -1,13 +1,18 @@
-import Cars from "./components/cars"
+import Car from "./components/car"
 import Dealer from "./components/dealer"
 
-const DestructuringChallenge = () => {
-   return (
-      <>
-         <Dealer name="Nusantara Auto" from="Indonesia" />
-         <Cars name="Toyota Avanza" type="MPV" />
-      </>
-   )
+/**
+ * Props destructuring challenge solution pairing `Dealer` and `Car` components.
+ *
+ * @returns Composed dealer and vehicle summary.
+ */
+const PropsDestructuringChallenge = () => {
+    return (
+        <>
+            <Dealer dealerName="Nusantara Auto" originCountry="Indonesia" />
+            <Car modelName="Toyota Avanza" bodyType="MPV" />
+        </>
+    )
 }
 
-export default DestructuringChallenge
+export default PropsDestructuringChallenge

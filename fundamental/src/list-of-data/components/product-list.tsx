@@ -1,26 +1,34 @@
-type Product = {
-   id: number
-   name: string
-   price: string
+/**
+ * Represents a catalog item displayed in {@link ProductList}.
+ */
+interface Product {
+    id: number
+    name: string
+    price: string
 }
 
-const ProductList = () => {
-   const products: Product[] = [
-      { id: 1, name: "Phone", price: "$699" },
-      { id: 2, name: "Laptop", price: "$1200" },
-      { id: 3, name: "Headphones", price: "$199" },
-   ]
+const PRODUCTS: Product[] = [
+    { id: 1, name: "Phone", price: "$699" },
+    { id: 2, name: "Laptop", price: "$1200" },
+    { id: 3, name: "Headphones", price: "$199" },
+]
 
-   return (
-      <div>
-         {products.map((p) => (
-            <div key={p.id}>
-               <h1>Name: {p.name}</h1>
-               <p>Price: {p.price}</p>
-            </div>
-         ))}
-      </div>
-   )
+/**
+ * Renders a collection of products mapped with stable `product.id` keys.
+ *
+ * @returns Unordered list of product entries.
+ */
+const ProductList = () => {
+    return (
+        <ul>
+            {PRODUCTS.map((product) => (
+                <li key={product.id}>
+                    <h2>Name: {product.name}</h2>
+                    <p>Price: {product.price}</p>
+                </li>
+            ))}
+        </ul>
+    )
 }
 
 export default ProductList

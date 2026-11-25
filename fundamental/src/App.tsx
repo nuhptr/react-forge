@@ -1,26 +1,15 @@
-import StateChallenge from "./state/challenge"
+import PortalShowcase from "./portal"
 
-const Rules = () => {
-   return (
-      <div>
-         <h1>Rules</h1>
-         <p>Open every folder to see topics!</p>
-      </div>
-   )
-}
-
-const State = () => {
-   return <StateChallenge />
-}
-
-// Rafce
+/**
+ * Root playground component for the React Fundamentals workspace.
+ *
+ * Swap the rendered component below (for example `./basic`, `./jsx`, `./props`,
+ * `./state/challenge`, `./portal`, or `./advanced-keys`) to preview any lesson.
+ *
+ * @returns The active topic showcase component.
+ */
 const App = () => {
-   return (
-      <>
-         {/* <Rules /> */}
-         {/* <State /> */}
-      </>
-   )
+    return <PortalShowcase />
 }
 
 export default App

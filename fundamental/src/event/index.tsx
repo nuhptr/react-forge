@@ -1,35 +1,57 @@
-const Button = () => {
-   // Handle click
-   const handleClick = () => console.log(Math.round(Math.random() * 10))
+/**
+ * Logs a random integer between `0` and `10` when clicked.
+ */
+const RandomNumberButton = () => {
+    const handleClick = () => {
+        console.log(Math.round(Math.random() * 10))
+    }
 
-   return <button onClick={handleClick}>Click</button>
+    return (
+        <button type="button" onClick={handleClick}>
+            Generate Random Number
+        </button>
+    )
 }
 
-const Copy = () => {
-   const copyHandler = () => {
-      console.log("Stop stealing my content")
-   }
+/**
+ * Logs a warning message whenever the user copies text from the paragraph.
+ */
+const CopyProtectedText = () => {
+    const handleCopy = () => {
+        console.log("Stop stealing my content")
+    }
 
-   return <p onCopy={copyHandler}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    return <p onCopy={handleCopy}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 }
 
-const Move = () => {
-   const moveHandler = () => {
-      alert("Mouse move event fired!")
-      console.log("Mouse move event Fired!")
-   }
+/**
+ * Logs a message when the pointer enters the paragraph element.
+ */
+const HoverTrackerText = () => {
+    const handleMouseEnter = () => {
+        console.log("Mouse enter event fired!")
+    }
 
-   return <p onMouseOver={moveHandler}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    return (
+        <p onMouseEnter={handleMouseEnter}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    )
 }
 
-const Event = () => {
-   return (
-      <>
-         <Button />
-         <Copy />
-         <Move />
-      </>
-   )
+/**
+ * Demonstrates attaching DOM event handlers (`onClick`, `onCopy`, `onMouseEnter`) in JSX.
+ *
+ * @returns Interactive event handler showcase.
+ */
+const EventExamples = () => {
+    return (
+        <>
+            <RandomNumberButton />
+            <CopyProtectedText />
+            <HoverTrackerText />
+        </>
+    )
 }
 
-export default Event
+export default EventExamples
